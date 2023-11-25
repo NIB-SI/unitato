@@ -1,0 +1,1636 @@
+                            11/24/2023 at 23h54m10s                             
+
+
+ ------------------------------------------------------------------------------
+|   Another GFF Analysis Toolkit (AGAT) - Version: v1.2.0                      |
+|   https://github.com/NBISweden/AGAT                                          |
+|   National Bioinformatics Infrastructure Sweden (NBIS) - www.nbis.se         |
+ ------------------------------------------------------------------------------
+                                        
+                                       
+                          ------ Start parsing ------                           
+-------------------------- parse options and metadata --------------------------
+=> Accessing the feature_levels YAML file
+Using standard /home/administrator/conda2/envs/Liftoff1.6.3.original/lib/perl5/site_perl/auto/share/dist/AGAT/feature_levels.yaml file
+=> Attribute used to group features when no Parent/ID relationship exists (i.e common tag):
+	* locus_tag
+	* gene_id
+=> merge_loci option deactivated
+=> Machine information:
+	This script is being run by perl v5.32.1
+	Bioperl location being used: /home/administrator/conda2/envs/Liftoff1.6.3.original/lib/perl5/site_perl/Bio/
+	Operating system being used: linux 
+=> Accessing Ontology
+	No ontology accessible from the gff file header!
+	We use the SOFA ontology distributed with AGAT:
+		/home/administrator/conda2/envs/Liftoff1.6.3.original/lib/perl5/site_perl/auto/share/dist/AGAT/so.obo
+	Read ontology /home/administrator/conda2/envs/Liftoff1.6.3.original/lib/perl5/site_perl/auto/share/dist/AGAT/so.obo:
+		4 root terms, and 2596 total terms, and 1516 leaf terms
+	Filtering ontology:
+The feature type (3rd column) is constrained to be either a term from the Sequence Ontology or an SO accession number. The latter alternative is distinguished using the syntax SO:000000. In either case, it must be sequence_feature (SO:0000110) or an is_a child of it.
+We filter the ontology to apply this rule.		We found 1861 terms that are sequence_feature or is_a child of it.
+--------------------------------- parsing file ---------------------------------
+=> Number of line in file: 10201
+=> Number of comment lines: 0
+=> Fasta included: No
+=> Number of features lines: 10201
+=> Number of feature type (3rd column): 4
+	* Level1: 1 => gene
+	* level2: 1 => mRNA
+	* level3: 2 => exon CDS
+	* unknown: 0 => 
+=> Version of the Bioperl GFF parser selected by AGAT: 3
+                  ------ End parsing (done in 2 second) ------                  
+
+
+                           ------ Start checks ------                           
+---------------------------- Check1: feature types -----------------------------
+----------------------------------- ontology -----------------------------------
+All feature types in agreement with the Ontology.
+------------------------------------- agat -------------------------------------
+AGAT can deal with all the encountered feature types (3rd column)
+------------------------------ done in 0 seconds -------------------------------
+
+------------------------------ Check2: duplicates ------------------------------
+None found
+------------------------------ done in 0 seconds -------------------------------
+
+-------------------------- Check3: sequential bucket ---------------------------
+Nothing to check as sequential bucket!
+------------------------------ done in 0 seconds -------------------------------
+
+--------------------------- Check4: l2 linked to l3 ----------------------------
+No problem found
+------------------------------ done in 0 seconds -------------------------------
+
+--------------------------- Check5: l1 linked to l2 ----------------------------
+No problem found
+------------------------------ done in 0 seconds -------------------------------
+
+--------------------------- Check6: remove orphan l1 ---------------------------
+We remove only those not supposed to be orphan
+None found
+------------------------------ done in 0 seconds -------------------------------
+
+------------------------- Check7: all level3 locations -------------------------
+Features adjacents we merge them:
+DMv6.1_chr06	Liftoff	CDS	45794482	45794605	.	-	.	ID PGSC0003DMC400066033 ; Name PGSC0003DMC400066033 ; Parent PGSC0003DMT400094358 ; extra_copy_number 0
+DMv6.1_chr06	Liftoff	CDS	45794606	45794946	.	-	.	ID PGSC0003DMC400066033 ; Name PGSC0003DMC400066033 ; Parent PGSC0003DMT400094358 ; extra_copy_number 0
+Features adjacents we merge them:
+DMv6.1_chr04	Liftoff	CDS	54263943	54264181	.	-	.	ID PGSC0003DMC400017358 ; Name PGSC0003DMC400017358 ; Parent PGSC0003DMT400025486 ; extra_copy_number 0
+DMv6.1_chr04	Liftoff	CDS	54264182	54264528	.	-	.	ID PGSC0003DMC400017358 ; Name PGSC0003DMC400017358 ; Parent PGSC0003DMT400025486 ; extra_copy_number 0
+Features adjacents we merge them:
+DMv6.1_chr06	Liftoff	exon	45794482	45794605	.	-	.	ID PGSC0003DME400242521 ; Name PGSC0003DME400242521 ; Parent PGSC0003DMT400094358 ; extra_copy_number 0
+DMv6.1_chr06	Liftoff	exon	45794606	45794946	.	-	.	ID PGSC0003DME400242522 ; Name PGSC0003DME400242522 ; Parent PGSC0003DMT400094358 ; extra_copy_number 0
+Features adjacents we merge them:
+DMv6.1_chr04	Liftoff	exon	54263943	54264181	.	-	.	ID PGSC0003DME400068412 ; Name PGSC0003DME400068412 ; Parent PGSC0003DMT400025486 ; extra_copy_number 0
+DMv6.1_chr04	Liftoff	exon	54264182	54264528	.	-	.	ID PGSC0003DME400068414 ; Name PGSC0003DME400068414 ; Parent PGSC0003DMT400025486 ; extra_copy_number 0
+------------------------------ done in 0 seconds -------------------------------
+
+------------------------------ Check8: check cds -------------------------------
+No problem found
+------------------------------ done in 0 seconds -------------------------------
+
+----------------------------- Check9: check exons ------------------------------
+Create one Exon for pgsc0003dmt400014560
+:DMv6.1_chr03	Liftoff	exon	57870299	57870466	.	+	.	ID "nbis-exon-1"  ; Name PGSC0003DMC400010065 ; Parent PGSC0003DMT400014560 ; extra_copy_number 0
+Create one Exon for pgsc0003dmt400028819
+:DMv6.1_chr10	Liftoff	exon	54824929	54824996	.	+	.	ID "nbis-exon-2"  ; Name PGSC0003DMC400019596 ; Parent PGSC0003DMT400028819 ; extra_copy_number 0
+Create one Exon for pgsc0003dmt400028819
+:DMv6.1_chr10	Liftoff	exon	54825738	54826185	.	+	.	ID "nbis-exon-3"  ; Name PGSC0003DMC400019596 ; Parent PGSC0003DMT400028819 ; extra_copy_number 0
+Create one Exon for pgsc0003dmt400059504
+:DMv6.1_chr04	Liftoff	exon	46964558	46964687	.	-	.	ID "nbis-exon-4"  ; Name PGSC0003DMC400040046 ; Parent PGSC0003DMT400059504 ; extra_copy_number 0
+4 exons created that were missing
+No exons locations modified
+No supernumerary exons removed
+No level2 locations modified
+------------------------------ done in 0 seconds -------------------------------
+
+----------------------------- Check10: check utrs ------------------------------
+Create one UTR for pgsc0003dmt400000313
+:DMv6.1_chr01	Liftoff	three_prime_UTR	74449819	74450173	.	-	.	ID "nbis-three_prime_utr-1"  ; Name PGSC0003DME400000922 ; Parent PGSC0003DMT400000313 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400000313
+:DMv6.1_chr01	Liftoff	five_prime_UTR	74450450	74450761	.	-	.	ID "nbis-five_prime_utr-1"  ; Name PGSC0003DME400000922 ; Parent PGSC0003DMT400000313 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400000483
+:DMv6.1_chr01	Liftoff	three_prime_UTR	73195462	73195708	.	-	.	ID "nbis-three_prime_utr-2"  ; Name PGSC0003DME400001419 ; Parent PGSC0003DMT400000483 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400000483
+:DMv6.1_chr01	Liftoff	five_prime_UTR	73196402	73196403	.	-	.	ID "nbis-five_prime_utr-2"  ; Name PGSC0003DME400001419 ; Parent PGSC0003DMT400000483 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400000483
+:DMv6.1_chr01	Liftoff	five_prime_UTR	73197926	73197975	.	-	.	ID "nbis-five_prime_utr-2"  ; Name PGSC0003DME400001419 ; Parent PGSC0003DMT400000483 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400000483
+:DMv6.1_chr01	Liftoff	five_prime_UTR	73198068	73198147	.	-	.	ID "nbis-five_prime_utr-2"  ; Name PGSC0003DME400001419 ; Parent PGSC0003DMT400000483 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400001031
+:DMv6.1_chr12	Liftoff	five_prime_UTR	54860865	54860953	.	+	.	ID "nbis-five_prime_utr-3"  ; Name PGSC0003DME400003120 ; Parent PGSC0003DMT400001031 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400001031
+:DMv6.1_chr12	Liftoff	three_prime_UTR	54861437	54861437	.	+	.	ID "nbis-three_prime_utr-3"  ; Name PGSC0003DME400003120 ; Parent PGSC0003DMT400001031 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400001031
+:DMv6.1_chr12	Liftoff	three_prime_UTR	54866545	54866868	.	+	.	ID "nbis-three_prime_utr-3"  ; Name PGSC0003DME400003120 ; Parent PGSC0003DMT400001031 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400001278
+:DMv6.1_chr02	Liftoff	three_prime_UTR	44661737	44661915	.	-	.	ID "nbis-three_prime_utr-4"  ; Name PGSC0003DME400003887 ; Parent PGSC0003DMT400001278 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400001278
+:DMv6.1_chr02	Liftoff	five_prime_UTR	44665491	44665559	.	-	.	ID "nbis-five_prime_utr-4"  ; Name PGSC0003DME400003887 ; Parent PGSC0003DMT400001278 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400001923
+:DMv6.1_chr01	Liftoff	three_prime_UTR	86287111	86287649	.	-	.	ID "nbis-three_prime_utr-5"  ; Name PGSC0003DME400005713 ; Parent PGSC0003DMT400001923 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400001923
+:DMv6.1_chr01	Liftoff	five_prime_UTR	86288044	86288073	.	-	.	ID "nbis-five_prime_utr-5"  ; Name PGSC0003DME400005713 ; Parent PGSC0003DMT400001923 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400001923
+:DMv6.1_chr01	Liftoff	five_prime_UTR	86289090	86289169	.	-	.	ID "nbis-five_prime_utr-5"  ; Name PGSC0003DME400005713 ; Parent PGSC0003DMT400001923 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002222
+:DMv6.1_chr01	Liftoff	five_prime_UTR	65319509	65319684	.	+	.	ID "nbis-five_prime_utr-6"  ; Name PGSC0003DME400006528 ; Parent PGSC0003DMT400002222 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002222
+:DMv6.1_chr01	Liftoff	five_prime_UTR	65323763	65323813	.	+	.	ID "nbis-five_prime_utr-6"  ; Name PGSC0003DME400006528 ; Parent PGSC0003DMT400002222 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002222
+:DMv6.1_chr01	Liftoff	three_prime_UTR	65324227	65324324	.	+	.	ID "nbis-three_prime_utr-6"  ; Name PGSC0003DME400006528 ; Parent PGSC0003DMT400002222 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002352
+:DMv6.1_chr11	Liftoff	five_prime_UTR	11757370	11757435	.	+	.	ID "nbis-five_prime_utr-7"  ; Name PGSC0003DME400006875 ; Parent PGSC0003DMT400002352 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002352
+:DMv6.1_chr11	Liftoff	three_prime_UTR	11764433	11764806	.	+	.	ID "nbis-three_prime_utr-7"  ; Name PGSC0003DME400006875 ; Parent PGSC0003DMT400002352 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002373
+:DMv6.1_chr11	Liftoff	five_prime_UTR	11457881	11457934	.	+	.	ID "nbis-five_prime_utr-8"  ; Name PGSC0003DME400006930 ; Parent PGSC0003DMT400002373 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002373
+:DMv6.1_chr11	Liftoff	three_prime_UTR	11466220	11466258	.	+	.	ID "nbis-three_prime_utr-8"  ; Name PGSC0003DME400006930 ; Parent PGSC0003DMT400002373 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002373
+:DMv6.1_chr11	Liftoff	three_prime_UTR	11466572	11466815	.	+	.	ID "nbis-three_prime_utr-8"  ; Name PGSC0003DME400006930 ; Parent PGSC0003DMT400002373 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002403
+:DMv6.1_chr11	Liftoff	three_prime_UTR	11536930	11537286	.	-	.	ID "nbis-three_prime_utr-9"  ; Name PGSC0003DME400006988 ; Parent PGSC0003DMT400002403 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002403
+:DMv6.1_chr11	Liftoff	three_prime_UTR	11537375	11537629	.	-	.	ID "nbis-three_prime_utr-9"  ; Name PGSC0003DME400006988 ; Parent PGSC0003DMT400002403 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002403
+:DMv6.1_chr11	Liftoff	five_prime_UTR	11543692	11543795	.	-	.	ID "nbis-five_prime_utr-9"  ; Name PGSC0003DME400006988 ; Parent PGSC0003DMT400002403 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002789
+:DMv6.1_chr07	Liftoff	three_prime_UTR	47211877	47212195	.	-	.	ID "nbis-three_prime_utr-10"  ; Name PGSC0003DME400008097 ; Parent PGSC0003DMT400002789 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002789
+:DMv6.1_chr07	Liftoff	five_prime_UTR	47216535	47216579	.	-	.	ID "nbis-five_prime_utr-10"  ; Name PGSC0003DME400008097 ; Parent PGSC0003DMT400002789 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002789
+:DMv6.1_chr07	Liftoff	five_prime_UTR	47216699	47216803	.	-	.	ID "nbis-five_prime_utr-10"  ; Name PGSC0003DME400008097 ; Parent PGSC0003DMT400002789 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002949
+:DMv6.1_chr08	Liftoff	three_prime_UTR	5336553	5336976	.	-	.	ID "nbis-three_prime_utr-11"  ; Name PGSC0003DME400008571 ; Parent PGSC0003DMT400002949 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002949
+:DMv6.1_chr08	Liftoff	three_prime_UTR	5337413	5337529	.	-	.	ID "nbis-three_prime_utr-11"  ; Name PGSC0003DME400008571 ; Parent PGSC0003DMT400002949 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002949
+:DMv6.1_chr08	Liftoff	five_prime_UTR	5338148	5338760	.	-	.	ID "nbis-five_prime_utr-11"  ; Name PGSC0003DME400008571 ; Parent PGSC0003DMT400002949 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002949
+:DMv6.1_chr08	Liftoff	five_prime_UTR	5341867	5342121	.	-	.	ID "nbis-five_prime_utr-11"  ; Name PGSC0003DME400008571 ; Parent PGSC0003DMT400002949 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002980
+:DMv6.1_chr05	Liftoff	five_prime_UTR	37597896	37598274	.	+	.	ID "nbis-five_prime_utr-12"  ; Name PGSC0003DME400008638 ; Parent PGSC0003DMT400002980 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400002980
+:DMv6.1_chr05	Liftoff	three_prime_UTR	37598611	37599136	.	+	.	ID "nbis-three_prime_utr-12"  ; Name PGSC0003DME400008638 ; Parent PGSC0003DMT400002980 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003214
+:DMv6.1_chr08	Liftoff	three_prime_UTR	44785945	44786120	.	-	.	ID "nbis-three_prime_utr-13"  ; Name PGSC0003DME400009240 ; Parent PGSC0003DMT400003214 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003214
+:DMv6.1_chr08	Liftoff	three_prime_UTR	44786549	44786977	.	-	.	ID "nbis-three_prime_utr-13"  ; Name PGSC0003DME400009240 ; Parent PGSC0003DMT400003214 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003214
+:DMv6.1_chr08	Liftoff	five_prime_UTR	44787203	44787599	.	-	.	ID "nbis-five_prime_utr-13"  ; Name PGSC0003DME400009240 ; Parent PGSC0003DMT400003214 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003426
+:DMv6.1_chr02	Liftoff	three_prime_UTR	43301437	43301910	.	-	.	ID "nbis-three_prime_utr-14"  ; Name PGSC0003DME400009745 ; Parent PGSC0003DMT400003426 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003426
+:DMv6.1_chr02	Liftoff	five_prime_UTR	43302718	43302779	.	-	.	ID "nbis-five_prime_utr-14"  ; Name PGSC0003DME400009745 ; Parent PGSC0003DMT400003426 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003426
+:DMv6.1_chr02	Liftoff	five_prime_UTR	43304272	43304384	.	-	.	ID "nbis-five_prime_utr-14"  ; Name PGSC0003DME400009745 ; Parent PGSC0003DMT400003426 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003426
+:DMv6.1_chr02	Liftoff	five_prime_UTR	43304469	43304603	.	-	.	ID "nbis-five_prime_utr-14"  ; Name PGSC0003DME400009745 ; Parent PGSC0003DMT400003426 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003957
+:DMv6.1_chr09	Liftoff	five_prime_UTR	63458207	63458298	.	+	.	ID "nbis-five_prime_utr-15"  ; Name PGSC0003DME400011240 ; Parent PGSC0003DMT400003957 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003957
+:DMv6.1_chr09	Liftoff	five_prime_UTR	63460162	63460162	.	+	.	ID "nbis-five_prime_utr-15"  ; Name PGSC0003DME400011240 ; Parent PGSC0003DMT400003957 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400003957
+:DMv6.1_chr09	Liftoff	three_prime_UTR	63460463	63460893	.	+	.	ID "nbis-three_prime_utr-15"  ; Name PGSC0003DME400011240 ; Parent PGSC0003DMT400003957 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400004523
+:DMv6.1_chr01	Liftoff	three_prime_UTR	68717426	68720169	.	-	.	ID "nbis-three_prime_utr-16"  ; Name PGSC0003DME400012768 ; Parent PGSC0003DMT400004523 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400004523
+:DMv6.1_chr01	Liftoff	five_prime_UTR	68721140	68721188	.	-	.	ID "nbis-five_prime_utr-16"  ; Name PGSC0003DME400012768 ; Parent PGSC0003DMT400004523 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400005404
+:DMv6.1_chr06	Liftoff	three_prime_UTR	45164031	45164183	.	-	.	ID "nbis-three_prime_utr-17"  ; Name PGSC0003DME400015048 ; Parent PGSC0003DMT400005404 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400005404
+:DMv6.1_chr06	Liftoff	five_prime_UTR	45167427	45167482	.	-	.	ID "nbis-five_prime_utr-17"  ; Name PGSC0003DME400015048 ; Parent PGSC0003DMT400005404 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400005587
+:DMv6.1_chr11	Liftoff	five_prime_UTR	27189224	27189302	.	+	.	ID "nbis-five_prime_utr-18"  ; Name PGSC0003DME400015427 ; Parent PGSC0003DMT400005587 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400005587
+:DMv6.1_chr11	Liftoff	three_prime_UTR	27198187	27198506	.	+	.	ID "nbis-three_prime_utr-18"  ; Name PGSC0003DME400015427 ; Parent PGSC0003DMT400005587 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400005592
+:DMv6.1_chr11	Liftoff	five_prime_UTR	27068628	27068762	.	+	.	ID "nbis-five_prime_utr-19"  ; Name PGSC0003DME400015440 ; Parent PGSC0003DMT400005592 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400005592
+:DMv6.1_chr11	Liftoff	three_prime_UTR	27074961	27075263	.	+	.	ID "nbis-three_prime_utr-19"  ; Name PGSC0003DME400015440 ; Parent PGSC0003DMT400005592 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400005614
+:DMv6.1_chr12	Liftoff	three_prime_UTR	36751261	36751806	.	-	.	ID "nbis-three_prime_utr-20"  ; Name PGSC0003DME400015544 ; Parent PGSC0003DMT400005614 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400006199
+:DMv6.1_chr01	Liftoff	three_prime_UTR	24490965	24491220	.	-	.	ID "nbis-three_prime_utr-21"  ; Name PGSC0003DME400016966 ; Parent PGSC0003DMT400006199 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400006199
+:DMv6.1_chr01	Liftoff	five_prime_UTR	24492364	24492400	.	-	.	ID "nbis-five_prime_utr-20"  ; Name PGSC0003DME400016966 ; Parent PGSC0003DMT400006199 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400006199
+:DMv6.1_chr01	Liftoff	five_prime_UTR	24493080	24493138	.	-	.	ID "nbis-five_prime_utr-20"  ; Name PGSC0003DME400016966 ; Parent PGSC0003DMT400006199 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400006199
+:DMv6.1_chr01	Liftoff	five_prime_UTR	24498509	24498524	.	-	.	ID "nbis-five_prime_utr-20"  ; Name PGSC0003DME400016966 ; Parent PGSC0003DMT400006199 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400006421
+:DMv6.1_chr03	Liftoff	three_prime_UTR	59177897	59179106	.	-	.	ID "nbis-three_prime_utr-22"  ; Name PGSC0003DME400017505 ; Parent PGSC0003DMT400006421 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400006421
+:DMv6.1_chr03	Liftoff	five_prime_UTR	59179734	59180258	.	-	.	ID "nbis-five_prime_utr-21"  ; Name PGSC0003DME400017505 ; Parent PGSC0003DMT400006421 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400006433
+:DMv6.1_chr03	Liftoff	five_prime_UTR	59095625	59095685	.	+	.	ID "nbis-five_prime_utr-22"  ; Name PGSC0003DME400017554 ; Parent PGSC0003DMT400006433 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400006433
+:DMv6.1_chr03	Liftoff	three_prime_UTR	59096097	59098568	.	+	.	ID "nbis-three_prime_utr-23"  ; Name PGSC0003DME400017554 ; Parent PGSC0003DMT400006433 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007165
+:DMv6.1_chr01	Liftoff	five_prime_UTR	78821216	78821934	.	+	.	ID "nbis-five_prime_utr-23"  ; Name PGSC0003DME400019741 ; Parent PGSC0003DMT400007165 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007165
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78822352	78823611	.	+	.	ID "nbis-three_prime_utr-24"  ; Name PGSC0003DME400019741 ; Parent PGSC0003DMT400007165 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	five_prime_UTR	78955091	78955287	.	+	.	ID "nbis-five_prime_utr-24"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	five_prime_UTR	78956743	78956781	.	+	.	ID "nbis-five_prime_utr-24"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78958066	78958069	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78958803	78958971	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78959063	78959183	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78959501	78959802	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78959906	78959978	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78960357	78960450	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78961290	78961458	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78961542	78961625	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78962048	78962177	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78962282	78962372	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78963133	78963263	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78964165	78964383	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007256
+:DMv6.1_chr01	Liftoff	three_prime_UTR	78964537	78965024	.	+	.	ID "nbis-three_prime_utr-25"  ; Name PGSC0003DME400020031 ; Parent PGSC0003DMT400007256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007391
+:DMv6.1_chr04	Liftoff	five_prime_UTR	1175823	1178706	.	+	.	ID "nbis-five_prime_utr-25"  ; Name PGSC0003DME400020306 ; Parent PGSC0003DMT400007391 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007391
+:DMv6.1_chr04	Liftoff	three_prime_UTR	1179112	1180529	.	+	.	ID "nbis-three_prime_utr-26"  ; Name PGSC0003DME400020306 ; Parent PGSC0003DMT400007391 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007456
+:DMv6.1_chr04	Liftoff	five_prime_UTR	857425	859099	.	+	.	ID "nbis-five_prime_utr-26"  ; Name PGSC0003DME400020458 ; Parent PGSC0003DMT400007456 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007456
+:DMv6.1_chr04	Liftoff	three_prime_UTR	859331	860083	.	+	.	ID "nbis-three_prime_utr-27"  ; Name PGSC0003DME400020458 ; Parent PGSC0003DMT400007456 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007543
+:DMv6.1_chr12	Liftoff	five_prime_UTR	56609205	56609301	.	+	.	ID "nbis-five_prime_utr-27"  ; Name PGSC0003DME400020682 ; Parent PGSC0003DMT400007543 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007543
+:DMv6.1_chr12	Liftoff	three_prime_UTR	56617345	56617665	.	+	.	ID "nbis-three_prime_utr-28"  ; Name PGSC0003DME400020682 ; Parent PGSC0003DMT400007543 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007577
+:DMv6.1_chr12	Liftoff	five_prime_UTR	56383456	56383522	.	+	.	ID "nbis-five_prime_utr-28"  ; Name PGSC0003DME400020745 ; Parent PGSC0003DMT400007577 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007577
+:DMv6.1_chr12	Liftoff	three_prime_UTR	56390339	56390612	.	+	.	ID "nbis-three_prime_utr-29"  ; Name PGSC0003DME400020745 ; Parent PGSC0003DMT400007577 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007578
+:DMv6.1_chr12	Liftoff	five_prime_UTR	56371516	56371727	.	+	.	ID "nbis-five_prime_utr-29"  ; Name PGSC0003DME400020749 ; Parent PGSC0003DMT400007578 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007578
+:DMv6.1_chr12	Liftoff	five_prime_UTR	56371829	56371925	.	+	.	ID "nbis-five_prime_utr-29"  ; Name PGSC0003DME400020749 ; Parent PGSC0003DMT400007578 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400007578
+:DMv6.1_chr12	Liftoff	three_prime_UTR	56378413	56378687	.	+	.	ID "nbis-three_prime_utr-30"  ; Name PGSC0003DME400020749 ; Parent PGSC0003DMT400007578 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400008985
+:DMv6.1_chr02	Liftoff	three_prime_UTR	38361178	38362106	.	-	.	ID "nbis-three_prime_utr-31"  ; Name PGSC0003DME400024475 ; Parent PGSC0003DMT400008985 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400008985
+:DMv6.1_chr02	Liftoff	three_prime_UTR	38365973	38366050	.	-	.	ID "nbis-three_prime_utr-31"  ; Name PGSC0003DME400024475 ; Parent PGSC0003DMT400008985 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400008985
+:DMv6.1_chr02	Liftoff	three_prime_UTR	38366174	38366256	.	-	.	ID "nbis-three_prime_utr-31"  ; Name PGSC0003DME400024475 ; Parent PGSC0003DMT400008985 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400008985
+:DMv6.1_chr02	Liftoff	five_prime_UTR	38367635	38367717	.	-	.	ID "nbis-five_prime_utr-30"  ; Name PGSC0003DME400024475 ; Parent PGSC0003DMT400008985 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400010092
+:DMv6.1_chr08	Liftoff	five_prime_UTR	55784221	55784291	.	+	.	ID "nbis-five_prime_utr-31"  ; Name PGSC0003DME400027644 ; Parent PGSC0003DMT400010092 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400010092
+:DMv6.1_chr08	Liftoff	five_prime_UTR	55785722	55785748	.	+	.	ID "nbis-five_prime_utr-31"  ; Name PGSC0003DME400027644 ; Parent PGSC0003DMT400010092 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400010092
+:DMv6.1_chr08	Liftoff	three_prime_UTR	55786111	55786594	.	+	.	ID "nbis-three_prime_utr-32"  ; Name PGSC0003DME400027644 ; Parent PGSC0003DMT400010092 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400010228
+:DMv6.1_chr02	Liftoff	five_prime_UTR	41036224	41036881	.	+	.	ID "nbis-five_prime_utr-32"  ; Name PGSC0003DME400027960 ; Parent PGSC0003DMT400010228 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400010228
+:DMv6.1_chr02	Liftoff	three_prime_UTR	41037383	41038640	.	+	.	ID "nbis-three_prime_utr-33"  ; Name PGSC0003DME400027960 ; Parent PGSC0003DMT400010228 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400011144
+:DMv6.1_chr01	Liftoff	three_prime_UTR	62885224	62885491	.	-	.	ID "nbis-three_prime_utr-34"  ; Name PGSC0003DME400030578 ; Parent PGSC0003DMT400011144 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400011144
+:DMv6.1_chr01	Liftoff	five_prime_UTR	62891251	62891420	.	-	.	ID "nbis-five_prime_utr-33"  ; Name PGSC0003DME400030578 ; Parent PGSC0003DMT400011144 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400011191
+:DMv6.1_chr03	Liftoff	five_prime_UTR	1705893	1706348	.	+	.	ID "nbis-five_prime_utr-34"  ; Name PGSC0003DME400030696 ; Parent PGSC0003DMT400011191 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400011191
+:DMv6.1_chr03	Liftoff	three_prime_UTR	1706760	1708510	.	+	.	ID "nbis-three_prime_utr-35"  ; Name PGSC0003DME400030696 ; Parent PGSC0003DMT400011191 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400011301
+:DMv6.1_chr10	Liftoff	three_prime_UTR	46480639	46482270	.	-	.	ID "nbis-three_prime_utr-36"  ; Name PGSC0003DME400030931 ; Parent PGSC0003DMT400011301 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400011301
+:DMv6.1_chr10	Liftoff	five_prime_UTR	46486075	46486418	.	-	.	ID "nbis-five_prime_utr-35"  ; Name PGSC0003DME400030931 ; Parent PGSC0003DMT400011301 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400011408
+:DMv6.1_chr08	Liftoff	five_prime_UTR	3526540	3526590	.	+	.	ID "nbis-five_prime_utr-36"  ; Name PGSC0003DME400031222 ; Parent PGSC0003DMT400011408 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400011408
+:DMv6.1_chr08	Liftoff	three_prime_UTR	3535092	3535360	.	+	.	ID "nbis-three_prime_utr-37"  ; Name PGSC0003DME400031222 ; Parent PGSC0003DMT400011408 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400012346
+:DMv6.1_chr06	Liftoff	three_prime_UTR	49115100	49115211	.	-	.	ID "nbis-three_prime_utr-38"  ; Name PGSC0003DME400033710 ; Parent PGSC0003DMT400012346 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400012346
+:DMv6.1_chr06	Liftoff	five_prime_UTR	49119336	49119435	.	-	.	ID "nbis-five_prime_utr-37"  ; Name PGSC0003DME400033710 ; Parent PGSC0003DMT400012346 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400012375
+:DMv6.1_chr06	Liftoff	three_prime_UTR	48936946	48937033	.	-	.	ID "nbis-three_prime_utr-39"  ; Name PGSC0003DME400033782 ; Parent PGSC0003DMT400012375 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400012375
+:DMv6.1_chr06	Liftoff	five_prime_UTR	48937229	48937444	.	-	.	ID "nbis-five_prime_utr-38"  ; Name PGSC0003DME400033782 ; Parent PGSC0003DMT400012375 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400012621
+:DMv6.1_chr04	Liftoff	three_prime_UTR	63427975	63429671	.	-	.	ID "nbis-three_prime_utr-40"  ; Name PGSC0003DME400034468 ; Parent PGSC0003DMT400012621 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400012621
+:DMv6.1_chr04	Liftoff	five_prime_UTR	63430071	63430133	.	-	.	ID "nbis-five_prime_utr-39"  ; Name PGSC0003DME400034468 ; Parent PGSC0003DMT400012621 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400012621
+:DMv6.1_chr04	Liftoff	five_prime_UTR	63430210	63430267	.	-	.	ID "nbis-five_prime_utr-39"  ; Name PGSC0003DME400034468 ; Parent PGSC0003DMT400012621 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013159
+:DMv6.1_chr04	Liftoff	three_prime_UTR	66603180	66605001	.	-	.	ID "nbis-three_prime_utr-41"  ; Name PGSC0003DME400035786 ; Parent PGSC0003DMT400013159 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013159
+:DMv6.1_chr04	Liftoff	three_prime_UTR	66605289	66605712	.	-	.	ID "nbis-three_prime_utr-41"  ; Name PGSC0003DME400035786 ; Parent PGSC0003DMT400013159 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013159
+:DMv6.1_chr04	Liftoff	five_prime_UTR	66606103	66606128	.	-	.	ID "nbis-five_prime_utr-40"  ; Name PGSC0003DME400035786 ; Parent PGSC0003DMT400013159 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013484
+:DMv6.1_chr03	Liftoff	five_prime_UTR	36284191	36284348	.	+	.	ID "nbis-five_prime_utr-41"  ; Name PGSC0003DME400036601 ; Parent PGSC0003DMT400013484 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013484
+:DMv6.1_chr03	Liftoff	three_prime_UTR	36285503	36293242	.	+	.	ID "nbis-three_prime_utr-42"  ; Name PGSC0003DME400036601 ; Parent PGSC0003DMT400013484 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013517
+:DMv6.1_chr05	Liftoff	three_prime_UTR	45814157	45814293	.	-	.	ID "nbis-three_prime_utr-43"  ; Name PGSC0003DME400036698 ; Parent PGSC0003DMT400013517 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013517
+:DMv6.1_chr05	Liftoff	five_prime_UTR	45814567	45814567	.	-	.	ID "nbis-five_prime_utr-42"  ; Name PGSC0003DME400036698 ; Parent PGSC0003DMT400013517 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013517
+:DMv6.1_chr05	Liftoff	five_prime_UTR	45815432	45815557	.	-	.	ID "nbis-five_prime_utr-42"  ; Name PGSC0003DME400036698 ; Parent PGSC0003DMT400013517 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013589
+:DMv6.1_chr01	Liftoff	three_prime_UTR	15263263	15263765	.	-	.	ID "nbis-three_prime_utr-44"  ; Name PGSC0003DME400036851 ; Parent PGSC0003DMT400013589 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013589
+:DMv6.1_chr01	Liftoff	three_prime_UTR	15263862	15264302	.	-	.	ID "nbis-three_prime_utr-44"  ; Name PGSC0003DME400036851 ; Parent PGSC0003DMT400013589 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013589
+:DMv6.1_chr01	Liftoff	five_prime_UTR	15264720	15264810	.	-	.	ID "nbis-five_prime_utr-43"  ; Name PGSC0003DME400036851 ; Parent PGSC0003DMT400013589 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013634
+:DMv6.1_chr06	Liftoff	three_prime_UTR	1480559	1481206	.	-	.	ID "nbis-three_prime_utr-45"  ; Name PGSC0003DME400036952 ; Parent PGSC0003DMT400013634 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013634
+:DMv6.1_chr06	Liftoff	five_prime_UTR	1482245	1482314	.	-	.	ID "nbis-five_prime_utr-44"  ; Name PGSC0003DME400036952 ; Parent PGSC0003DMT400013634 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013634
+:DMv6.1_chr06	Liftoff	five_prime_UTR	1485129	1485200	.	-	.	ID "nbis-five_prime_utr-44"  ; Name PGSC0003DME400036952 ; Parent PGSC0003DMT400013634 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013649
+:DMv6.1_chr06	Liftoff	three_prime_UTR	1414703	1415591	.	-	.	ID "nbis-three_prime_utr-46"  ; Name PGSC0003DME400036988 ; Parent PGSC0003DMT400013649 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013649
+:DMv6.1_chr06	Liftoff	five_prime_UTR	1415901	1416024	.	-	.	ID "nbis-five_prime_utr-45"  ; Name PGSC0003DME400036988 ; Parent PGSC0003DMT400013649 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013819
+:DMv6.1_chr01	Liftoff	three_prime_UTR	75096208	75096704	.	-	.	ID "nbis-three_prime_utr-47"  ; Name PGSC0003DME400037457 ; Parent PGSC0003DMT400013819 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013819
+:DMv6.1_chr01	Liftoff	three_prime_UTR	75097492	75097605	.	-	.	ID "nbis-three_prime_utr-47"  ; Name PGSC0003DME400037457 ; Parent PGSC0003DMT400013819 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013819
+:DMv6.1_chr01	Liftoff	three_prime_UTR	75102972	75103270	.	-	.	ID "nbis-three_prime_utr-47"  ; Name PGSC0003DME400037457 ; Parent PGSC0003DMT400013819 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400013819
+:DMv6.1_chr01	Liftoff	five_prime_UTR	75104831	75105150	.	-	.	ID "nbis-five_prime_utr-46"  ; Name PGSC0003DME400037457 ; Parent PGSC0003DMT400013819 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014002
+:DMv6.1_chr05	Liftoff	three_prime_UTR	40543405	40543448	.	-	.	ID "nbis-three_prime_utr-48"  ; Name PGSC0003DME400037864 ; Parent PGSC0003DMT400014002 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014002
+:DMv6.1_chr05	Liftoff	five_prime_UTR	40543788	40545613	.	-	.	ID "nbis-five_prime_utr-47"  ; Name PGSC0003DME400037864 ; Parent PGSC0003DMT400014002 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014064
+:DMv6.1_chr04	Liftoff	three_prime_UTR	50462585	50462791	.	-	.	ID "nbis-three_prime_utr-49"  ; Name PGSC0003DME400038033 ; Parent PGSC0003DMT400014064 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014064
+:DMv6.1_chr04	Liftoff	five_prime_UTR	50463738	50463767	.	-	.	ID "nbis-five_prime_utr-48"  ; Name PGSC0003DME400038033 ; Parent PGSC0003DMT400014064 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014064
+:DMv6.1_chr04	Liftoff	five_prime_UTR	50470139	50470497	.	-	.	ID "nbis-five_prime_utr-48"  ; Name PGSC0003DME400038033 ; Parent PGSC0003DMT400014064 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014506
+:DMv6.1_chr03	Liftoff	three_prime_UTR	56650941	56651039	.	-	.	ID "nbis-three_prime_utr-50"  ; Name PGSC0003DME400039110 ; Parent PGSC0003DMT400014506 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014506
+:DMv6.1_chr03	Liftoff	five_prime_UTR	56657403	56657555	.	-	.	ID "nbis-five_prime_utr-49"  ; Name PGSC0003DME400039110 ; Parent PGSC0003DMT400014506 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014560
+:DMv6.1_chr03	Liftoff	five_prime_UTR	57862378	57862504	.	+	.	ID "nbis-five_prime_utr-50"  ; Name PGSC0003DME400039258 ; Parent PGSC0003DMT400014560 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014603
+:DMv6.1_chr03	Liftoff	five_prime_UTR	57612123	57612253	.	+	.	ID "nbis-five_prime_utr-51"  ; Name PGSC0003DME400039362 ; Parent PGSC0003DMT400014603 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014603
+:DMv6.1_chr03	Liftoff	three_prime_UTR	57612635	57612959	.	+	.	ID "nbis-three_prime_utr-51"  ; Name PGSC0003DME400039362 ; Parent PGSC0003DMT400014603 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014886
+:DMv6.1_chr08	Liftoff	five_prime_UTR	6481714	6481874	.	+	.	ID "nbis-five_prime_utr-52"  ; Name PGSC0003DME400040234 ; Parent PGSC0003DMT400014886 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014886
+:DMv6.1_chr08	Liftoff	five_prime_UTR	6487370	6487549	.	+	.	ID "nbis-five_prime_utr-52"  ; Name PGSC0003DME400040234 ; Parent PGSC0003DMT400014886 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400014886
+:DMv6.1_chr08	Liftoff	three_prime_UTR	6487984	6488200	.	+	.	ID "nbis-three_prime_utr-52"  ; Name PGSC0003DME400040234 ; Parent PGSC0003DMT400014886 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015724
+:DMv6.1_chr07	Liftoff	three_prime_UTR	45767467	45770516	.	-	.	ID "nbis-three_prime_utr-53"  ; Name PGSC0003DME400042463 ; Parent PGSC0003DMT400015724 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015724
+:DMv6.1_chr07	Liftoff	five_prime_UTR	45771612	45771780	.	-	.	ID "nbis-five_prime_utr-53"  ; Name PGSC0003DME400042463 ; Parent PGSC0003DMT400015724 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015744
+:DMv6.1_chr07	Liftoff	three_prime_UTR	45906179	45906472	.	-	.	ID "nbis-three_prime_utr-54"  ; Name PGSC0003DME400042536 ; Parent PGSC0003DMT400015744 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015744
+:DMv6.1_chr07	Liftoff	five_prime_UTR	45913592	45913648	.	-	.	ID "nbis-five_prime_utr-54"  ; Name PGSC0003DME400042536 ; Parent PGSC0003DMT400015744 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015922
+:DMv6.1_chr10	Liftoff	five_prime_UTR	43008774	43008789	.	+	.	ID "nbis-five_prime_utr-55"  ; Name PGSC0003DME400043012 ; Parent PGSC0003DMT400015922 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015922
+:DMv6.1_chr10	Liftoff	three_prime_UTR	43018341	43018656	.	+	.	ID "nbis-three_prime_utr-55"  ; Name PGSC0003DME400043012 ; Parent PGSC0003DMT400015922 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015969
+:DMv6.1_chr01	Liftoff	five_prime_UTR	56250199	56250331	.	+	.	ID "nbis-five_prime_utr-56"  ; Name PGSC0003DME400043114 ; Parent PGSC0003DMT400015969 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015969
+:DMv6.1_chr01	Liftoff	five_prime_UTR	56250584	56250683	.	+	.	ID "nbis-five_prime_utr-56"  ; Name PGSC0003DME400043114 ; Parent PGSC0003DMT400015969 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015969
+:DMv6.1_chr01	Liftoff	five_prime_UTR	56252279	56252280	.	+	.	ID "nbis-five_prime_utr-56"  ; Name PGSC0003DME400043114 ; Parent PGSC0003DMT400015969 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015969
+:DMv6.1_chr01	Liftoff	three_prime_UTR	56253531	56253844	.	+	.	ID "nbis-three_prime_utr-56"  ; Name PGSC0003DME400043114 ; Parent PGSC0003DMT400015969 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015969
+:DMv6.1_chr01	Liftoff	three_prime_UTR	56255700	56255795	.	+	.	ID "nbis-three_prime_utr-56"  ; Name PGSC0003DME400043114 ; Parent PGSC0003DMT400015969 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400015969
+:DMv6.1_chr01	Liftoff	three_prime_UTR	56258138	56259620	.	+	.	ID "nbis-three_prime_utr-56"  ; Name PGSC0003DME400043114 ; Parent PGSC0003DMT400015969 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016437
+:DMv6.1_chr04	Liftoff	five_prime_UTR	32617234	32617427	.	+	.	ID "nbis-five_prime_utr-57"  ; Name PGSC0003DME400044303 ; Parent PGSC0003DMT400016437 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016437
+:DMv6.1_chr04	Liftoff	three_prime_UTR	32617635	32618056	.	+	.	ID "nbis-three_prime_utr-57"  ; Name PGSC0003DME400044303 ; Parent PGSC0003DMT400016437 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016614
+:DMv6.1_chr12	Liftoff	five_prime_UTR	9403101	9403322	.	+	.	ID "nbis-five_prime_utr-58"  ; Name PGSC0003DME400044693 ; Parent PGSC0003DMT400016614 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016614
+:DMv6.1_chr12	Liftoff	five_prime_UTR	9403401	9403453	.	+	.	ID "nbis-five_prime_utr-58"  ; Name PGSC0003DME400044693 ; Parent PGSC0003DMT400016614 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016614
+:DMv6.1_chr12	Liftoff	five_prime_UTR	9411723	9411729	.	+	.	ID "nbis-five_prime_utr-58"  ; Name PGSC0003DME400044693 ; Parent PGSC0003DMT400016614 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016614
+:DMv6.1_chr12	Liftoff	three_prime_UTR	9412147	9412244	.	+	.	ID "nbis-three_prime_utr-58"  ; Name PGSC0003DME400044693 ; Parent PGSC0003DMT400016614 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016752
+:DMv6.1_chr11	Liftoff	three_prime_UTR	10687062	10687546	.	-	.	ID "nbis-three_prime_utr-59"  ; Name PGSC0003DME400044966 ; Parent PGSC0003DMT400016752 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016752
+:DMv6.1_chr11	Liftoff	five_prime_UTR	10694576	10694610	.	-	.	ID "nbis-five_prime_utr-59"  ; Name PGSC0003DME400044966 ; Parent PGSC0003DMT400016752 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016765
+:DMv6.1_chr01	Liftoff	five_prime_UTR	13733741	13734074	.	+	.	ID "nbis-five_prime_utr-60"  ; Name PGSC0003DME400044998 ; Parent PGSC0003DMT400016765 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016765
+:DMv6.1_chr01	Liftoff	three_prime_UTR	13741442	13741803	.	+	.	ID "nbis-three_prime_utr-60"  ; Name PGSC0003DME400044998 ; Parent PGSC0003DMT400016765 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016815
+:DMv6.1_chr09	Liftoff	five_prime_UTR	66935411	66935511	.	+	.	ID "nbis-five_prime_utr-61"  ; Name PGSC0003DME400045141 ; Parent PGSC0003DMT400016815 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400016815
+:DMv6.1_chr09	Liftoff	three_prime_UTR	66935887	66936299	.	+	.	ID "nbis-three_prime_utr-61"  ; Name PGSC0003DME400045141 ; Parent PGSC0003DMT400016815 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400017103
+:DMv6.1_chr11	Liftoff	five_prime_UTR	15976046	15977268	.	+	.	ID "nbis-five_prime_utr-62"  ; Name PGSC0003DME400045780 ; Parent PGSC0003DMT400017103 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400017103
+:DMv6.1_chr11	Liftoff	three_prime_UTR	15977623	15977778	.	+	.	ID "nbis-three_prime_utr-62"  ; Name PGSC0003DME400045780 ; Parent PGSC0003DMT400017103 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400017386
+:DMv6.1_chr01	Liftoff	five_prime_UTR	65998518	65998542	.	+	.	ID "nbis-five_prime_utr-63"  ; Name PGSC0003DME400046412 ; Parent PGSC0003DMT400017386 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400017386
+:DMv6.1_chr01	Liftoff	three_prime_UTR	66001772	66003476	.	+	.	ID "nbis-three_prime_utr-63"  ; Name PGSC0003DME400046412 ; Parent PGSC0003DMT400017386 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400017518
+:DMv6.1_chr01	Liftoff	three_prime_UTR	67153053	67155178	.	+	.	ID "nbis-three_prime_utr-64"  ; Name PGSC0003DME400046811 ; Parent PGSC0003DMT400017518 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400017820
+:DMv6.1_chr02	Liftoff	five_prime_UTR	25465515	25465629	.	+	.	ID "nbis-five_prime_utr-64"  ; Name PGSC0003DME400047661 ; Parent PGSC0003DMT400017820 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400017820
+:DMv6.1_chr02	Liftoff	three_prime_UTR	25466113	25467250	.	+	.	ID "nbis-three_prime_utr-65"  ; Name PGSC0003DME400047661 ; Parent PGSC0003DMT400017820 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400018003
+:DMv6.1_chr05	Liftoff	three_prime_UTR	48854188	48854496	.	-	.	ID "nbis-three_prime_utr-66"  ; Name PGSC0003DME400048167 ; Parent PGSC0003DMT400018003 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400018003
+:DMv6.1_chr05	Liftoff	five_prime_UTR	48862251	48862306	.	-	.	ID "nbis-five_prime_utr-65"  ; Name PGSC0003DME400048167 ; Parent PGSC0003DMT400018003 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400018701
+:DMv6.1_chr02	Liftoff	five_prime_UTR	29380391	29380480	.	+	.	ID "nbis-five_prime_utr-66"  ; Name PGSC0003DME400050070 ; Parent PGSC0003DMT400018701 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400018701
+:DMv6.1_chr02	Liftoff	three_prime_UTR	29390098	29390285	.	+	.	ID "nbis-three_prime_utr-67"  ; Name PGSC0003DME400050070 ; Parent PGSC0003DMT400018701 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400018733
+:DMv6.1_chr04	Liftoff	three_prime_UTR	48515441	48515968	.	-	.	ID "nbis-three_prime_utr-68"  ; Name PGSC0003DME400050150 ; Parent PGSC0003DMT400018733 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400018733
+:DMv6.1_chr04	Liftoff	five_prime_UTR	48516272	48516460	.	-	.	ID "nbis-five_prime_utr-67"  ; Name PGSC0003DME400050150 ; Parent PGSC0003DMT400018733 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400019527
+:DMv6.1_chr09	Liftoff	five_prime_UTR	55434561	55435694	.	+	.	ID "nbis-five_prime_utr-68"  ; Name PGSC0003DME400052434 ; Parent PGSC0003DMT400019527 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400019527
+:DMv6.1_chr09	Liftoff	three_prime_UTR	55435947	55436134	.	+	.	ID "nbis-three_prime_utr-69"  ; Name PGSC0003DME400052434 ; Parent PGSC0003DMT400019527 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400019827
+:DMv6.1_chr06	Liftoff	five_prime_UTR	45317365	45318306	.	+	.	ID "nbis-five_prime_utr-69"  ; Name PGSC0003DME400053252 ; Parent PGSC0003DMT400019827 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400019827
+:DMv6.1_chr06	Liftoff	three_prime_UTR	45318778	45319621	.	+	.	ID "nbis-three_prime_utr-70"  ; Name PGSC0003DME400053252 ; Parent PGSC0003DMT400019827 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400020416
+:DMv6.1_chr12	Liftoff	five_prime_UTR	57655251	57655336	.	+	.	ID "nbis-five_prime_utr-70"  ; Name PGSC0003DME400054685 ; Parent PGSC0003DMT400020416 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400020416
+:DMv6.1_chr12	Liftoff	five_prime_UTR	57658069	57658091	.	+	.	ID "nbis-five_prime_utr-70"  ; Name PGSC0003DME400054685 ; Parent PGSC0003DMT400020416 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400020416
+:DMv6.1_chr12	Liftoff	three_prime_UTR	57658425	57658762	.	+	.	ID "nbis-three_prime_utr-71"  ; Name PGSC0003DME400054685 ; Parent PGSC0003DMT400020416 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400020650
+:DMv6.1_chr04	Liftoff	three_prime_UTR	64857639	64858342	.	-	.	ID "nbis-three_prime_utr-72"  ; Name PGSC0003DME400055252 ; Parent PGSC0003DMT400020650 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400020650
+:DMv6.1_chr04	Liftoff	five_prime_UTR	64864892	64864927	.	-	.	ID "nbis-five_prime_utr-71"  ; Name PGSC0003DME400055252 ; Parent PGSC0003DMT400020650 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400020769
+:DMv6.1_chr04	Liftoff	three_prime_UTR	64889747	64890176	.	-	.	ID "nbis-three_prime_utr-73"  ; Name PGSC0003DME400055615 ; Parent PGSC0003DMT400020769 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400020769
+:DMv6.1_chr04	Liftoff	five_prime_UTR	64890456	64891953	.	-	.	ID "nbis-five_prime_utr-72"  ; Name PGSC0003DME400055615 ; Parent PGSC0003DMT400020769 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400021709
+:DMv6.1_chr11	Liftoff	five_prime_UTR	27741796	27742224	.	+	.	ID "nbis-five_prime_utr-73"  ; Name PGSC0003DME400058108 ; Parent PGSC0003DMT400021709 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400021709
+:DMv6.1_chr11	Liftoff	three_prime_UTR	27744783	27745450	.	+	.	ID "nbis-three_prime_utr-74"  ; Name PGSC0003DME400058108 ; Parent PGSC0003DMT400021709 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400021897
+:DMv6.1_chr09	Liftoff	five_prime_UTR	271056	271214	.	+	.	ID "nbis-five_prime_utr-74"  ; Name PGSC0003DME400058649 ; Parent PGSC0003DMT400021897 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400021897
+:DMv6.1_chr09	Liftoff	three_prime_UTR	272634	273194	.	+	.	ID "nbis-three_prime_utr-75"  ; Name PGSC0003DME400058649 ; Parent PGSC0003DMT400021897 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400021897
+:DMv6.1_chr09	Liftoff	three_prime_UTR	275685	276420	.	+	.	ID "nbis-three_prime_utr-75"  ; Name PGSC0003DME400058649 ; Parent PGSC0003DMT400021897 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400022270
+:DMv6.1_chr03	Liftoff	five_prime_UTR	28459761	28459853	.	+	.	ID "nbis-five_prime_utr-75"  ; Name PGSC0003DME400059583 ; Parent PGSC0003DMT400022270 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400022270
+:DMv6.1_chr03	Liftoff	three_prime_UTR	28465702	28465769	.	+	.	ID "nbis-three_prime_utr-76"  ; Name PGSC0003DME400059583 ; Parent PGSC0003DMT400022270 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400022676
+:DMv6.1_chr07	Liftoff	five_prime_UTR	17218497	17219084	.	+	.	ID "nbis-five_prime_utr-76"  ; Name PGSC0003DME400060656 ; Parent PGSC0003DMT400022676 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400022676
+:DMv6.1_chr07	Liftoff	three_prime_UTR	17219783	17220002	.	+	.	ID "nbis-three_prime_utr-77"  ; Name PGSC0003DME400060656 ; Parent PGSC0003DMT400022676 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400023831
+:DMv6.1_chr11	Liftoff	three_prime_UTR	9638952	9639342	.	-	.	ID "nbis-three_prime_utr-78"  ; Name PGSC0003DME400064026 ; Parent PGSC0003DMT400023831 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400023831
+:DMv6.1_chr11	Liftoff	five_prime_UTR	9647017	9647205	.	-	.	ID "nbis-five_prime_utr-77"  ; Name PGSC0003DME400064026 ; Parent PGSC0003DMT400023831 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400023901
+:DMv6.1_chr11	Liftoff	five_prime_UTR	9580198	9580548	.	+	.	ID "nbis-five_prime_utr-78"  ; Name PGSC0003DME400064216 ; Parent PGSC0003DMT400023901 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400023901
+:DMv6.1_chr11	Liftoff	five_prime_UTR	9588222	9588274	.	+	.	ID "nbis-five_prime_utr-78"  ; Name PGSC0003DME400064216 ; Parent PGSC0003DMT400023901 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400023901
+:DMv6.1_chr11	Liftoff	three_prime_UTR	9588888	9589565	.	+	.	ID "nbis-three_prime_utr-79"  ; Name PGSC0003DME400064216 ; Parent PGSC0003DMT400023901 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400023983
+:DMv6.1_chr11	Liftoff	three_prime_UTR	14527048	14527311	.	-	.	ID "nbis-three_prime_utr-80"  ; Name PGSC0003DME400064410 ; Parent PGSC0003DMT400023983 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400023983
+:DMv6.1_chr11	Liftoff	five_prime_UTR	14535786	14535906	.	-	.	ID "nbis-five_prime_utr-79"  ; Name PGSC0003DME400064410 ; Parent PGSC0003DMT400023983 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400025112
+:DMv6.1_chr02	Liftoff	three_prime_UTR	28822006	28822352	.	-	.	ID "nbis-three_prime_utr-81"  ; Name PGSC0003DME400067541 ; Parent PGSC0003DMT400025112 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400025112
+:DMv6.1_chr02	Liftoff	five_prime_UTR	28830435	28830561	.	-	.	ID "nbis-five_prime_utr-80"  ; Name PGSC0003DME400067541 ; Parent PGSC0003DMT400025112 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400025396
+:DMv6.1_chr02	Liftoff	three_prime_UTR	12218561	12218568	.	-	.	ID "nbis-three_prime_utr-82"  ; Name PGSC0003DME400068257 ; Parent PGSC0003DMT400025396 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400025396
+:DMv6.1_chr02	Liftoff	five_prime_UTR	12218770	12219609	.	-	.	ID "nbis-five_prime_utr-81"  ; Name PGSC0003DME400068257 ; Parent PGSC0003DMT400025396 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400025509
+:DMv6.1_chr10	Liftoff	five_prime_UTR	38656820	38656903	.	+	.	ID "nbis-five_prime_utr-82"  ; Name PGSC0003DME400068469 ; Parent PGSC0003DMT400025509 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400025509
+:DMv6.1_chr10	Liftoff	three_prime_UTR	38665280	38665459	.	+	.	ID "nbis-three_prime_utr-83"  ; Name PGSC0003DME400068469 ; Parent PGSC0003DMT400025509 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400026056
+:DMv6.1_chr02	Liftoff	five_prime_UTR	42595641	42595707	.	+	.	ID "nbis-five_prime_utr-83"  ; Name PGSC0003DME400070083 ; Parent PGSC0003DMT400026056 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400026056
+:DMv6.1_chr02	Liftoff	three_prime_UTR	42598792	42598858	.	+	.	ID "nbis-three_prime_utr-84"  ; Name PGSC0003DME400070083 ; Parent PGSC0003DMT400026056 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400026576
+:DMv6.1_chr10	Liftoff	three_prime_UTR	7340319	7340534	.	-	.	ID "nbis-three_prime_utr-85"  ; Name PGSC0003DME400071306 ; Parent PGSC0003DMT400026576 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400026576
+:DMv6.1_chr10	Liftoff	five_prime_UTR	7348975	7349014	.	-	.	ID "nbis-five_prime_utr-84"  ; Name PGSC0003DME400071306 ; Parent PGSC0003DMT400026576 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400026645
+:DMv6.1_chr09	Liftoff	five_prime_UTR	56679243	56679340	.	+	.	ID "nbis-five_prime_utr-85"  ; Name PGSC0003DME400071485 ; Parent PGSC0003DMT400026645 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400026645
+:DMv6.1_chr09	Liftoff	three_prime_UTR	56687326	56687529	.	+	.	ID "nbis-three_prime_utr-86"  ; Name PGSC0003DME400071485 ; Parent PGSC0003DMT400026645 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027199
+:DMv6.1_chr01	Liftoff	five_prime_UTR	5134853	5135490	.	+	.	ID "nbis-five_prime_utr-86"  ; Name PGSC0003DME400072808 ; Parent PGSC0003DMT400027199 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027199
+:DMv6.1_chr01	Liftoff	three_prime_UTR	5135776	5135854	.	+	.	ID "nbis-three_prime_utr-87"  ; Name PGSC0003DME400072808 ; Parent PGSC0003DMT400027199 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027202
+:DMv6.1_chr01	Liftoff	five_prime_UTR	5121721	5121756	.	+	.	ID "nbis-five_prime_utr-87"  ; Name PGSC0003DME400072813 ; Parent PGSC0003DMT400027202 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027202
+:DMv6.1_chr01	Liftoff	three_prime_UTR	5131558	5131694	.	+	.	ID "nbis-three_prime_utr-88"  ; Name PGSC0003DME400072813 ; Parent PGSC0003DMT400027202 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027435
+:DMv6.1_chr02	Liftoff	five_prime_UTR	8418276	8418443	.	+	.	ID "nbis-five_prime_utr-88"  ; Name PGSC0003DME400073356 ; Parent PGSC0003DMT400027435 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027435
+:DMv6.1_chr02	Liftoff	three_prime_UTR	8419161	8419168	.	+	.	ID "nbis-three_prime_utr-89"  ; Name PGSC0003DME400073356 ; Parent PGSC0003DMT400027435 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027435
+:DMv6.1_chr02	Liftoff	three_prime_UTR	8424791	8425123	.	+	.	ID "nbis-three_prime_utr-89"  ; Name PGSC0003DME400073356 ; Parent PGSC0003DMT400027435 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027623
+:DMv6.1_chr01	Liftoff	three_prime_UTR	61028489	61028523	.	-	.	ID "nbis-three_prime_utr-90"  ; Name PGSC0003DME400073829 ; Parent PGSC0003DMT400027623 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027623
+:DMv6.1_chr01	Liftoff	five_prime_UTR	61028883	61028924	.	-	.	ID "nbis-five_prime_utr-89"  ; Name PGSC0003DME400073829 ; Parent PGSC0003DMT400027623 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027623
+:DMv6.1_chr01	Liftoff	five_prime_UTR	61030769	61031040	.	-	.	ID "nbis-five_prime_utr-89"  ; Name PGSC0003DME400073829 ; Parent PGSC0003DMT400027623 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027780
+:DMv6.1_chr04	Liftoff	three_prime_UTR	46586506	46586528	.	-	.	ID "nbis-three_prime_utr-91"  ; Name PGSC0003DME400074274 ; Parent PGSC0003DMT400027780 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027780
+:DMv6.1_chr04	Liftoff	five_prime_UTR	46587067	46587473	.	-	.	ID "nbis-five_prime_utr-90"  ; Name PGSC0003DME400074274 ; Parent PGSC0003DMT400027780 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027810
+:DMv6.1_chr01	Liftoff	five_prime_UTR	4587216	4587517	.	+	.	ID "nbis-five_prime_utr-91"  ; Name PGSC0003DME400074337 ; Parent PGSC0003DMT400027810 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400027810
+:DMv6.1_chr01	Liftoff	three_prime_UTR	4588544	4588599	.	+	.	ID "nbis-three_prime_utr-92"  ; Name PGSC0003DME400074337 ; Parent PGSC0003DMT400027810 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400028819
+:DMv6.1_chr10	Liftoff	five_prime_UTR	54817380	54817443	.	+	.	ID "nbis-five_prime_utr-92"  ; Name PGSC0003DME400076738 ; Parent PGSC0003DMT400028819 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400028963
+:DMv6.1_chr07	Liftoff	five_prime_UTR	1269256	1269339	.	+	.	ID "nbis-five_prime_utr-93"  ; Name PGSC0003DME400077065 ; Parent PGSC0003DMT400028963 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400028963
+:DMv6.1_chr07	Liftoff	three_prime_UTR	1269595	1270501	.	+	.	ID "nbis-three_prime_utr-93"  ; Name PGSC0003DME400077065 ; Parent PGSC0003DMT400028963 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400029507
+:DMv6.1_chr01	Liftoff	three_prime_UTR	59791412	59793814	.	-	.	ID "nbis-three_prime_utr-94"  ; Name PGSC0003DME400078613 ; Parent PGSC0003DMT400029507 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400029507
+:DMv6.1_chr01	Liftoff	five_prime_UTR	59794046	59794090	.	-	.	ID "nbis-five_prime_utr-94"  ; Name PGSC0003DME400078613 ; Parent PGSC0003DMT400029507 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400029713
+:DMv6.1_chr10	Liftoff	five_prime_UTR	60149386	60149541	.	+	.	ID "nbis-five_prime_utr-95"  ; Name PGSC0003DME400079228 ; Parent PGSC0003DMT400029713 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400029713
+:DMv6.1_chr10	Liftoff	three_prime_UTR	60150883	60152117	.	+	.	ID "nbis-three_prime_utr-95"  ; Name PGSC0003DME400079228 ; Parent PGSC0003DMT400029713 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400029713
+:DMv6.1_chr10	Liftoff	three_prime_UTR	60153858	60154391	.	+	.	ID "nbis-three_prime_utr-95"  ; Name PGSC0003DME400079228 ; Parent PGSC0003DMT400029713 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030260
+:DMv6.1_chr09	Liftoff	five_prime_UTR	63951563	63951798	.	+	.	ID "nbis-five_prime_utr-96"  ; Name PGSC0003DME400080398 ; Parent PGSC0003DMT400030260 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030260
+:DMv6.1_chr09	Liftoff	three_prime_UTR	63955694	63955955	.	+	.	ID "nbis-three_prime_utr-96"  ; Name PGSC0003DME400080398 ; Parent PGSC0003DMT400030260 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030417
+:DMv6.1_chr05	Liftoff	three_prime_UTR	50626166	50626460	.	-	.	ID "nbis-three_prime_utr-97"  ; Name PGSC0003DME400080791 ; Parent PGSC0003DMT400030417 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030417
+:DMv6.1_chr05	Liftoff	five_prime_UTR	50634852	50635011	.	-	.	ID "nbis-five_prime_utr-97"  ; Name PGSC0003DME400080791 ; Parent PGSC0003DMT400030417 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030572
+:DMv6.1_chr08	Liftoff	five_prime_UTR	3237422	3237972	.	+	.	ID "nbis-five_prime_utr-98"  ; Name PGSC0003DME400081136 ; Parent PGSC0003DMT400030572 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030572
+:DMv6.1_chr08	Liftoff	three_prime_UTR	3238282	3239208	.	+	.	ID "nbis-three_prime_utr-98"  ; Name PGSC0003DME400081136 ; Parent PGSC0003DMT400030572 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030572
+:DMv6.1_chr08	Liftoff	three_prime_UTR	3239285	3239542	.	+	.	ID "nbis-three_prime_utr-98"  ; Name PGSC0003DME400081136 ; Parent PGSC0003DMT400030572 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030606
+:DMv6.1_chr09	Liftoff	five_prime_UTR	901186	901331	.	+	.	ID "nbis-five_prime_utr-99"  ; Name PGSC0003DME400081201 ; Parent PGSC0003DMT400030606 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030606
+:DMv6.1_chr09	Liftoff	three_prime_UTR	910702	910802	.	+	.	ID "nbis-three_prime_utr-99"  ; Name PGSC0003DME400081201 ; Parent PGSC0003DMT400030606 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030613
+:DMv6.1_chr05	Liftoff	three_prime_UTR	10785120	10786428	.	-	.	ID "nbis-three_prime_utr-100"  ; Name PGSC0003DME400081218 ; Parent PGSC0003DMT400030613 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030613
+:DMv6.1_chr05	Liftoff	five_prime_UTR	10786786	10787150	.	-	.	ID "nbis-five_prime_utr-100"  ; Name PGSC0003DME400081218 ; Parent PGSC0003DMT400030613 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030836
+:DMv6.1_chr06	Liftoff	five_prime_UTR	41165447	41169841	.	+	.	ID "nbis-five_prime_utr-101"  ; Name PGSC0003DME400081860 ; Parent PGSC0003DMT400030836 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030836
+:DMv6.1_chr06	Liftoff	three_prime_UTR	41170145	41170588	.	+	.	ID "nbis-three_prime_utr-101"  ; Name PGSC0003DME400081860 ; Parent PGSC0003DMT400030836 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030953
+:DMv6.1_chr03	Liftoff	three_prime_UTR	29551544	29551977	.	-	.	ID "nbis-three_prime_utr-102"  ; Name PGSC0003DME400082173 ; Parent PGSC0003DMT400030953 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400030953
+:DMv6.1_chr03	Liftoff	five_prime_UTR	29552743	29552846	.	-	.	ID "nbis-five_prime_utr-102"  ; Name PGSC0003DME400082173 ; Parent PGSC0003DMT400030953 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400032710
+:DMv6.1_chr01	Liftoff	five_prime_UTR	82362321	82362386	.	+	.	ID "nbis-five_prime_utr-103"  ; Name PGSC0003DME400086761 ; Parent PGSC0003DMT400032710 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400032710
+:DMv6.1_chr01	Liftoff	three_prime_UTR	82362627	82363277	.	+	.	ID "nbis-three_prime_utr-103"  ; Name PGSC0003DME400086761 ; Parent PGSC0003DMT400032710 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400032907
+:DMv6.1_chr02	Liftoff	three_prime_UTR	45025813	45027571	.	-	.	ID "nbis-three_prime_utr-104"  ; Name PGSC0003DME400087372 ; Parent PGSC0003DMT400032907 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400032907
+:DMv6.1_chr02	Liftoff	five_prime_UTR	45028081	45028738	.	-	.	ID "nbis-five_prime_utr-104"  ; Name PGSC0003DME400087372 ; Parent PGSC0003DMT400032907 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400032907
+:DMv6.1_chr02	Liftoff	five_prime_UTR	45028818	45029152	.	-	.	ID "nbis-five_prime_utr-104"  ; Name PGSC0003DME400087372 ; Parent PGSC0003DMT400032907 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033191
+:DMv6.1_chr01	Liftoff	three_prime_UTR	72065965	72066228	.	-	.	ID "nbis-three_prime_utr-105"  ; Name PGSC0003DME400088151 ; Parent PGSC0003DMT400033191 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033191
+:DMv6.1_chr01	Liftoff	three_prime_UTR	72067286	72067531	.	-	.	ID "nbis-three_prime_utr-105"  ; Name PGSC0003DME400088151 ; Parent PGSC0003DMT400033191 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033191
+:DMv6.1_chr01	Liftoff	five_prime_UTR	72068720	72068746	.	-	.	ID "nbis-five_prime_utr-105"  ; Name PGSC0003DME400088151 ; Parent PGSC0003DMT400033191 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033270
+:DMv6.1_chr01	Liftoff	five_prime_UTR	71870050	71870317	.	+	.	ID "nbis-five_prime_utr-106"  ; Name PGSC0003DME400088379 ; Parent PGSC0003DMT400033270 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033270
+:DMv6.1_chr01	Liftoff	three_prime_UTR	71870498	71872815	.	+	.	ID "nbis-three_prime_utr-106"  ; Name PGSC0003DME400088379 ; Parent PGSC0003DMT400033270 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033589
+:DMv6.1_chr04	Liftoff	three_prime_UTR	62090250	62091318	.	-	.	ID "nbis-three_prime_utr-107"  ; Name PGSC0003DME400089277 ; Parent PGSC0003DMT400033589 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033589
+:DMv6.1_chr04	Liftoff	five_prime_UTR	62092285	62092418	.	-	.	ID "nbis-five_prime_utr-107"  ; Name PGSC0003DME400089277 ; Parent PGSC0003DMT400033589 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033589
+:DMv6.1_chr04	Liftoff	five_prime_UTR	62092515	62092665	.	-	.	ID "nbis-five_prime_utr-107"  ; Name PGSC0003DME400089277 ; Parent PGSC0003DMT400033589 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033589
+:DMv6.1_chr04	Liftoff	five_prime_UTR	62092833	62093600	.	-	.	ID "nbis-five_prime_utr-107"  ; Name PGSC0003DME400089277 ; Parent PGSC0003DMT400033589 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033589
+:DMv6.1_chr04	Liftoff	five_prime_UTR	62094162	62094307	.	-	.	ID "nbis-five_prime_utr-107"  ; Name PGSC0003DME400089277 ; Parent PGSC0003DMT400033589 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033700
+:DMv6.1_chr12	Liftoff	three_prime_UTR	30094592	30098730	.	-	.	ID "nbis-three_prime_utr-108"  ; Name PGSC0003DME400089625 ; Parent PGSC0003DMT400033700 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033700
+:DMv6.1_chr12	Liftoff	five_prime_UTR	30099034	30099275	.	-	.	ID "nbis-five_prime_utr-108"  ; Name PGSC0003DME400089625 ; Parent PGSC0003DMT400033700 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033884
+:DMv6.1_chr02	Liftoff	three_prime_UTR	21924405	21925658	.	-	.	ID "nbis-three_prime_utr-109"  ; Name PGSC0003DME400090187 ; Parent PGSC0003DMT400033884 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400033884
+:DMv6.1_chr02	Liftoff	five_prime_UTR	21925971	21926224	.	-	.	ID "nbis-five_prime_utr-109"  ; Name PGSC0003DME400090187 ; Parent PGSC0003DMT400033884 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400034486
+:DMv6.1_chr11	Liftoff	five_prime_UTR	1310935	1312002	.	+	.	ID "nbis-five_prime_utr-110"  ; Name PGSC0003DME400091513 ; Parent PGSC0003DMT400034486 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400034486
+:DMv6.1_chr11	Liftoff	three_prime_UTR	1312438	1315964	.	+	.	ID "nbis-three_prime_utr-110"  ; Name PGSC0003DME400091513 ; Parent PGSC0003DMT400034486 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400034567
+:DMv6.1_chr11	Liftoff	three_prime_UTR	705951	706231	.	-	.	ID "nbis-three_prime_utr-111"  ; Name PGSC0003DME400091720 ; Parent PGSC0003DMT400034567 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400034567
+:DMv6.1_chr11	Liftoff	five_prime_UTR	706992	707296	.	-	.	ID "nbis-five_prime_utr-111"  ; Name PGSC0003DME400091720 ; Parent PGSC0003DMT400034567 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400034567
+:DMv6.1_chr11	Liftoff	five_prime_UTR	707450	707537	.	-	.	ID "nbis-five_prime_utr-111"  ; Name PGSC0003DME400091720 ; Parent PGSC0003DMT400034567 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400034567
+:DMv6.1_chr11	Liftoff	five_prime_UTR	709980	710248	.	-	.	ID "nbis-five_prime_utr-111"  ; Name PGSC0003DME400091720 ; Parent PGSC0003DMT400034567 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400034981
+:DMv6.1_chr03	Liftoff	three_prime_UTR	586355	586483	.	-	.	ID "nbis-three_prime_utr-112"  ; Name PGSC0003DME400092829 ; Parent PGSC0003DMT400034981 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400034981
+:DMv6.1_chr03	Liftoff	five_prime_UTR	586676	587469	.	-	.	ID "nbis-five_prime_utr-112"  ; Name PGSC0003DME400092829 ; Parent PGSC0003DMT400034981 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035035
+:DMv6.1_chr05	Liftoff	five_prime_UTR	8840596	8840779	.	+	.	ID "nbis-five_prime_utr-113"  ; Name PGSC0003DME400092982 ; Parent PGSC0003DMT400035035 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035035
+:DMv6.1_chr05	Liftoff	five_prime_UTR	8843789	8843803	.	+	.	ID "nbis-five_prime_utr-113"  ; Name PGSC0003DME400092982 ; Parent PGSC0003DMT400035035 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035035
+:DMv6.1_chr05	Liftoff	three_prime_UTR	8844488	8845449	.	+	.	ID "nbis-three_prime_utr-113"  ; Name PGSC0003DME400092982 ; Parent PGSC0003DMT400035035 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035535
+:DMv6.1_chr02	Liftoff	three_prime_UTR	35925318	35925451	.	-	.	ID "nbis-three_prime_utr-114"  ; Name PGSC0003DME400094308 ; Parent PGSC0003DMT400035535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035535
+:DMv6.1_chr02	Liftoff	five_prime_UTR	35925800	35925971	.	-	.	ID "nbis-five_prime_utr-114"  ; Name PGSC0003DME400094308 ; Parent PGSC0003DMT400035535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035535
+:DMv6.1_chr02	Liftoff	five_prime_UTR	35926389	35926788	.	-	.	ID "nbis-five_prime_utr-114"  ; Name PGSC0003DME400094308 ; Parent PGSC0003DMT400035535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035535
+:DMv6.1_chr02	Liftoff	five_prime_UTR	35928155	35928239	.	-	.	ID "nbis-five_prime_utr-114"  ; Name PGSC0003DME400094308 ; Parent PGSC0003DMT400035535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035535
+:DMv6.1_chr02	Liftoff	five_prime_UTR	35929118	35929810	.	-	.	ID "nbis-five_prime_utr-114"  ; Name PGSC0003DME400094308 ; Parent PGSC0003DMT400035535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035610
+:DMv6.1_chr05	Liftoff	five_prime_UTR	46787609	46787647	.	+	.	ID "nbis-five_prime_utr-115"  ; Name PGSC0003DME400094588 ; Parent PGSC0003DMT400035610 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035610
+:DMv6.1_chr05	Liftoff	three_prime_UTR	46789719	46789780	.	+	.	ID "nbis-three_prime_utr-115"  ; Name PGSC0003DME400094588 ; Parent PGSC0003DMT400035610 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035610
+:DMv6.1_chr05	Liftoff	three_prime_UTR	46789987	46790086	.	+	.	ID "nbis-three_prime_utr-115"  ; Name PGSC0003DME400094588 ; Parent PGSC0003DMT400035610 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035610
+:DMv6.1_chr05	Liftoff	three_prime_UTR	46793130	46794351	.	+	.	ID "nbis-three_prime_utr-115"  ; Name PGSC0003DME400094588 ; Parent PGSC0003DMT400035610 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035610
+:DMv6.1_chr05	Liftoff	three_prime_UTR	46795611	46795929	.	+	.	ID "nbis-three_prime_utr-115"  ; Name PGSC0003DME400094588 ; Parent PGSC0003DMT400035610 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035610
+:DMv6.1_chr05	Liftoff	three_prime_UTR	46796250	46796503	.	+	.	ID "nbis-three_prime_utr-115"  ; Name PGSC0003DME400094588 ; Parent PGSC0003DMT400035610 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035610
+:DMv6.1_chr05	Liftoff	three_prime_UTR	46796605	46797134	.	+	.	ID "nbis-three_prime_utr-115"  ; Name PGSC0003DME400094588 ; Parent PGSC0003DMT400035610 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035782
+:DMv6.1_chr07	Liftoff	five_prime_UTR	11590180	11592626	.	+	.	ID "nbis-five_prime_utr-116"  ; Name PGSC0003DME400095021 ; Parent PGSC0003DMT400035782 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035782
+:DMv6.1_chr07	Liftoff	three_prime_UTR	11593014	11595111	.	+	.	ID "nbis-three_prime_utr-116"  ; Name PGSC0003DME400095021 ; Parent PGSC0003DMT400035782 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035927
+:DMv6.1_chr08	Liftoff	three_prime_UTR	40381844	40382110	.	-	.	ID "nbis-three_prime_utr-117"  ; Name PGSC0003DME400095396 ; Parent PGSC0003DMT400035927 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035927
+:DMv6.1_chr08	Liftoff	five_prime_UTR	40390519	40390651	.	-	.	ID "nbis-five_prime_utr-117"  ; Name PGSC0003DME400095396 ; Parent PGSC0003DMT400035927 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035974
+:DMv6.1_chr03	Liftoff	three_prime_UTR	38701778	38706354	.	-	.	ID "nbis-three_prime_utr-118"  ; Name PGSC0003DME400095515 ; Parent PGSC0003DMT400035974 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400035974
+:DMv6.1_chr03	Liftoff	five_prime_UTR	38707618	38707824	.	-	.	ID "nbis-five_prime_utr-118"  ; Name PGSC0003DME400095515 ; Parent PGSC0003DMT400035974 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400036564
+:DMv6.1_chr11	Liftoff	three_prime_UTR	11208003	11208323	.	-	.	ID "nbis-three_prime_utr-119"  ; Name PGSC0003DME400096822 ; Parent PGSC0003DMT400036564 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400036564
+:DMv6.1_chr11	Liftoff	five_prime_UTR	11213889	11214045	.	-	.	ID "nbis-five_prime_utr-119"  ; Name PGSC0003DME400096822 ; Parent PGSC0003DMT400036564 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400036639
+:DMv6.1_chr03	Liftoff	five_prime_UTR	55569074	55569182	.	+	.	ID "nbis-five_prime_utr-120"  ; Name PGSC0003DME400096998 ; Parent PGSC0003DMT400036639 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400036639
+:DMv6.1_chr03	Liftoff	three_prime_UTR	55569870	55571656	.	+	.	ID "nbis-three_prime_utr-120"  ; Name PGSC0003DME400096998 ; Parent PGSC0003DMT400036639 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037068
+:DMv6.1_chr03	Liftoff	three_prime_UTR	41695424	41700827	.	-	.	ID "nbis-three_prime_utr-121"  ; Name PGSC0003DME400098305 ; Parent PGSC0003DMT400037068 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037068
+:DMv6.1_chr03	Liftoff	five_prime_UTR	41701251	41701348	.	-	.	ID "nbis-five_prime_utr-121"  ; Name PGSC0003DME400098305 ; Parent PGSC0003DMT400037068 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037174
+:DMv6.1_chr03	Liftoff	three_prime_UTR	41733341	41733433	.	-	.	ID "nbis-three_prime_utr-122"  ; Name PGSC0003DME400098556 ; Parent PGSC0003DMT400037174 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037174
+:DMv6.1_chr03	Liftoff	five_prime_UTR	41734322	41734567	.	-	.	ID "nbis-five_prime_utr-122"  ; Name PGSC0003DME400098556 ; Parent PGSC0003DMT400037174 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037174
+:DMv6.1_chr03	Liftoff	five_prime_UTR	41741873	41742157	.	-	.	ID "nbis-five_prime_utr-122"  ; Name PGSC0003DME400098556 ; Parent PGSC0003DMT400037174 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037284
+:DMv6.1_chr10	Liftoff	five_prime_UTR	1093991	1094380	.	+	.	ID "nbis-five_prime_utr-123"  ; Name PGSC0003DME400098852 ; Parent PGSC0003DMT400037284 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037284
+:DMv6.1_chr10	Liftoff	three_prime_UTR	1094618	1095918	.	+	.	ID "nbis-three_prime_utr-123"  ; Name PGSC0003DME400098852 ; Parent PGSC0003DMT400037284 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037297
+:DMv6.1_chr10	Liftoff	five_prime_UTR	1220606	1220826	.	+	.	ID "nbis-five_prime_utr-124"  ; Name PGSC0003DME400098890 ; Parent PGSC0003DMT400037297 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037297
+:DMv6.1_chr10	Liftoff	five_prime_UTR	1222459	1222497	.	+	.	ID "nbis-five_prime_utr-124"  ; Name PGSC0003DME400098890 ; Parent PGSC0003DMT400037297 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037297
+:DMv6.1_chr10	Liftoff	three_prime_UTR	1222999	1223690	.	+	.	ID "nbis-three_prime_utr-124"  ; Name PGSC0003DME400098890 ; Parent PGSC0003DMT400037297 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037427
+:DMv6.1_chr12	Liftoff	five_prime_UTR	11425296	11425378	.	+	.	ID "nbis-five_prime_utr-125"  ; Name PGSC0003DME400099250 ; Parent PGSC0003DMT400037427 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400037427
+:DMv6.1_chr12	Liftoff	three_prime_UTR	11432263	11432447	.	+	.	ID "nbis-three_prime_utr-125"  ; Name PGSC0003DME400099250 ; Parent PGSC0003DMT400037427 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038009
+:DMv6.1_chr01	Liftoff	five_prime_UTR	88252828	88252976	.	+	.	ID "nbis-five_prime_utr-126"  ; Name PGSC0003DME400100788 ; Parent PGSC0003DMT400038009 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038009
+:DMv6.1_chr01	Liftoff	five_prime_UTR	88254246	88254347	.	+	.	ID "nbis-five_prime_utr-126"  ; Name PGSC0003DME400100788 ; Parent PGSC0003DMT400038009 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038009
+:DMv6.1_chr01	Liftoff	three_prime_UTR	88259128	88259608	.	+	.	ID "nbis-three_prime_utr-126"  ; Name PGSC0003DME400100788 ; Parent PGSC0003DMT400038009 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038406
+:DMv6.1_chr03	Liftoff	five_prime_UTR	38387151	38387174	.	+	.	ID "nbis-five_prime_utr-127"  ; Name PGSC0003DME400101881 ; Parent PGSC0003DMT400038406 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038406
+:DMv6.1_chr03	Liftoff	three_prime_UTR	38395958	38396060	.	+	.	ID "nbis-three_prime_utr-127"  ; Name PGSC0003DME400101881 ; Parent PGSC0003DMT400038406 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038471
+:DMv6.1_chr08	Liftoff	three_prime_UTR	3297481	3297874	.	-	.	ID "nbis-three_prime_utr-128"  ; Name PGSC0003DME400102070 ; Parent PGSC0003DMT400038471 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038471
+:DMv6.1_chr08	Liftoff	five_prime_UTR	3304925	3305795	.	-	.	ID "nbis-five_prime_utr-128"  ; Name PGSC0003DME400102070 ; Parent PGSC0003DMT400038471 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038502
+:DMv6.1_chr03	Liftoff	three_prime_UTR	6754956	6755227	.	-	.	ID "nbis-three_prime_utr-129"  ; Name PGSC0003DME400102190 ; Parent PGSC0003DMT400038502 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038502
+:DMv6.1_chr03	Liftoff	five_prime_UTR	6755609	6756033	.	-	.	ID "nbis-five_prime_utr-129"  ; Name PGSC0003DME400102190 ; Parent PGSC0003DMT400038502 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038502
+:DMv6.1_chr03	Liftoff	five_prime_UTR	6756114	6756176	.	-	.	ID "nbis-five_prime_utr-129"  ; Name PGSC0003DME400102190 ; Parent PGSC0003DMT400038502 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038502
+:DMv6.1_chr03	Liftoff	five_prime_UTR	6756256	6756547	.	-	.	ID "nbis-five_prime_utr-129"  ; Name PGSC0003DME400102190 ; Parent PGSC0003DMT400038502 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038502
+:DMv6.1_chr03	Liftoff	five_prime_UTR	6756781	6756841	.	-	.	ID "nbis-five_prime_utr-129"  ; Name PGSC0003DME400102190 ; Parent PGSC0003DMT400038502 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038502
+:DMv6.1_chr03	Liftoff	five_prime_UTR	6763922	6764312	.	-	.	ID "nbis-five_prime_utr-129"  ; Name PGSC0003DME400102190 ; Parent PGSC0003DMT400038502 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038741
+:DMv6.1_chr03	Liftoff	five_prime_UTR	26542683	26542773	.	+	.	ID "nbis-five_prime_utr-130"  ; Name PGSC0003DME400102874 ; Parent PGSC0003DMT400038741 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400038741
+:DMv6.1_chr03	Liftoff	three_prime_UTR	26543731	26545075	.	+	.	ID "nbis-three_prime_utr-130"  ; Name PGSC0003DME400102874 ; Parent PGSC0003DMT400038741 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400039561
+:DMv6.1_chr03	Liftoff	five_prime_UTR	49008281	49009918	.	+	.	ID "nbis-five_prime_utr-131"  ; Name PGSC0003DME400104992 ; Parent PGSC0003DMT400039561 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400039561
+:DMv6.1_chr03	Liftoff	three_prime_UTR	49010111	49010777	.	+	.	ID "nbis-three_prime_utr-131"  ; Name PGSC0003DME400104992 ; Parent PGSC0003DMT400039561 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400039679
+:DMv6.1_chr12	Liftoff	three_prime_UTR	58873127	58873239	.	-	.	ID "nbis-three_prime_utr-132"  ; Name PGSC0003DME400105295 ; Parent PGSC0003DMT400039679 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400039679
+:DMv6.1_chr12	Liftoff	five_prime_UTR	58874248	58874512	.	-	.	ID "nbis-five_prime_utr-132"  ; Name PGSC0003DME400105295 ; Parent PGSC0003DMT400039679 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040216
+:DMv6.1_chr11	Liftoff	three_prime_UTR	46673444	46673599	.	-	.	ID "nbis-three_prime_utr-133"  ; Name PGSC0003DME400106723 ; Parent PGSC0003DMT400040216 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040216
+:DMv6.1_chr11	Liftoff	five_prime_UTR	46682247	46682315	.	-	.	ID "nbis-five_prime_utr-133"  ; Name PGSC0003DME400106723 ; Parent PGSC0003DMT400040216 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040535
+:DMv6.1_chr11	Liftoff	five_prime_UTR	2625929	2625992	.	+	.	ID "nbis-five_prime_utr-134"  ; Name PGSC0003DME400107541 ; Parent PGSC0003DMT400040535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040535
+:DMv6.1_chr11	Liftoff	three_prime_UTR	2628985	2629376	.	+	.	ID "nbis-three_prime_utr-134"  ; Name PGSC0003DME400107541 ; Parent PGSC0003DMT400040535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040535
+:DMv6.1_chr11	Liftoff	three_prime_UTR	2629543	2629625	.	+	.	ID "nbis-three_prime_utr-134"  ; Name PGSC0003DME400107541 ; Parent PGSC0003DMT400040535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040535
+:DMv6.1_chr11	Liftoff	three_prime_UTR	2630512	2630621	.	+	.	ID "nbis-three_prime_utr-134"  ; Name PGSC0003DME400107541 ; Parent PGSC0003DMT400040535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040535
+:DMv6.1_chr11	Liftoff	three_prime_UTR	2630918	2631381	.	+	.	ID "nbis-three_prime_utr-134"  ; Name PGSC0003DME400107541 ; Parent PGSC0003DMT400040535 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040666
+:DMv6.1_chr08	Liftoff	three_prime_UTR	48885072	48885897	.	-	.	ID "nbis-three_prime_utr-135"  ; Name PGSC0003DME400107831 ; Parent PGSC0003DMT400040666 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040666
+:DMv6.1_chr08	Liftoff	five_prime_UTR	48886345	48889465	.	-	.	ID "nbis-five_prime_utr-135"  ; Name PGSC0003DME400107831 ; Parent PGSC0003DMT400040666 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040694
+:DMv6.1_chr06	Liftoff	three_prime_UTR	12021990	12022110	.	-	.	ID "nbis-three_prime_utr-136"  ; Name PGSC0003DME400107890 ; Parent PGSC0003DMT400040694 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040694
+:DMv6.1_chr06	Liftoff	five_prime_UTR	12022336	12022451	.	-	.	ID "nbis-five_prime_utr-136"  ; Name PGSC0003DME400107890 ; Parent PGSC0003DMT400040694 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400040694
+:DMv6.1_chr06	Liftoff	five_prime_UTR	12023445	12023697	.	-	.	ID "nbis-five_prime_utr-136"  ; Name PGSC0003DME400107890 ; Parent PGSC0003DMT400040694 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400041084
+:DMv6.1_chr05	Liftoff	three_prime_UTR	20307820	20308048	.	-	.	ID "nbis-three_prime_utr-137"  ; Name PGSC0003DME400108918 ; Parent PGSC0003DMT400041084 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400041084
+:DMv6.1_chr05	Liftoff	five_prime_UTR	20317165	20317195	.	-	.	ID "nbis-five_prime_utr-137"  ; Name PGSC0003DME400108918 ; Parent PGSC0003DMT400041084 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400041178
+:DMv6.1_chr07	Liftoff	five_prime_UTR	9589611	9589644	.	+	.	ID "nbis-five_prime_utr-138"  ; Name PGSC0003DME400109236 ; Parent PGSC0003DMT400041178 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400041178
+:DMv6.1_chr07	Liftoff	three_prime_UTR	9589915	9590897	.	+	.	ID "nbis-three_prime_utr-138"  ; Name PGSC0003DME400109236 ; Parent PGSC0003DMT400041178 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042093
+:DMv6.1_chr06	Liftoff	five_prime_UTR	40290953	40291264	.	+	.	ID "nbis-five_prime_utr-139"  ; Name PGSC0003DME400111616 ; Parent PGSC0003DMT400042093 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042093
+:DMv6.1_chr06	Liftoff	five_prime_UTR	40292251	40292313	.	+	.	ID "nbis-five_prime_utr-139"  ; Name PGSC0003DME400111616 ; Parent PGSC0003DMT400042093 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042093
+:DMv6.1_chr06	Liftoff	three_prime_UTR	40299666	40299900	.	+	.	ID "nbis-three_prime_utr-139"  ; Name PGSC0003DME400111616 ; Parent PGSC0003DMT400042093 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042100
+:DMv6.1_chr06	Liftoff	five_prime_UTR	39981874	39982317	.	+	.	ID "nbis-five_prime_utr-140"  ; Name PGSC0003DME400111655 ; Parent PGSC0003DMT400042100 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042100
+:DMv6.1_chr06	Liftoff	five_prime_UTR	39983228	39983353	.	+	.	ID "nbis-five_prime_utr-140"  ; Name PGSC0003DME400111655 ; Parent PGSC0003DMT400042100 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042100
+:DMv6.1_chr06	Liftoff	five_prime_UTR	39983662	39983683	.	+	.	ID "nbis-five_prime_utr-140"  ; Name PGSC0003DME400111655 ; Parent PGSC0003DMT400042100 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042100
+:DMv6.1_chr06	Liftoff	three_prime_UTR	39984499	39984670	.	+	.	ID "nbis-three_prime_utr-140"  ; Name PGSC0003DME400111655 ; Parent PGSC0003DMT400042100 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042100
+:DMv6.1_chr06	Liftoff	three_prime_UTR	39984816	39985350	.	+	.	ID "nbis-three_prime_utr-140"  ; Name PGSC0003DME400111655 ; Parent PGSC0003DMT400042100 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042232
+:DMv6.1_chr01	Liftoff	five_prime_UTR	4053449	4054442	.	+	.	ID "nbis-five_prime_utr-141"  ; Name PGSC0003DME400112049 ; Parent PGSC0003DMT400042232 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042232
+:DMv6.1_chr01	Liftoff	three_prime_UTR	4054857	4055098	.	+	.	ID "nbis-three_prime_utr-141"  ; Name PGSC0003DME400112049 ; Parent PGSC0003DMT400042232 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042719
+:DMv6.1_chr04	Liftoff	five_prime_UTR	52484437	52484769	.	+	.	ID "nbis-five_prime_utr-142"  ; Name PGSC0003DME400113344 ; Parent PGSC0003DMT400042719 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400042719
+:DMv6.1_chr04	Liftoff	three_prime_UTR	52485469	52485717	.	+	.	ID "nbis-three_prime_utr-142"  ; Name PGSC0003DME400113344 ; Parent PGSC0003DMT400042719 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400043242
+:DMv6.1_chr06	Liftoff	five_prime_UTR	45474931	45475079	.	+	.	ID "nbis-five_prime_utr-143"  ; Name PGSC0003DME400114553 ; Parent PGSC0003DMT400043242 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400043242
+:DMv6.1_chr06	Liftoff	five_prime_UTR	45476581	45476603	.	+	.	ID "nbis-five_prime_utr-143"  ; Name PGSC0003DME400114553 ; Parent PGSC0003DMT400043242 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400043242
+:DMv6.1_chr06	Liftoff	three_prime_UTR	45476940	45477451	.	+	.	ID "nbis-three_prime_utr-143"  ; Name PGSC0003DME400114553 ; Parent PGSC0003DMT400043242 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400043310
+:DMv6.1_chr01	Liftoff	three_prime_UTR	56937458	56938422	.	-	.	ID "nbis-three_prime_utr-144"  ; Name PGSC0003DME400114714 ; Parent PGSC0003DMT400043310 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400043310
+:DMv6.1_chr01	Liftoff	five_prime_UTR	56938966	56940442	.	-	.	ID "nbis-five_prime_utr-144"  ; Name PGSC0003DME400114714 ; Parent PGSC0003DMT400043310 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400043584
+:DMv6.1_chr03	Liftoff	five_prime_UTR	31499558	31499563	.	+	.	ID "nbis-five_prime_utr-145"  ; Name PGSC0003DME400115441 ; Parent PGSC0003DMT400043584 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400043584
+:DMv6.1_chr03	Liftoff	three_prime_UTR	31499726	31500070	.	+	.	ID "nbis-three_prime_utr-145"  ; Name PGSC0003DME400115441 ; Parent PGSC0003DMT400043584 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045008
+:DMv6.1_chr05	Liftoff	three_prime_UTR	11754008	11754246	.	-	.	ID "nbis-three_prime_utr-146"  ; Name PGSC0003DME400118822 ; Parent PGSC0003DMT400045008 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045008
+:DMv6.1_chr05	Liftoff	five_prime_UTR	11762973	11763568	.	-	.	ID "nbis-five_prime_utr-146"  ; Name PGSC0003DME400118822 ; Parent PGSC0003DMT400045008 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045450
+:DMv6.1_chr05	Liftoff	five_prime_UTR	6318284	6318515	.	+	.	ID "nbis-five_prime_utr-147"  ; Name PGSC0003DME400119979 ; Parent PGSC0003DMT400045450 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045450
+:DMv6.1_chr05	Liftoff	three_prime_UTR	6319192	6322160	.	+	.	ID "nbis-three_prime_utr-147"  ; Name PGSC0003DME400119979 ; Parent PGSC0003DMT400045450 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045578
+:DMv6.1_chr04	Liftoff	five_prime_UTR	33622927	33623095	.	+	.	ID "nbis-five_prime_utr-148"  ; Name PGSC0003DME400120356 ; Parent PGSC0003DMT400045578 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045578
+:DMv6.1_chr04	Liftoff	three_prime_UTR	33623360	33623366	.	+	.	ID "nbis-three_prime_utr-148"  ; Name PGSC0003DME400120356 ; Parent PGSC0003DMT400045578 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045578
+:DMv6.1_chr04	Liftoff	three_prime_UTR	33631619	33632320	.	+	.	ID "nbis-three_prime_utr-148"  ; Name PGSC0003DME400120356 ; Parent PGSC0003DMT400045578 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045758
+:DMv6.1_chr02	Liftoff	three_prime_UTR	35381143	35381623	.	-	.	ID "nbis-three_prime_utr-149"  ; Name PGSC0003DME400120776 ; Parent PGSC0003DMT400045758 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045758
+:DMv6.1_chr02	Liftoff	five_prime_UTR	35382536	35382564	.	-	.	ID "nbis-five_prime_utr-149"  ; Name PGSC0003DME400120776 ; Parent PGSC0003DMT400045758 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045758
+:DMv6.1_chr02	Liftoff	five_prime_UTR	35390111	35390268	.	-	.	ID "nbis-five_prime_utr-149"  ; Name PGSC0003DME400120776 ; Parent PGSC0003DMT400045758 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045959
+:DMv6.1_chr01	Liftoff	three_prime_UTR	36651804	36651811	.	-	.	ID "nbis-three_prime_utr-150"  ; Name PGSC0003DME400121239 ; Parent PGSC0003DMT400045959 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045959
+:DMv6.1_chr01	Liftoff	three_prime_UTR	36657462	36657469	.	-	.	ID "nbis-three_prime_utr-150"  ; Name PGSC0003DME400121239 ; Parent PGSC0003DMT400045959 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400045959
+:DMv6.1_chr01	Liftoff	five_prime_UTR	36658823	36659164	.	-	.	ID "nbis-five_prime_utr-150"  ; Name PGSC0003DME400121239 ; Parent PGSC0003DMT400045959 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046107
+:DMv6.1_chr06	Liftoff	three_prime_UTR	31632893	31632894	.	-	.	ID "nbis-three_prime_utr-151"  ; Name PGSC0003DME400121599 ; Parent PGSC0003DMT400046107 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046107
+:DMv6.1_chr06	Liftoff	five_prime_UTR	31633165	31635862	.	-	.	ID "nbis-five_prime_utr-151"  ; Name PGSC0003DME400121599 ; Parent PGSC0003DMT400046107 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046187
+:DMv6.1_chr09	Liftoff	five_prime_UTR	66467710	66467942	.	+	.	ID "nbis-five_prime_utr-152"  ; Name PGSC0003DME400121782 ; Parent PGSC0003DMT400046187 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046187
+:DMv6.1_chr09	Liftoff	three_prime_UTR	66468105	66468246	.	+	.	ID "nbis-three_prime_utr-152"  ; Name PGSC0003DME400121782 ; Parent PGSC0003DMT400046187 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046198
+:DMv6.1_chr06	Liftoff	five_prime_UTR	785826	786844	.	+	.	ID "nbis-five_prime_utr-153"  ; Name PGSC0003DME400121834 ; Parent PGSC0003DMT400046198 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046198
+:DMv6.1_chr06	Liftoff	three_prime_UTR	787325	787988	.	+	.	ID "nbis-three_prime_utr-153"  ; Name PGSC0003DME400121834 ; Parent PGSC0003DMT400046198 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046228
+:DMv6.1_chr02	Liftoff	five_prime_UTR	7321700	7323228	.	+	.	ID "nbis-five_prime_utr-154"  ; Name PGSC0003DME400121903 ; Parent PGSC0003DMT400046228 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046228
+:DMv6.1_chr02	Liftoff	three_prime_UTR	7324060	7326301	.	+	.	ID "nbis-three_prime_utr-154"  ; Name PGSC0003DME400121903 ; Parent PGSC0003DMT400046228 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046288
+:DMv6.1_chr12	Liftoff	three_prime_UTR	768619	768960	.	-	.	ID "nbis-three_prime_utr-155"  ; Name PGSC0003DME400122071 ; Parent PGSC0003DMT400046288 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046288
+:DMv6.1_chr12	Liftoff	five_prime_UTR	769918	770861	.	-	.	ID "nbis-five_prime_utr-155"  ; Name PGSC0003DME400122071 ; Parent PGSC0003DMT400046288 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046809
+:DMv6.1_chr03	Liftoff	five_prime_UTR	51197146	51197312	.	+	.	ID "nbis-five_prime_utr-156"  ; Name PGSC0003DME400123359 ; Parent PGSC0003DMT400046809 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046809
+:DMv6.1_chr03	Liftoff	three_prime_UTR	51206490	51206875	.	+	.	ID "nbis-three_prime_utr-156"  ; Name PGSC0003DME400123359 ; Parent PGSC0003DMT400046809 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046947
+:DMv6.1_chr01	Liftoff	three_prime_UTR	79772072	79774636	.	-	.	ID "nbis-three_prime_utr-157"  ; Name PGSC0003DME400123696 ; Parent PGSC0003DMT400046947 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400046947
+:DMv6.1_chr01	Liftoff	five_prime_UTR	79775114	79775347	.	-	.	ID "nbis-five_prime_utr-157"  ; Name PGSC0003DME400123696 ; Parent PGSC0003DMT400046947 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400047187
+:DMv6.1_chr07	Liftoff	three_prime_UTR	49908915	49909105	.	-	.	ID "nbis-three_prime_utr-158"  ; Name PGSC0003DME400124357 ; Parent PGSC0003DMT400047187 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400047187
+:DMv6.1_chr07	Liftoff	five_prime_UTR	49909994	49914160	.	-	.	ID "nbis-five_prime_utr-158"  ; Name PGSC0003DME400124357 ; Parent PGSC0003DMT400047187 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400047497
+:DMv6.1_chr08	Liftoff	five_prime_UTR	4524705	4524745	.	+	.	ID "nbis-five_prime_utr-159"  ; Name PGSC0003DME400125102 ; Parent PGSC0003DMT400047497 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400047497
+:DMv6.1_chr08	Liftoff	three_prime_UTR	4526156	4530015	.	+	.	ID "nbis-three_prime_utr-159"  ; Name PGSC0003DME400125102 ; Parent PGSC0003DMT400047497 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400048287
+:DMv6.1_chr03	Liftoff	five_prime_UTR	9686913	9687072	.	+	.	ID "nbis-five_prime_utr-160"  ; Name PGSC0003DME400127286 ; Parent PGSC0003DMT400048287 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400048287
+:DMv6.1_chr03	Liftoff	three_prime_UTR	9696402	9696584	.	+	.	ID "nbis-three_prime_utr-160"  ; Name PGSC0003DME400127286 ; Parent PGSC0003DMT400048287 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400048321
+:DMv6.1_chr11	Liftoff	five_prime_UTR	18078188	18078926	.	+	.	ID "nbis-five_prime_utr-161"  ; Name PGSC0003DME400127396 ; Parent PGSC0003DMT400048321 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400048321
+:DMv6.1_chr11	Liftoff	three_prime_UTR	18079104	18079126	.	+	.	ID "nbis-three_prime_utr-161"  ; Name PGSC0003DME400127396 ; Parent PGSC0003DMT400048321 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400049446
+:DMv6.1_chr10	Liftoff	three_prime_UTR	52316908	52318122	.	-	.	ID "nbis-three_prime_utr-162"  ; Name PGSC0003DME400130101 ; Parent PGSC0003DMT400049446 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400049446
+:DMv6.1_chr10	Liftoff	five_prime_UTR	52318648	52318718	.	-	.	ID "nbis-five_prime_utr-162"  ; Name PGSC0003DME400130101 ; Parent PGSC0003DMT400049446 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400049678
+:DMv6.1_chr09	Liftoff	three_prime_UTR	55338608	55339011	.	-	.	ID "nbis-three_prime_utr-163"  ; Name PGSC0003DME400130801 ; Parent PGSC0003DMT400049678 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400049678
+:DMv6.1_chr09	Liftoff	five_prime_UTR	55348054	55348171	.	-	.	ID "nbis-five_prime_utr-163"  ; Name PGSC0003DME400130801 ; Parent PGSC0003DMT400049678 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400049895
+:DMv6.1_chr10	Liftoff	five_prime_UTR	6031444	6035174	.	+	.	ID "nbis-five_prime_utr-164"  ; Name PGSC0003DME400131364 ; Parent PGSC0003DMT400049895 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400049895
+:DMv6.1_chr10	Liftoff	three_prime_UTR	6035820	6036636	.	+	.	ID "nbis-three_prime_utr-164"  ; Name PGSC0003DME400131364 ; Parent PGSC0003DMT400049895 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050582
+:DMv6.1_chr05	Liftoff	three_prime_UTR	1213839	1214346	.	-	.	ID "nbis-three_prime_utr-165"  ; Name PGSC0003DME400133218 ; Parent PGSC0003DMT400050582 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050582
+:DMv6.1_chr05	Liftoff	three_prime_UTR	1214742	1215366	.	-	.	ID "nbis-three_prime_utr-165"  ; Name PGSC0003DME400133218 ; Parent PGSC0003DMT400050582 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050582
+:DMv6.1_chr05	Liftoff	three_prime_UTR	1218354	1218625	.	-	.	ID "nbis-three_prime_utr-165"  ; Name PGSC0003DME400133218 ; Parent PGSC0003DMT400050582 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050582
+:DMv6.1_chr05	Liftoff	five_prime_UTR	1220858	1220882	.	-	.	ID "nbis-five_prime_utr-165"  ; Name PGSC0003DME400133218 ; Parent PGSC0003DMT400050582 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050637
+:DMv6.1_chr11	Liftoff	five_prime_UTR	43660896	43661166	.	+	.	ID "nbis-five_prime_utr-166"  ; Name PGSC0003DME400133304 ; Parent PGSC0003DMT400050637 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050637
+:DMv6.1_chr11	Liftoff	three_prime_UTR	43662271	43662322	.	+	.	ID "nbis-three_prime_utr-166"  ; Name PGSC0003DME400133304 ; Parent PGSC0003DMT400050637 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050637
+:DMv6.1_chr11	Liftoff	three_prime_UTR	43663813	43663929	.	+	.	ID "nbis-three_prime_utr-166"  ; Name PGSC0003DME400133304 ; Parent PGSC0003DMT400050637 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050637
+:DMv6.1_chr11	Liftoff	three_prime_UTR	43664527	43664631	.	+	.	ID "nbis-three_prime_utr-166"  ; Name PGSC0003DME400133304 ; Parent PGSC0003DMT400050637 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050637
+:DMv6.1_chr11	Liftoff	three_prime_UTR	43665199	43665258	.	+	.	ID "nbis-three_prime_utr-166"  ; Name PGSC0003DME400133304 ; Parent PGSC0003DMT400050637 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050637
+:DMv6.1_chr11	Liftoff	three_prime_UTR	43665337	43665411	.	+	.	ID "nbis-three_prime_utr-166"  ; Name PGSC0003DME400133304 ; Parent PGSC0003DMT400050637 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400050637
+:DMv6.1_chr11	Liftoff	three_prime_UTR	43665758	43666016	.	+	.	ID "nbis-three_prime_utr-166"  ; Name PGSC0003DME400133304 ; Parent PGSC0003DMT400050637 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051098
+:DMv6.1_chr01	Liftoff	five_prime_UTR	28739119	28739833	.	+	.	ID "nbis-five_prime_utr-167"  ; Name PGSC0003DME400134481 ; Parent PGSC0003DMT400051098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051098
+:DMv6.1_chr01	Liftoff	five_prime_UTR	28741362	28741707	.	+	.	ID "nbis-five_prime_utr-167"  ; Name PGSC0003DME400134481 ; Parent PGSC0003DMT400051098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051098
+:DMv6.1_chr01	Liftoff	five_prime_UTR	28741780	28741841	.	+	.	ID "nbis-five_prime_utr-167"  ; Name PGSC0003DME400134481 ; Parent PGSC0003DMT400051098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051098
+:DMv6.1_chr01	Liftoff	five_prime_UTR	28741929	28742203	.	+	.	ID "nbis-five_prime_utr-167"  ; Name PGSC0003DME400134481 ; Parent PGSC0003DMT400051098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051098
+:DMv6.1_chr01	Liftoff	five_prime_UTR	28745233	28745291	.	+	.	ID "nbis-five_prime_utr-167"  ; Name PGSC0003DME400134481 ; Parent PGSC0003DMT400051098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051098
+:DMv6.1_chr01	Liftoff	three_prime_UTR	28746284	28746334	.	+	.	ID "nbis-three_prime_utr-167"  ; Name PGSC0003DME400134481 ; Parent PGSC0003DMT400051098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051098
+:DMv6.1_chr01	Liftoff	three_prime_UTR	28748055	28748730	.	+	.	ID "nbis-three_prime_utr-167"  ; Name PGSC0003DME400134481 ; Parent PGSC0003DMT400051098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051223
+:DMv6.1_chr07	Liftoff	three_prime_UTR	4443576	4443771	.	-	.	ID "nbis-three_prime_utr-168"  ; Name PGSC0003DME400134780 ; Parent PGSC0003DMT400051223 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051223
+:DMv6.1_chr07	Liftoff	five_prime_UTR	4452132	4452248	.	-	.	ID "nbis-five_prime_utr-168"  ; Name PGSC0003DME400134780 ; Parent PGSC0003DMT400051223 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051253
+:DMv6.1_chr08	Liftoff	five_prime_UTR	13478702	13479439	.	+	.	ID "nbis-five_prime_utr-169"  ; Name PGSC0003DME400134882 ; Parent PGSC0003DMT400051253 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051253
+:DMv6.1_chr08	Liftoff	three_prime_UTR	13480469	13480484	.	+	.	ID "nbis-three_prime_utr-169"  ; Name PGSC0003DME400134882 ; Parent PGSC0003DMT400051253 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051253
+:DMv6.1_chr08	Liftoff	three_prime_UTR	13487090	13487421	.	+	.	ID "nbis-three_prime_utr-169"  ; Name PGSC0003DME400134882 ; Parent PGSC0003DMT400051253 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051332
+:DMv6.1_chr02	Liftoff	five_prime_UTR	19639576	19639718	.	+	.	ID "nbis-five_prime_utr-170"  ; Name PGSC0003DME400135062 ; Parent PGSC0003DMT400051332 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051332
+:DMv6.1_chr02	Liftoff	five_prime_UTR	19641709	19643208	.	+	.	ID "nbis-five_prime_utr-170"  ; Name PGSC0003DME400135062 ; Parent PGSC0003DMT400051332 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051332
+:DMv6.1_chr02	Liftoff	three_prime_UTR	19643975	19645270	.	+	.	ID "nbis-three_prime_utr-170"  ; Name PGSC0003DME400135062 ; Parent PGSC0003DMT400051332 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051644
+:DMv6.1_chr06	Liftoff	three_prime_UTR	58610238	58611863	.	-	.	ID "nbis-three_prime_utr-171"  ; Name PGSC0003DME400135790 ; Parent PGSC0003DMT400051644 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051644
+:DMv6.1_chr06	Liftoff	five_prime_UTR	58612515	58612756	.	-	.	ID "nbis-five_prime_utr-171"  ; Name PGSC0003DME400135790 ; Parent PGSC0003DMT400051644 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051644
+:DMv6.1_chr06	Liftoff	five_prime_UTR	58613018	58613240	.	-	.	ID "nbis-five_prime_utr-171"  ; Name PGSC0003DME400135790 ; Parent PGSC0003DMT400051644 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051853
+:DMv6.1_chr06	Liftoff	five_prime_UTR	58772491	58772588	.	+	.	ID "nbis-five_prime_utr-172"  ; Name PGSC0003DME400136383 ; Parent PGSC0003DMT400051853 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051853
+:DMv6.1_chr06	Liftoff	three_prime_UTR	58773114	58775177	.	+	.	ID "nbis-three_prime_utr-172"  ; Name PGSC0003DME400136383 ; Parent PGSC0003DMT400051853 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051867
+:DMv6.1_chr06	Liftoff	five_prime_UTR	58711836	58711844	.	+	.	ID "nbis-five_prime_utr-173"  ; Name PGSC0003DME400136434 ; Parent PGSC0003DMT400051867 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400051867
+:DMv6.1_chr06	Liftoff	three_prime_UTR	58720009	58720332	.	+	.	ID "nbis-three_prime_utr-173"  ; Name PGSC0003DME400136434 ; Parent PGSC0003DMT400051867 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052015
+:DMv6.1_chr02	Liftoff	three_prime_UTR	45874800	45874998	.	-	.	ID "nbis-three_prime_utr-174"  ; Name PGSC0003DME400136954 ; Parent PGSC0003DMT400052015 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052015
+:DMv6.1_chr02	Liftoff	three_prime_UTR	45875125	45875497	.	-	.	ID "nbis-three_prime_utr-174"  ; Name PGSC0003DME400136954 ; Parent PGSC0003DMT400052015 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052015
+:DMv6.1_chr02	Liftoff	five_prime_UTR	45883282	45883340	.	-	.	ID "nbis-five_prime_utr-174"  ; Name PGSC0003DME400136954 ; Parent PGSC0003DMT400052015 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052015
+:DMv6.1_chr02	Liftoff	five_prime_UTR	45883502	45883675	.	-	.	ID "nbis-five_prime_utr-174"  ; Name PGSC0003DME400136954 ; Parent PGSC0003DMT400052015 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052492
+:DMv6.1_chr12	Liftoff	five_prime_UTR	47531247	47531257	.	+	.	ID "nbis-five_prime_utr-175"  ; Name PGSC0003DME400138267 ; Parent PGSC0003DMT400052492 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052492
+:DMv6.1_chr12	Liftoff	three_prime_UTR	47533207	47533235	.	+	.	ID "nbis-three_prime_utr-175"  ; Name PGSC0003DME400138267 ; Parent PGSC0003DMT400052492 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052512
+:DMv6.1_chr12	Liftoff	five_prime_UTR	47842604	47844071	.	+	.	ID "nbis-five_prime_utr-176"  ; Name PGSC0003DME400138306 ; Parent PGSC0003DMT400052512 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052512
+:DMv6.1_chr12	Liftoff	three_prime_UTR	47844726	47844832	.	+	.	ID "nbis-three_prime_utr-176"  ; Name PGSC0003DME400138306 ; Parent PGSC0003DMT400052512 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052512
+:DMv6.1_chr12	Liftoff	three_prime_UTR	47844935	47844996	.	+	.	ID "nbis-three_prime_utr-176"  ; Name PGSC0003DME400138306 ; Parent PGSC0003DMT400052512 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052512
+:DMv6.1_chr12	Liftoff	three_prime_UTR	47845985	47846397	.	+	.	ID "nbis-three_prime_utr-176"  ; Name PGSC0003DME400138306 ; Parent PGSC0003DMT400052512 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052670
+:DMv6.1_chr07	Liftoff	five_prime_UTR	51177098	51177248	.	+	.	ID "nbis-five_prime_utr-177"  ; Name PGSC0003DME400138831 ; Parent PGSC0003DMT400052670 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052670
+:DMv6.1_chr07	Liftoff	three_prime_UTR	51178644	51178676	.	+	.	ID "nbis-three_prime_utr-177"  ; Name PGSC0003DME400138831 ; Parent PGSC0003DMT400052670 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052670
+:DMv6.1_chr07	Liftoff	three_prime_UTR	51178795	51178887	.	+	.	ID "nbis-three_prime_utr-177"  ; Name PGSC0003DME400138831 ; Parent PGSC0003DMT400052670 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052670
+:DMv6.1_chr07	Liftoff	three_prime_UTR	51182470	51182532	.	+	.	ID "nbis-three_prime_utr-177"  ; Name PGSC0003DME400138831 ; Parent PGSC0003DMT400052670 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052670
+:DMv6.1_chr07	Liftoff	three_prime_UTR	51182613	51182850	.	+	.	ID "nbis-three_prime_utr-177"  ; Name PGSC0003DME400138831 ; Parent PGSC0003DMT400052670 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052725
+:DMv6.1_chr06	Liftoff	five_prime_UTR	45999143	45999184	.	+	.	ID "nbis-five_prime_utr-178"  ; Name PGSC0003DME400138941 ; Parent PGSC0003DMT400052725 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052725
+:DMv6.1_chr06	Liftoff	five_prime_UTR	45999582	46000117	.	+	.	ID "nbis-five_prime_utr-178"  ; Name PGSC0003DME400138941 ; Parent PGSC0003DMT400052725 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400052725
+:DMv6.1_chr06	Liftoff	three_prime_UTR	46000457	46000690	.	+	.	ID "nbis-three_prime_utr-178"  ; Name PGSC0003DME400138941 ; Parent PGSC0003DMT400052725 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053236
+:DMv6.1_chr12	Liftoff	five_prime_UTR	54385913	54385941	.	+	.	ID "nbis-five_prime_utr-179"  ; Name PGSC0003DME400140185 ; Parent PGSC0003DMT400053236 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053236
+:DMv6.1_chr12	Liftoff	five_prime_UTR	54386168	54386190	.	+	.	ID "nbis-five_prime_utr-179"  ; Name PGSC0003DME400140185 ; Parent PGSC0003DMT400053236 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053236
+:DMv6.1_chr12	Liftoff	three_prime_UTR	54391949	54392065	.	+	.	ID "nbis-three_prime_utr-179"  ; Name PGSC0003DME400140185 ; Parent PGSC0003DMT400053236 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053314
+:DMv6.1_chr07	Liftoff	five_prime_UTR	7201384	7201524	.	+	.	ID "nbis-five_prime_utr-180"  ; Name PGSC0003DME400140378 ; Parent PGSC0003DMT400053314 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053314
+:DMv6.1_chr07	Liftoff	three_prime_UTR	7202246	7204699	.	+	.	ID "nbis-three_prime_utr-180"  ; Name PGSC0003DME400140378 ; Parent PGSC0003DMT400053314 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053377
+:DMv6.1_chr01	Liftoff	three_prime_UTR	80251243	80251444	.	-	.	ID "nbis-three_prime_utr-181"  ; Name PGSC0003DME400140548 ; Parent PGSC0003DMT400053377 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053377
+:DMv6.1_chr01	Liftoff	five_prime_UTR	80252210	80252308	.	-	.	ID "nbis-five_prime_utr-181"  ; Name PGSC0003DME400140548 ; Parent PGSC0003DMT400053377 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053457
+:DMv6.1_chr06	Liftoff	three_prime_UTR	1309468	1309643	.	-	.	ID "nbis-three_prime_utr-182"  ; Name PGSC0003DME400140776 ; Parent PGSC0003DMT400053457 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053457
+:DMv6.1_chr06	Liftoff	five_prime_UTR	1309830	1310408	.	-	.	ID "nbis-five_prime_utr-182"  ; Name PGSC0003DME400140776 ; Parent PGSC0003DMT400053457 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053585
+:DMv6.1_chr09	Liftoff	five_prime_UTR	21751000	21752471	.	+	.	ID "nbis-five_prime_utr-183"  ; Name PGSC0003DME400141053 ; Parent PGSC0003DMT400053585 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053585
+:DMv6.1_chr09	Liftoff	three_prime_UTR	21753942	21753970	.	+	.	ID "nbis-three_prime_utr-183"  ; Name PGSC0003DME400141053 ; Parent PGSC0003DMT400053585 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053585
+:DMv6.1_chr09	Liftoff	three_prime_UTR	21754066	21754181	.	+	.	ID "nbis-three_prime_utr-183"  ; Name PGSC0003DME400141053 ; Parent PGSC0003DMT400053585 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053585
+:DMv6.1_chr09	Liftoff	three_prime_UTR	21755640	21755754	.	+	.	ID "nbis-three_prime_utr-183"  ; Name PGSC0003DME400141053 ; Parent PGSC0003DMT400053585 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400053585
+:DMv6.1_chr09	Liftoff	three_prime_UTR	21757451	21758103	.	+	.	ID "nbis-three_prime_utr-183"  ; Name PGSC0003DME400141053 ; Parent PGSC0003DMT400053585 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055365
+:DMv6.1_chr01	Liftoff	three_prime_UTR	43618689	43618803	.	-	.	ID "nbis-three_prime_utr-184"  ; Name PGSC0003DME400145414 ; Parent PGSC0003DMT400055365 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055365
+:DMv6.1_chr01	Liftoff	five_prime_UTR	43626543	43626599	.	-	.	ID "nbis-five_prime_utr-184"  ; Name PGSC0003DME400145414 ; Parent PGSC0003DMT400055365 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055458
+:DMv6.1_chr04	Liftoff	three_prime_UTR	64495113	64501844	.	-	.	ID "nbis-three_prime_utr-185"  ; Name PGSC0003DME400145669 ; Parent PGSC0003DMT400055458 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055458
+:DMv6.1_chr04	Liftoff	five_prime_UTR	64502410	64502527	.	-	.	ID "nbis-five_prime_utr-185"  ; Name PGSC0003DME400145669 ; Parent PGSC0003DMT400055458 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055859
+:DMv6.1_chr03	Liftoff	three_prime_UTR	33174746	33174789	.	-	.	ID "nbis-three_prime_utr-186"  ; Name PGSC0003DME400146733 ; Parent PGSC0003DMT400055859 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055859
+:DMv6.1_chr03	Liftoff	five_prime_UTR	33175192	33175266	.	-	.	ID "nbis-five_prime_utr-186"  ; Name PGSC0003DME400146733 ; Parent PGSC0003DMT400055859 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055859
+:DMv6.1_chr03	Liftoff	five_prime_UTR	33176294	33176816	.	-	.	ID "nbis-five_prime_utr-186"  ; Name PGSC0003DME400146733 ; Parent PGSC0003DMT400055859 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055878
+:DMv6.1_chr03	Liftoff	five_prime_UTR	33421014	33421332	.	+	.	ID "nbis-five_prime_utr-187"  ; Name PGSC0003DME400146781 ; Parent PGSC0003DMT400055878 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400055878
+:DMv6.1_chr03	Liftoff	three_prime_UTR	33421630	33422053	.	+	.	ID "nbis-three_prime_utr-187"  ; Name PGSC0003DME400146781 ; Parent PGSC0003DMT400055878 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056402
+:DMv6.1_chr09	Liftoff	five_prime_UTR	39721412	39723181	.	+	.	ID "nbis-five_prime_utr-188"  ; Name PGSC0003DME400148005 ; Parent PGSC0003DMT400056402 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056402
+:DMv6.1_chr09	Liftoff	three_prime_UTR	39723566	39723576	.	+	.	ID "nbis-three_prime_utr-188"  ; Name PGSC0003DME400148005 ; Parent PGSC0003DMT400056402 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056430
+:DMv6.1_chr02	Liftoff	five_prime_UTR	10932067	10932148	.	+	.	ID "nbis-five_prime_utr-189"  ; Name PGSC0003DME400148058 ; Parent PGSC0003DMT400056430 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056430
+:DMv6.1_chr02	Liftoff	three_prime_UTR	10938402	10938978	.	+	.	ID "nbis-three_prime_utr-189"  ; Name PGSC0003DME400148058 ; Parent PGSC0003DMT400056430 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056449
+:DMv6.1_chr02	Liftoff	three_prime_UTR	11064548	11065068	.	-	.	ID "nbis-three_prime_utr-190"  ; Name PGSC0003DME400148107 ; Parent PGSC0003DMT400056449 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056449
+:DMv6.1_chr02	Liftoff	five_prime_UTR	11074105	11074235	.	-	.	ID "nbis-five_prime_utr-190"  ; Name PGSC0003DME400148107 ; Parent PGSC0003DMT400056449 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056699
+:DMv6.1_chr08	Liftoff	five_prime_UTR	56040750	56041554	.	+	.	ID "nbis-five_prime_utr-191"  ; Name PGSC0003DME400148727 ; Parent PGSC0003DMT400056699 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056699
+:DMv6.1_chr08	Liftoff	three_prime_UTR	56041819	56042227	.	+	.	ID "nbis-three_prime_utr-191"  ; Name PGSC0003DME400148727 ; Parent PGSC0003DMT400056699 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056722
+:DMv6.1_chr02	Liftoff	five_prime_UTR	16444689	16444834	.	+	.	ID "nbis-five_prime_utr-192"  ; Name PGSC0003DME400148812 ; Parent PGSC0003DMT400056722 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400056722
+:DMv6.1_chr02	Liftoff	three_prime_UTR	16450877	16451455	.	+	.	ID "nbis-three_prime_utr-192"  ; Name PGSC0003DME400148812 ; Parent PGSC0003DMT400056722 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400057018
+:DMv6.1_chr07	Liftoff	three_prime_UTR	56655551	56656216	.	-	.	ID "nbis-three_prime_utr-193"  ; Name PGSC0003DME400149619 ; Parent PGSC0003DMT400057018 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400057018
+:DMv6.1_chr07	Liftoff	three_prime_UTR	56656977	56656982	.	-	.	ID "nbis-three_prime_utr-193"  ; Name PGSC0003DME400149619 ; Parent PGSC0003DMT400057018 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400057018
+:DMv6.1_chr07	Liftoff	five_prime_UTR	56658877	56658958	.	-	.	ID "nbis-five_prime_utr-193"  ; Name PGSC0003DME400149619 ; Parent PGSC0003DMT400057018 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058249
+:DMv6.1_chr01	Liftoff	five_prime_UTR	15077119	15077528	.	+	.	ID "nbis-five_prime_utr-194"  ; Name PGSC0003DME400153163 ; Parent PGSC0003DMT400058249 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058249
+:DMv6.1_chr01	Liftoff	three_prime_UTR	15077727	15081578	.	+	.	ID "nbis-three_prime_utr-194"  ; Name PGSC0003DME400153163 ; Parent PGSC0003DMT400058249 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058355
+:DMv6.1_chr01	Liftoff	five_prime_UTR	60771747	60771818	.	+	.	ID "nbis-five_prime_utr-195"  ; Name PGSC0003DME400153471 ; Parent PGSC0003DMT400058355 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058355
+:DMv6.1_chr01	Liftoff	three_prime_UTR	60772446	60774204	.	+	.	ID "nbis-three_prime_utr-195"  ; Name PGSC0003DME400153471 ; Parent PGSC0003DMT400058355 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058831
+:DMv6.1_chr01	Liftoff	five_prime_UTR	61579935	61581857	.	+	.	ID "nbis-five_prime_utr-196"  ; Name PGSC0003DME400154820 ; Parent PGSC0003DMT400058831 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058831
+:DMv6.1_chr01	Liftoff	three_prime_UTR	61582071	61582220	.	+	.	ID "nbis-three_prime_utr-196"  ; Name PGSC0003DME400154820 ; Parent PGSC0003DMT400058831 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058874
+:DMv6.1_chr11	Liftoff	three_prime_UTR	33932425	33933197	.	-	.	ID "nbis-three_prime_utr-197"  ; Name PGSC0003DME400154979 ; Parent PGSC0003DMT400058874 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058874
+:DMv6.1_chr11	Liftoff	five_prime_UTR	33940897	33941058	.	-	.	ID "nbis-five_prime_utr-197"  ; Name PGSC0003DME400154979 ; Parent PGSC0003DMT400058874 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058877
+:DMv6.1_chr11	Liftoff	three_prime_UTR	34089954	34090188	.	-	.	ID "nbis-three_prime_utr-198"  ; Name PGSC0003DME400154994 ; Parent PGSC0003DMT400058877 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058877
+:DMv6.1_chr11	Liftoff	five_prime_UTR	34090966	34090976	.	-	.	ID "nbis-five_prime_utr-198"  ; Name PGSC0003DME400154994 ; Parent PGSC0003DMT400058877 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058877
+:DMv6.1_chr11	Liftoff	five_prime_UTR	34098591	34098671	.	-	.	ID "nbis-five_prime_utr-198"  ; Name PGSC0003DME400154994 ; Parent PGSC0003DMT400058877 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058885
+:DMv6.1_chr11	Liftoff	three_prime_UTR	33897267	33898187	.	-	.	ID "nbis-three_prime_utr-199"  ; Name PGSC0003DME400155003 ; Parent PGSC0003DMT400058885 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400058885
+:DMv6.1_chr11	Liftoff	five_prime_UTR	33898524	33898699	.	-	.	ID "nbis-five_prime_utr-199"  ; Name PGSC0003DME400155003 ; Parent PGSC0003DMT400058885 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059026
+:DMv6.1_chr03	Liftoff	three_prime_UTR	9006117	9007342	.	-	.	ID "nbis-three_prime_utr-200"  ; Name PGSC0003DME400155338 ; Parent PGSC0003DMT400059026 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059026
+:DMv6.1_chr03	Liftoff	five_prime_UTR	9008159	9009378	.	-	.	ID "nbis-five_prime_utr-200"  ; Name PGSC0003DME400155338 ; Parent PGSC0003DMT400059026 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059026
+:DMv6.1_chr03	Liftoff	five_prime_UTR	9009498	9009741	.	-	.	ID "nbis-five_prime_utr-200"  ; Name PGSC0003DME400155338 ; Parent PGSC0003DMT400059026 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059094
+:DMv6.1_chr02	Liftoff	five_prime_UTR	31002680	31002728	.	+	.	ID "nbis-five_prime_utr-201"  ; Name PGSC0003DME400155518 ; Parent PGSC0003DMT400059094 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059094
+:DMv6.1_chr02	Liftoff	three_prime_UTR	31004584	31005109	.	+	.	ID "nbis-three_prime_utr-201"  ; Name PGSC0003DME400155518 ; Parent PGSC0003DMT400059094 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059108
+:DMv6.1_chr03	Liftoff	three_prime_UTR	36061318	36063577	.	-	.	ID "nbis-three_prime_utr-202"  ; Name PGSC0003DME400155554 ; Parent PGSC0003DMT400059108 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059108
+:DMv6.1_chr03	Liftoff	five_prime_UTR	36065056	36065101	.	-	.	ID "nbis-five_prime_utr-202"  ; Name PGSC0003DME400155554 ; Parent PGSC0003DMT400059108 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059108
+:DMv6.1_chr03	Liftoff	five_prime_UTR	36065554	36065568	.	-	.	ID "nbis-five_prime_utr-202"  ; Name PGSC0003DME400155554 ; Parent PGSC0003DMT400059108 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059322
+:DMv6.1_chr09	Liftoff	five_prime_UTR	33587534	33587645	.	+	.	ID "nbis-five_prime_utr-203"  ; Name PGSC0003DME400156067 ; Parent PGSC0003DMT400059322 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059322
+:DMv6.1_chr09	Liftoff	five_prime_UTR	33587757	33587856	.	+	.	ID "nbis-five_prime_utr-203"  ; Name PGSC0003DME400156067 ; Parent PGSC0003DMT400059322 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059322
+:DMv6.1_chr09	Liftoff	five_prime_UTR	33588178	33588256	.	+	.	ID "nbis-five_prime_utr-203"  ; Name PGSC0003DME400156067 ; Parent PGSC0003DMT400059322 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059322
+:DMv6.1_chr09	Liftoff	five_prime_UTR	33588645	33588765	.	+	.	ID "nbis-five_prime_utr-203"  ; Name PGSC0003DME400156067 ; Parent PGSC0003DMT400059322 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059322
+:DMv6.1_chr09	Liftoff	five_prime_UTR	33589039	33589218	.	+	.	ID "nbis-five_prime_utr-203"  ; Name PGSC0003DME400156067 ; Parent PGSC0003DMT400059322 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059322
+:DMv6.1_chr09	Liftoff	three_prime_UTR	33589678	33590317	.	+	.	ID "nbis-three_prime_utr-203"  ; Name PGSC0003DME400156067 ; Parent PGSC0003DMT400059322 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059322
+:DMv6.1_chr09	Liftoff	three_prime_UTR	33590545	33590692	.	+	.	ID "nbis-three_prime_utr-203"  ; Name PGSC0003DME400156067 ; Parent PGSC0003DMT400059322 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059322
+:DMv6.1_chr09	Liftoff	three_prime_UTR	33592647	33593582	.	+	.	ID "nbis-three_prime_utr-203"  ; Name PGSC0003DME400156067 ; Parent PGSC0003DMT400059322 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059327
+:DMv6.1_chr05	Liftoff	three_prime_UTR	5413568	5413621	.	-	.	ID "nbis-three_prime_utr-204"  ; Name PGSC0003DME400156080 ; Parent PGSC0003DMT400059327 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059327
+:DMv6.1_chr05	Liftoff	five_prime_UTR	5414732	5414799	.	-	.	ID "nbis-five_prime_utr-204"  ; Name PGSC0003DME400156080 ; Parent PGSC0003DMT400059327 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059397
+:DMv6.1_chr09	Liftoff	three_prime_UTR	8294218	8294666	.	-	.	ID "nbis-three_prime_utr-205"  ; Name PGSC0003DME400156259 ; Parent PGSC0003DMT400059397 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059397
+:DMv6.1_chr09	Liftoff	five_prime_UTR	8301834	8302000	.	-	.	ID "nbis-five_prime_utr-205"  ; Name PGSC0003DME400156259 ; Parent PGSC0003DMT400059397 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059506
+:DMv6.1_chr04	Liftoff	three_prime_UTR	46962997	46963321	.	-	.	ID "nbis-three_prime_utr-206"  ; Name PGSC0003DME400156515 ; Parent PGSC0003DMT400059506 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059506
+:DMv6.1_chr04	Liftoff	five_prime_UTR	46964369	46964482	.	-	.	ID "nbis-five_prime_utr-206"  ; Name PGSC0003DME400156515 ; Parent PGSC0003DMT400059506 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059506
+:DMv6.1_chr04	Liftoff	five_prime_UTR	46964558	46964687	.	-	.	ID "nbis-five_prime_utr-206"  ; Name PGSC0003DME400156515 ; Parent PGSC0003DMT400059506 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059506
+:DMv6.1_chr04	Liftoff	five_prime_UTR	46972282	46972597	.	-	.	ID "nbis-five_prime_utr-206"  ; Name PGSC0003DME400156515 ; Parent PGSC0003DMT400059506 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059555
+:DMv6.1_chr11	Liftoff	three_prime_UTR	32100960	32101331	.	-	.	ID "nbis-three_prime_utr-207"  ; Name PGSC0003DME400156655 ; Parent PGSC0003DMT400059555 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400059555
+:DMv6.1_chr11	Liftoff	five_prime_UTR	32101497	32101682	.	-	.	ID "nbis-five_prime_utr-207"  ; Name PGSC0003DME400156655 ; Parent PGSC0003DMT400059555 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400060042
+:DMv6.1_chr05	Liftoff	three_prime_UTR	54545644	54549202	.	-	.	ID "nbis-three_prime_utr-208"  ; Name PGSC0003DME400157830 ; Parent PGSC0003DMT400060042 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400060042
+:DMv6.1_chr05	Liftoff	five_prime_UTR	54550947	54551055	.	-	.	ID "nbis-five_prime_utr-208"  ; Name PGSC0003DME400157830 ; Parent PGSC0003DMT400060042 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400060100
+:DMv6.1_chr05	Liftoff	three_prime_UTR	54326907	54328554	.	-	.	ID "nbis-three_prime_utr-209"  ; Name PGSC0003DME400157979 ; Parent PGSC0003DMT400060100 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400060100
+:DMv6.1_chr05	Liftoff	five_prime_UTR	54328840	54330204	.	-	.	ID "nbis-five_prime_utr-209"  ; Name PGSC0003DME400157979 ; Parent PGSC0003DMT400060100 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400060115
+:DMv6.1_chr05	Liftoff	three_prime_UTR	54257620	54258465	.	-	.	ID "nbis-three_prime_utr-210"  ; Name PGSC0003DME400158015 ; Parent PGSC0003DMT400060115 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400060115
+:DMv6.1_chr05	Liftoff	five_prime_UTR	54259006	54260070	.	-	.	ID "nbis-five_prime_utr-210"  ; Name PGSC0003DME400158015 ; Parent PGSC0003DMT400060115 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400062269
+:DMv6.1_chr08	Liftoff	five_prime_UTR	52466449	52466531	.	+	.	ID "nbis-five_prime_utr-211"  ; Name PGSC0003DME400163727 ; Parent PGSC0003DMT400062269 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400062269
+:DMv6.1_chr08	Liftoff	three_prime_UTR	52466796	52468663	.	+	.	ID "nbis-three_prime_utr-211"  ; Name PGSC0003DME400163727 ; Parent PGSC0003DMT400062269 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400062383
+:DMv6.1_chr12	Liftoff	five_prime_UTR	54048621	54048711	.	+	.	ID "nbis-five_prime_utr-212"  ; Name PGSC0003DME400164041 ; Parent PGSC0003DMT400062383 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400062383
+:DMv6.1_chr12	Liftoff	five_prime_UTR	54050746	54051103	.	+	.	ID "nbis-five_prime_utr-212"  ; Name PGSC0003DME400164041 ; Parent PGSC0003DMT400062383 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400062383
+:DMv6.1_chr12	Liftoff	three_prime_UTR	54051536	54051962	.	+	.	ID "nbis-three_prime_utr-212"  ; Name PGSC0003DME400164041 ; Parent PGSC0003DMT400062383 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400062906
+:DMv6.1_chr03	Liftoff	five_prime_UTR	52541757	52541849	.	+	.	ID "nbis-five_prime_utr-213"  ; Name PGSC0003DME400165319 ; Parent PGSC0003DMT400062906 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400062906
+:DMv6.1_chr03	Liftoff	three_prime_UTR	52542300	52542339	.	+	.	ID "nbis-three_prime_utr-213"  ; Name PGSC0003DME400165319 ; Parent PGSC0003DMT400062906 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400062906
+:DMv6.1_chr03	Liftoff	three_prime_UTR	52542429	52545430	.	+	.	ID "nbis-three_prime_utr-213"  ; Name PGSC0003DME400165319 ; Parent PGSC0003DMT400062906 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400063313
+:DMv6.1_chr03	Liftoff	three_prime_UTR	53459767	53459978	.	-	.	ID "nbis-three_prime_utr-214"  ; Name PGSC0003DME400166412 ; Parent PGSC0003DMT400063313 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400063313
+:DMv6.1_chr03	Liftoff	five_prime_UTR	53466940	53467026	.	-	.	ID "nbis-five_prime_utr-214"  ; Name PGSC0003DME400166412 ; Parent PGSC0003DMT400063313 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400063946
+:DMv6.1_chr04	Liftoff	five_prime_UTR	55697875	55698025	.	+	.	ID "nbis-five_prime_utr-215"  ; Name PGSC0003DME400168137 ; Parent PGSC0003DMT400063946 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400063946
+:DMv6.1_chr04	Liftoff	five_prime_UTR	55704009	55704018	.	+	.	ID "nbis-five_prime_utr-215"  ; Name PGSC0003DME400168137 ; Parent PGSC0003DMT400063946 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400063946
+:DMv6.1_chr04	Liftoff	three_prime_UTR	55704226	55704816	.	+	.	ID "nbis-three_prime_utr-215"  ; Name PGSC0003DME400168137 ; Parent PGSC0003DMT400063946 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400064008
+:DMv6.1_chr01	Liftoff	five_prime_UTR	80610940	80611051	.	+	.	ID "nbis-five_prime_utr-216"  ; Name PGSC0003DME400168318 ; Parent PGSC0003DMT400064008 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400064008
+:DMv6.1_chr01	Liftoff	three_prime_UTR	80618206	80618333	.	+	.	ID "nbis-three_prime_utr-216"  ; Name PGSC0003DME400168318 ; Parent PGSC0003DMT400064008 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400064078
+:DMv6.1_chr01	Liftoff	three_prime_UTR	81041707	81041807	.	-	.	ID "nbis-three_prime_utr-217"  ; Name PGSC0003DME400168556 ; Parent PGSC0003DMT400064078 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400064078
+:DMv6.1_chr01	Liftoff	five_prime_UTR	81042120	81043061	.	-	.	ID "nbis-five_prime_utr-217"  ; Name PGSC0003DME400168556 ; Parent PGSC0003DMT400064078 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400064098
+:DMv6.1_chr01	Liftoff	three_prime_UTR	80542247	80543347	.	-	.	ID "nbis-three_prime_utr-218"  ; Name PGSC0003DME400168634 ; Parent PGSC0003DMT400064098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400064098
+:DMv6.1_chr01	Liftoff	five_prime_UTR	80543585	80543872	.	-	.	ID "nbis-five_prime_utr-218"  ; Name PGSC0003DME400168634 ; Parent PGSC0003DMT400064098 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400064404
+:DMv6.1_chr10	Liftoff	three_prime_UTR	1562751	1565593	.	-	.	ID "nbis-three_prime_utr-219"  ; Name PGSC0003DME400169437 ; Parent PGSC0003DMT400064404 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400064404
+:DMv6.1_chr10	Liftoff	five_prime_UTR	1565963	1566100	.	-	.	ID "nbis-five_prime_utr-219"  ; Name PGSC0003DME400169437 ; Parent PGSC0003DMT400064404 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400065000
+:DMv6.1_chr01	Liftoff	three_prime_UTR	67687312	67687896	.	-	.	ID "nbis-three_prime_utr-220"  ; Name PGSC0003DME400171093 ; Parent PGSC0003DMT400065000 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400065000
+:DMv6.1_chr01	Liftoff	five_prime_UTR	67688521	67690092	.	-	.	ID "nbis-five_prime_utr-220"  ; Name PGSC0003DME400171093 ; Parent PGSC0003DMT400065000 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400066285
+:DMv6.1_chr01	Liftoff	five_prime_UTR	84779635	84781927	.	+	.	ID "nbis-five_prime_utr-221"  ; Name PGSC0003DME400174404 ; Parent PGSC0003DMT400066285 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400066285
+:DMv6.1_chr01	Liftoff	five_prime_UTR	84782112	84783351	.	+	.	ID "nbis-five_prime_utr-221"  ; Name PGSC0003DME400174404 ; Parent PGSC0003DMT400066285 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400066285
+:DMv6.1_chr01	Liftoff	five_prime_UTR	84783783	84783847	.	+	.	ID "nbis-five_prime_utr-221"  ; Name PGSC0003DME400174404 ; Parent PGSC0003DMT400066285 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400066285
+:DMv6.1_chr01	Liftoff	three_prime_UTR	84784224	84784709	.	+	.	ID "nbis-three_prime_utr-221"  ; Name PGSC0003DME400174404 ; Parent PGSC0003DMT400066285 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400066285
+:DMv6.1_chr01	Liftoff	three_prime_UTR	84785389	84785567	.	+	.	ID "nbis-three_prime_utr-221"  ; Name PGSC0003DME400174404 ; Parent PGSC0003DMT400066285 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400066938
+:DMv6.1_chr01	Liftoff	five_prime_UTR	71341731	71341821	.	+	.	ID "nbis-five_prime_utr-222"  ; Name PGSC0003DME400176095 ; Parent PGSC0003DMT400066938 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400066938
+:DMv6.1_chr01	Liftoff	three_prime_UTR	71350486	71350924	.	+	.	ID "nbis-three_prime_utr-222"  ; Name PGSC0003DME400176095 ; Parent PGSC0003DMT400066938 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067393
+:DMv6.1_chr07	Liftoff	five_prime_UTR	48694764	48694971	.	+	.	ID "nbis-five_prime_utr-223"  ; Name PGSC0003DME400177392 ; Parent PGSC0003DMT400067393 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067393
+:DMv6.1_chr07	Liftoff	five_prime_UTR	48700744	48700801	.	+	.	ID "nbis-five_prime_utr-223"  ; Name PGSC0003DME400177392 ; Parent PGSC0003DMT400067393 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067393
+:DMv6.1_chr07	Liftoff	three_prime_UTR	48701263	48701572	.	+	.	ID "nbis-three_prime_utr-223"  ; Name PGSC0003DME400177392 ; Parent PGSC0003DMT400067393 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067393
+:DMv6.1_chr07	Liftoff	three_prime_UTR	48701670	48701731	.	+	.	ID "nbis-three_prime_utr-223"  ; Name PGSC0003DME400177392 ; Parent PGSC0003DMT400067393 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067393
+:DMv6.1_chr07	Liftoff	three_prime_UTR	48701833	48701932	.	+	.	ID "nbis-three_prime_utr-223"  ; Name PGSC0003DME400177392 ; Parent PGSC0003DMT400067393 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067393
+:DMv6.1_chr07	Liftoff	three_prime_UTR	48702021	48702071	.	+	.	ID "nbis-three_prime_utr-223"  ; Name PGSC0003DME400177392 ; Parent PGSC0003DMT400067393 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067393
+:DMv6.1_chr07	Liftoff	three_prime_UTR	48702168	48702204	.	+	.	ID "nbis-three_prime_utr-223"  ; Name PGSC0003DME400177392 ; Parent PGSC0003DMT400067393 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067393
+:DMv6.1_chr07	Liftoff	three_prime_UTR	48702505	48702886	.	+	.	ID "nbis-three_prime_utr-223"  ; Name PGSC0003DME400177392 ; Parent PGSC0003DMT400067393 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067429
+:DMv6.1_chr08	Liftoff	five_prime_UTR	53345874	53345907	.	+	.	ID "nbis-five_prime_utr-224"  ; Name PGSC0003DME400177467 ; Parent PGSC0003DMT400067429 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067429
+:DMv6.1_chr08	Liftoff	three_prime_UTR	53350391	53350572	.	+	.	ID "nbis-three_prime_utr-224"  ; Name PGSC0003DME400177467 ; Parent PGSC0003DMT400067429 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067863
+:DMv6.1_chr02	Liftoff	three_prime_UTR	39057997	39058201	.	-	.	ID "nbis-three_prime_utr-225"  ; Name PGSC0003DME400178673 ; Parent PGSC0003DMT400067863 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067863
+:DMv6.1_chr02	Liftoff	five_prime_UTR	39058367	39058395	.	-	.	ID "nbis-five_prime_utr-225"  ; Name PGSC0003DME400178673 ; Parent PGSC0003DMT400067863 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067863
+:DMv6.1_chr02	Liftoff	five_prime_UTR	39061555	39061620	.	-	.	ID "nbis-five_prime_utr-225"  ; Name PGSC0003DME400178673 ; Parent PGSC0003DMT400067863 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400067863
+:DMv6.1_chr02	Liftoff	five_prime_UTR	39061715	39061895	.	-	.	ID "nbis-five_prime_utr-225"  ; Name PGSC0003DME400178673 ; Parent PGSC0003DMT400067863 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400068885
+:DMv6.1_chr09	Liftoff	three_prime_UTR	17242462	17242543	.	-	.	ID "nbis-three_prime_utr-226"  ; Name PGSC0003DME400181327 ; Parent PGSC0003DMT400068885 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400068885
+:DMv6.1_chr09	Liftoff	five_prime_UTR	17242976	17244929	.	-	.	ID "nbis-five_prime_utr-226"  ; Name PGSC0003DME400181327 ; Parent PGSC0003DMT400068885 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400069023
+:DMv6.1_chr08	Liftoff	five_prime_UTR	46022104	46022115	.	+	.	ID "nbis-five_prime_utr-227"  ; Name PGSC0003DME400181625 ; Parent PGSC0003DMT400069023 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400069023
+:DMv6.1_chr08	Liftoff	three_prime_UTR	46022440	46022671	.	+	.	ID "nbis-three_prime_utr-227"  ; Name PGSC0003DME400181625 ; Parent PGSC0003DMT400069023 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400069023
+:DMv6.1_chr08	Liftoff	three_prime_UTR	46022770	46022930	.	+	.	ID "nbis-three_prime_utr-227"  ; Name PGSC0003DME400181625 ; Parent PGSC0003DMT400069023 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400069023
+:DMv6.1_chr08	Liftoff	three_prime_UTR	46024333	46024562	.	+	.	ID "nbis-three_prime_utr-227"  ; Name PGSC0003DME400181625 ; Parent PGSC0003DMT400069023 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400069116
+:DMv6.1_chr10	Liftoff	five_prime_UTR	2747072	2747106	.	+	.	ID "nbis-five_prime_utr-228"  ; Name PGSC0003DME400181836 ; Parent PGSC0003DMT400069116 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400069116
+:DMv6.1_chr10	Liftoff	three_prime_UTR	2752601	2752640	.	+	.	ID "nbis-three_prime_utr-228"  ; Name PGSC0003DME400181836 ; Parent PGSC0003DMT400069116 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400069858
+:DMv6.1_chr05	Liftoff	three_prime_UTR	51958599	51959849	.	-	.	ID "nbis-three_prime_utr-229"  ; Name PGSC0003DME400183942 ; Parent PGSC0003DMT400069858 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400069858
+:DMv6.1_chr05	Liftoff	five_prime_UTR	51960093	51960295	.	-	.	ID "nbis-five_prime_utr-229"  ; Name PGSC0003DME400183942 ; Parent PGSC0003DMT400069858 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070283
+:DMv6.1_chr11	Liftoff	three_prime_UTR	5054463	5054966	.	-	.	ID "nbis-three_prime_utr-230"  ; Name PGSC0003DME400185158 ; Parent PGSC0003DMT400070283 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070283
+:DMv6.1_chr11	Liftoff	three_prime_UTR	5055038	5055167	.	-	.	ID "nbis-three_prime_utr-230"  ; Name PGSC0003DME400185158 ; Parent PGSC0003DMT400070283 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070283
+:DMv6.1_chr11	Liftoff	three_prime_UTR	5055352	5055471	.	-	.	ID "nbis-three_prime_utr-230"  ; Name PGSC0003DME400185158 ; Parent PGSC0003DMT400070283 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070283
+:DMv6.1_chr11	Liftoff	five_prime_UTR	5055754	5055850	.	-	.	ID "nbis-five_prime_utr-230"  ; Name PGSC0003DME400185158 ; Parent PGSC0003DMT400070283 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070283
+:DMv6.1_chr11	Liftoff	five_prime_UTR	5055959	5056009	.	-	.	ID "nbis-five_prime_utr-230"  ; Name PGSC0003DME400185158 ; Parent PGSC0003DMT400070283 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070283
+:DMv6.1_chr11	Liftoff	five_prime_UTR	5056971	5057094	.	-	.	ID "nbis-five_prime_utr-230"  ; Name PGSC0003DME400185158 ; Parent PGSC0003DMT400070283 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070402
+:DMv6.1_chr11	Liftoff	three_prime_UTR	45572896	45573081	.	-	.	ID "nbis-three_prime_utr-231"  ; Name PGSC0003DME400185506 ; Parent PGSC0003DMT400070402 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070402
+:DMv6.1_chr11	Liftoff	five_prime_UTR	45573871	45574394	.	-	.	ID "nbis-five_prime_utr-231"  ; Name PGSC0003DME400185506 ; Parent PGSC0003DMT400070402 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070699
+:DMv6.1_chr07	Liftoff	five_prime_UTR	2178156	2178332	.	-	.	ID "nbis-five_prime_utr-232"  ; Name PGSC0003DME400186274 ; Parent PGSC0003DMT400070699 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070973
+:DMv6.1_chr06	Liftoff	five_prime_UTR	35556460	35556725	.	+	.	ID "nbis-five_prime_utr-233"  ; Name PGSC0003DME400187088 ; Parent PGSC0003DMT400070973 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070973
+:DMv6.1_chr06	Liftoff	three_prime_UTR	35557587	35559563	.	+	.	ID "nbis-three_prime_utr-232"  ; Name PGSC0003DME400187088 ; Parent PGSC0003DMT400070973 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400070973
+:DMv6.1_chr06	Liftoff	three_prime_UTR	35559654	35562557	.	+	.	ID "nbis-three_prime_utr-232"  ; Name PGSC0003DME400187088 ; Parent PGSC0003DMT400070973 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071034
+:DMv6.1_chr11	Liftoff	five_prime_UTR	13300679	13301941	.	+	.	ID "nbis-five_prime_utr-234"  ; Name PGSC0003DME400187245 ; Parent PGSC0003DMT400071034 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071034
+:DMv6.1_chr11	Liftoff	three_prime_UTR	13302188	13302390	.	+	.	ID "nbis-three_prime_utr-233"  ; Name PGSC0003DME400187245 ; Parent PGSC0003DMT400071034 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071037
+:DMv6.1_chr07	Liftoff	three_prime_UTR	52978166	52979352	.	-	.	ID "nbis-three_prime_utr-234"  ; Name PGSC0003DME400187251 ; Parent PGSC0003DMT400071037 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071037
+:DMv6.1_chr07	Liftoff	five_prime_UTR	52984550	52984611	.	-	.	ID "nbis-five_prime_utr-235"  ; Name PGSC0003DME400187251 ; Parent PGSC0003DMT400071037 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071404
+:DMv6.1_chr01	Liftoff	five_prime_UTR	72086507	72086837	.	+	.	ID "nbis-five_prime_utr-236"  ; Name PGSC0003DME400188286 ; Parent PGSC0003DMT400071404 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071404
+:DMv6.1_chr01	Liftoff	three_prime_UTR	72087960	72091165	.	+	.	ID "nbis-three_prime_utr-235"  ; Name PGSC0003DME400188286 ; Parent PGSC0003DMT400071404 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071437
+:DMv6.1_chr11	Liftoff	three_prime_UTR	10329118	10329443	.	-	.	ID "nbis-three_prime_utr-236"  ; Name PGSC0003DME400188383 ; Parent PGSC0003DMT400071437 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071437
+:DMv6.1_chr11	Liftoff	five_prime_UTR	10337871	10338004	.	-	.	ID "nbis-five_prime_utr-237"  ; Name PGSC0003DME400188383 ; Parent PGSC0003DMT400071437 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071493
+:DMv6.1_chr03	Liftoff	five_prime_UTR	1076195	1076362	.	+	.	ID "nbis-five_prime_utr-238"  ; Name PGSC0003DME400188511 ; Parent PGSC0003DMT400071493 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071493
+:DMv6.1_chr03	Liftoff	five_prime_UTR	1076437	1076630	.	+	.	ID "nbis-five_prime_utr-238"  ; Name PGSC0003DME400188511 ; Parent PGSC0003DMT400071493 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071493
+:DMv6.1_chr03	Liftoff	five_prime_UTR	1078684	1078765	.	+	.	ID "nbis-five_prime_utr-238"  ; Name PGSC0003DME400188511 ; Parent PGSC0003DMT400071493 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071493
+:DMv6.1_chr03	Liftoff	five_prime_UTR	1078860	1079315	.	+	.	ID "nbis-five_prime_utr-238"  ; Name PGSC0003DME400188511 ; Parent PGSC0003DMT400071493 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071493
+:DMv6.1_chr03	Liftoff	three_prime_UTR	1079535	1080053	.	+	.	ID "nbis-three_prime_utr-237"  ; Name PGSC0003DME400188511 ; Parent PGSC0003DMT400071493 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071493
+:DMv6.1_chr03	Liftoff	three_prime_UTR	1080553	1080865	.	+	.	ID "nbis-three_prime_utr-237"  ; Name PGSC0003DME400188511 ; Parent PGSC0003DMT400071493 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071571
+:DMv6.1_chr01	Liftoff	five_prime_UTR	58832237	58833182	.	+	.	ID "nbis-five_prime_utr-239"  ; Name PGSC0003DME400188673 ; Parent PGSC0003DMT400071571 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071571
+:DMv6.1_chr01	Liftoff	three_prime_UTR	58833510	58836610	.	+	.	ID "nbis-three_prime_utr-238"  ; Name PGSC0003DME400188673 ; Parent PGSC0003DMT400071571 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071781
+:DMv6.1_chr04	Liftoff	three_prime_UTR	18275522	18276363	.	-	.	ID "nbis-three_prime_utr-239"  ; Name PGSC0003DME400189266 ; Parent PGSC0003DMT400071781 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071781
+:DMv6.1_chr04	Liftoff	five_prime_UTR	18277138	18277246	.	-	.	ID "nbis-five_prime_utr-240"  ; Name PGSC0003DME400189266 ; Parent PGSC0003DMT400071781 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071930
+:DMv6.1_chr07	Liftoff	five_prime_UTR	25170867	25170991	.	+	.	ID "nbis-five_prime_utr-241"  ; Name PGSC0003DME400189591 ; Parent PGSC0003DMT400071930 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400071930
+:DMv6.1_chr07	Liftoff	three_prime_UTR	25180477	25180804	.	+	.	ID "nbis-three_prime_utr-240"  ; Name PGSC0003DME400189591 ; Parent PGSC0003DMT400071930 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072173
+:DMv6.1_chr01	Liftoff	five_prime_UTR	38045584	38045932	.	+	.	ID "nbis-five_prime_utr-242"  ; Name PGSC0003DME400190113 ; Parent PGSC0003DMT400072173 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072173
+:DMv6.1_chr01	Liftoff	three_prime_UTR	38047267	38047865	.	+	.	ID "nbis-three_prime_utr-241"  ; Name PGSC0003DME400190113 ; Parent PGSC0003DMT400072173 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072173
+:DMv6.1_chr01	Liftoff	three_prime_UTR	38047996	38048307	.	+	.	ID "nbis-three_prime_utr-241"  ; Name PGSC0003DME400190113 ; Parent PGSC0003DMT400072173 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072173
+:DMv6.1_chr01	Liftoff	three_prime_UTR	38048403	38048508	.	+	.	ID "nbis-three_prime_utr-241"  ; Name PGSC0003DME400190113 ; Parent PGSC0003DMT400072173 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072173
+:DMv6.1_chr01	Liftoff	three_prime_UTR	38049613	38049791	.	+	.	ID "nbis-three_prime_utr-241"  ; Name PGSC0003DME400190113 ; Parent PGSC0003DMT400072173 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072173
+:DMv6.1_chr01	Liftoff	three_prime_UTR	38050858	38050936	.	+	.	ID "nbis-three_prime_utr-241"  ; Name PGSC0003DME400190113 ; Parent PGSC0003DMT400072173 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072173
+:DMv6.1_chr01	Liftoff	three_prime_UTR	38051723	38051743	.	+	.	ID "nbis-three_prime_utr-241"  ; Name PGSC0003DME400190113 ; Parent PGSC0003DMT400072173 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072320
+:DMv6.1_chr10	Liftoff	three_prime_UTR	57023950	57024210	.	-	.	ID "nbis-three_prime_utr-242"  ; Name PGSC0003DME400190534 ; Parent PGSC0003DMT400072320 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072320
+:DMv6.1_chr10	Liftoff	five_prime_UTR	57030386	57030473	.	-	.	ID "nbis-five_prime_utr-243"  ; Name PGSC0003DME400190534 ; Parent PGSC0003DMT400072320 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072797
+:DMv6.1_chr05	Liftoff	three_prime_UTR	437414	437596	.	-	.	ID "nbis-three_prime_utr-243"  ; Name PGSC0003DME400191865 ; Parent PGSC0003DMT400072797 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072797
+:DMv6.1_chr05	Liftoff	five_prime_UTR	444977	445012	.	-	.	ID "nbis-five_prime_utr-244"  ; Name PGSC0003DME400191865 ; Parent PGSC0003DMT400072797 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072797
+:DMv6.1_chr05	Liftoff	five_prime_UTR	445629	445767	.	-	.	ID "nbis-five_prime_utr-244"  ; Name PGSC0003DME400191865 ; Parent PGSC0003DMT400072797 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072840
+:DMv6.1_chr05	Liftoff	three_prime_UTR	262079	262456	.	-	.	ID "nbis-three_prime_utr-244"  ; Name PGSC0003DME400191981 ; Parent PGSC0003DMT400072840 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072840
+:DMv6.1_chr05	Liftoff	five_prime_UTR	262802	263502	.	-	.	ID "nbis-five_prime_utr-245"  ; Name PGSC0003DME400191981 ; Parent PGSC0003DMT400072840 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072884
+:DMv6.1_chr05	Liftoff	five_prime_UTR	890808	890919	.	+	.	ID "nbis-five_prime_utr-246"  ; Name PGSC0003DME400192095 ; Parent PGSC0003DMT400072884 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072884
+:DMv6.1_chr05	Liftoff	five_prime_UTR	891009	891012	.	+	.	ID "nbis-five_prime_utr-246"  ; Name PGSC0003DME400192095 ; Parent PGSC0003DMT400072884 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072884
+:DMv6.1_chr05	Liftoff	three_prime_UTR	891235	891637	.	+	.	ID "nbis-three_prime_utr-245"  ; Name PGSC0003DME400192095 ; Parent PGSC0003DMT400072884 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072924
+:DMv6.1_chr05	Liftoff	five_prime_UTR	633046	633538	.	+	.	ID "nbis-five_prime_utr-247"  ; Name PGSC0003DME400192235 ; Parent PGSC0003DMT400072924 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072924
+:DMv6.1_chr05	Liftoff	three_prime_UTR	634757	634989	.	+	.	ID "nbis-three_prime_utr-246"  ; Name PGSC0003DME400192235 ; Parent PGSC0003DMT400072924 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072924
+:DMv6.1_chr05	Liftoff	three_prime_UTR	637250	637340	.	+	.	ID "nbis-three_prime_utr-246"  ; Name PGSC0003DME400192235 ; Parent PGSC0003DMT400072924 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072924
+:DMv6.1_chr05	Liftoff	three_prime_UTR	638097	638191	.	+	.	ID "nbis-three_prime_utr-246"  ; Name PGSC0003DME400192235 ; Parent PGSC0003DMT400072924 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400072924
+:DMv6.1_chr05	Liftoff	three_prime_UTR	639050	639776	.	+	.	ID "nbis-three_prime_utr-246"  ; Name PGSC0003DME400192235 ; Parent PGSC0003DMT400072924 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073134
+:DMv6.1_chr02	Liftoff	three_prime_UTR	29461192	29461485	.	-	.	ID "nbis-three_prime_utr-247"  ; Name PGSC0003DME400192788 ; Parent PGSC0003DMT400073134 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073134
+:DMv6.1_chr02	Liftoff	five_prime_UTR	29467825	29467832	.	-	.	ID "nbis-five_prime_utr-248"  ; Name PGSC0003DME400192788 ; Parent PGSC0003DMT400073134 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073134
+:DMv6.1_chr02	Liftoff	five_prime_UTR	29468040	29468168	.	-	.	ID "nbis-five_prime_utr-248"  ; Name PGSC0003DME400192788 ; Parent PGSC0003DMT400073134 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073298
+:DMv6.1_chr02	Liftoff	five_prime_UTR	29807515	29807628	.	+	.	ID "nbis-five_prime_utr-249"  ; Name PGSC0003DME400193203 ; Parent PGSC0003DMT400073298 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073298
+:DMv6.1_chr02	Liftoff	three_prime_UTR	29807932	29808703	.	+	.	ID "nbis-three_prime_utr-248"  ; Name PGSC0003DME400193203 ; Parent PGSC0003DMT400073298 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073404
+:DMv6.1_chr06	Liftoff	three_prime_UTR	50268585	50268786	.	-	.	ID "nbis-three_prime_utr-249"  ; Name PGSC0003DME400193487 ; Parent PGSC0003DMT400073404 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073404
+:DMv6.1_chr06	Liftoff	five_prime_UTR	50268943	50269257	.	-	.	ID "nbis-five_prime_utr-250"  ; Name PGSC0003DME400193487 ; Parent PGSC0003DMT400073404 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073734
+:DMv6.1_chr12	Liftoff	three_prime_UTR	11023423	11023715	.	-	.	ID "nbis-three_prime_utr-250"  ; Name PGSC0003DME400194423 ; Parent PGSC0003DMT400073734 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073734
+:DMv6.1_chr12	Liftoff	five_prime_UTR	11024118	11024122	.	-	.	ID "nbis-five_prime_utr-251"  ; Name PGSC0003DME400194423 ; Parent PGSC0003DMT400073734 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073734
+:DMv6.1_chr12	Liftoff	five_prime_UTR	11026223	11026302	.	-	.	ID "nbis-five_prime_utr-251"  ; Name PGSC0003DME400194423 ; Parent PGSC0003DMT400073734 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073734
+:DMv6.1_chr12	Liftoff	five_prime_UTR	11026634	11026680	.	-	.	ID "nbis-five_prime_utr-251"  ; Name PGSC0003DME400194423 ; Parent PGSC0003DMT400073734 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073734
+:DMv6.1_chr12	Liftoff	five_prime_UTR	11027105	11027196	.	-	.	ID "nbis-five_prime_utr-251"  ; Name PGSC0003DME400194423 ; Parent PGSC0003DMT400073734 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073888
+:DMv6.1_chr04	Liftoff	three_prime_UTR	45061194	45062043	.	-	.	ID "nbis-three_prime_utr-251"  ; Name PGSC0003DME400194894 ; Parent PGSC0003DMT400073888 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073888
+:DMv6.1_chr04	Liftoff	three_prime_UTR	45062156	45064066	.	-	.	ID "nbis-three_prime_utr-251"  ; Name PGSC0003DME400194894 ; Parent PGSC0003DMT400073888 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400073888
+:DMv6.1_chr04	Liftoff	five_prime_UTR	45064910	45068843	.	-	.	ID "nbis-five_prime_utr-252"  ; Name PGSC0003DME400194894 ; Parent PGSC0003DMT400073888 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074191
+:DMv6.1_chr12	Liftoff	five_prime_UTR	53610454	53610608	.	+	.	ID "nbis-five_prime_utr-253"  ; Name PGSC0003DME400195792 ; Parent PGSC0003DMT400074191 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074191
+:DMv6.1_chr12	Liftoff	three_prime_UTR	53617598	53618773	.	+	.	ID "nbis-three_prime_utr-252"  ; Name PGSC0003DME400195792 ; Parent PGSC0003DMT400074191 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074290
+:DMv6.1_chr08	Liftoff	three_prime_UTR	17565136	17565578	.	-	.	ID "nbis-three_prime_utr-253"  ; Name PGSC0003DME400196084 ; Parent PGSC0003DMT400074290 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074290
+:DMv6.1_chr08	Liftoff	five_prime_UTR	17566667	17566798	.	-	.	ID "nbis-five_prime_utr-254"  ; Name PGSC0003DME400196084 ; Parent PGSC0003DMT400074290 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074348
+:DMv6.1_chr06	Liftoff	three_prime_UTR	38366638	38367051	.	-	.	ID "nbis-three_prime_utr-254"  ; Name PGSC0003DME400196235 ; Parent PGSC0003DMT400074348 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074348
+:DMv6.1_chr06	Liftoff	five_prime_UTR	38367682	38368125	.	-	.	ID "nbis-five_prime_utr-255"  ; Name PGSC0003DME400196235 ; Parent PGSC0003DMT400074348 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074348
+:DMv6.1_chr06	Liftoff	five_prime_UTR	38369537	38369938	.	-	.	ID "nbis-five_prime_utr-255"  ; Name PGSC0003DME400196235 ; Parent PGSC0003DMT400074348 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074629
+:DMv6.1_chr10	Liftoff	five_prime_UTR	37830529	37830613	.	+	.	ID "nbis-five_prime_utr-256"  ; Name PGSC0003DME400196984 ; Parent PGSC0003DMT400074629 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074629
+:DMv6.1_chr10	Liftoff	three_prime_UTR	37837981	37838681	.	+	.	ID "nbis-three_prime_utr-255"  ; Name PGSC0003DME400196984 ; Parent PGSC0003DMT400074629 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074931
+:DMv6.1_chr08	Liftoff	three_prime_UTR	42012269	42013362	.	-	.	ID "nbis-three_prime_utr-256"  ; Name PGSC0003DME400197714 ; Parent PGSC0003DMT400074931 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074931
+:DMv6.1_chr08	Liftoff	three_prime_UTR	42020949	42020967	.	-	.	ID "nbis-three_prime_utr-256"  ; Name PGSC0003DME400197714 ; Parent PGSC0003DMT400074931 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400074931
+:DMv6.1_chr08	Liftoff	five_prime_UTR	42021317	42021464	.	-	.	ID "nbis-five_prime_utr-257"  ; Name PGSC0003DME400197714 ; Parent PGSC0003DMT400074931 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400075779
+:DMv6.1_chr04	Liftoff	three_prime_UTR	3868504	3868936	.	-	.	ID "nbis-three_prime_utr-257"  ; Name PGSC0003DME400199968 ; Parent PGSC0003DMT400075779 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400075779
+:DMv6.1_chr04	Liftoff	three_prime_UTR	3871559	3871573	.	-	.	ID "nbis-three_prime_utr-257"  ; Name PGSC0003DME400199968 ; Parent PGSC0003DMT400075779 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400075779
+:DMv6.1_chr04	Liftoff	five_prime_UTR	3871909	3871981	.	-	.	ID "nbis-five_prime_utr-258"  ; Name PGSC0003DME400199968 ; Parent PGSC0003DMT400075779 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400075981
+:DMv6.1_chr08	Liftoff	five_prime_UTR	47342051	47342161	.	+	.	ID "nbis-five_prime_utr-259"  ; Name PGSC0003DME400200445 ; Parent PGSC0003DMT400075981 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400075981
+:DMv6.1_chr08	Liftoff	three_prime_UTR	47348314	47348823	.	+	.	ID "nbis-three_prime_utr-258"  ; Name PGSC0003DME400200445 ; Parent PGSC0003DMT400075981 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400076046
+:DMv6.1_chr08	Liftoff	five_prime_UTR	47769633	47769663	.	+	.	ID "nbis-five_prime_utr-260"  ; Name PGSC0003DME400200634 ; Parent PGSC0003DMT400076046 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400076046
+:DMv6.1_chr08	Liftoff	three_prime_UTR	47776851	47776955	.	+	.	ID "nbis-three_prime_utr-259"  ; Name PGSC0003DME400200634 ; Parent PGSC0003DMT400076046 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400076401
+:DMv6.1_chr02	Liftoff	five_prime_UTR	31838671	31839012	.	+	.	ID "nbis-five_prime_utr-261"  ; Name PGSC0003DME400201730 ; Parent PGSC0003DMT400076401 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400076401
+:DMv6.1_chr02	Liftoff	three_prime_UTR	31839247	31840302	.	+	.	ID "nbis-three_prime_utr-260"  ; Name PGSC0003DME400201730 ; Parent PGSC0003DMT400076401 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400076410
+:DMv6.1_chr08	Liftoff	five_prime_UTR	44533683	44534291	.	+	.	ID "nbis-five_prime_utr-262"  ; Name PGSC0003DME400201755 ; Parent PGSC0003DMT400076410 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400076410
+:DMv6.1_chr08	Liftoff	three_prime_UTR	44535526	44535746	.	+	.	ID "nbis-three_prime_utr-261"  ; Name PGSC0003DME400201755 ; Parent PGSC0003DMT400076410 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400077256
+:DMv6.1_chr04	Liftoff	five_prime_UTR	17044835	17044964	.	+	.	ID "nbis-five_prime_utr-263"  ; Name PGSC0003DME400203946 ; Parent PGSC0003DMT400077256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400077256
+:DMv6.1_chr04	Liftoff	three_prime_UTR	17045211	17048083	.	+	.	ID "nbis-three_prime_utr-262"  ; Name PGSC0003DME400203946 ; Parent PGSC0003DMT400077256 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400077503
+:DMv6.1_chr06	Liftoff	three_prime_UTR	10327848	10328228	.	-	.	ID "nbis-three_prime_utr-263"  ; Name PGSC0003DME400204571 ; Parent PGSC0003DMT400077503 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400077503
+:DMv6.1_chr06	Liftoff	five_prime_UTR	10334582	10334689	.	-	.	ID "nbis-five_prime_utr-264"  ; Name PGSC0003DME400204571 ; Parent PGSC0003DMT400077503 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400077725
+:DMv6.1_chr11	Liftoff	three_prime_UTR	45632871	45632928	.	-	.	ID "nbis-three_prime_utr-264"  ; Name PGSC0003DME400205113 ; Parent PGSC0003DMT400077725 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400077725
+:DMv6.1_chr11	Liftoff	five_prime_UTR	45633208	45633274	.	-	.	ID "nbis-five_prime_utr-265"  ; Name PGSC0003DME400205113 ; Parent PGSC0003DMT400077725 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400078042
+:DMv6.1_chr06	Liftoff	five_prime_UTR	56972431	56972542	.	+	.	ID "nbis-five_prime_utr-266"  ; Name PGSC0003DME400205877 ; Parent PGSC0003DMT400078042 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400078042
+:DMv6.1_chr06	Liftoff	three_prime_UTR	56972948	56973322	.	+	.	ID "nbis-three_prime_utr-265"  ; Name PGSC0003DME400205877 ; Parent PGSC0003DMT400078042 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400078042
+:DMv6.1_chr06	Liftoff	three_prime_UTR	56975631	56975764	.	+	.	ID "nbis-three_prime_utr-265"  ; Name PGSC0003DME400205877 ; Parent PGSC0003DMT400078042 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400078172
+:DMv6.1_chr06	Liftoff	three_prime_UTR	56356398	56357358	.	-	.	ID "nbis-three_prime_utr-266"  ; Name PGSC0003DME400206236 ; Parent PGSC0003DMT400078172 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400078172
+:DMv6.1_chr06	Liftoff	five_prime_UTR	56358166	56359568	.	-	.	ID "nbis-five_prime_utr-267"  ; Name PGSC0003DME400206236 ; Parent PGSC0003DMT400078172 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400078562
+:DMv6.1_chr05	Liftoff	five_prime_UTR	3348567	3349335	.	+	.	ID "nbis-five_prime_utr-268"  ; Name PGSC0003DME400207302 ; Parent PGSC0003DMT400078562 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400078562
+:DMv6.1_chr05	Liftoff	three_prime_UTR	3349672	3349943	.	+	.	ID "nbis-three_prime_utr-267"  ; Name PGSC0003DME400207302 ; Parent PGSC0003DMT400078562 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079005
+:DMv6.1_chr07	Liftoff	five_prime_UTR	2877821	2878053	.	+	.	ID "nbis-five_prime_utr-269"  ; Name PGSC0003DME400208435 ; Parent PGSC0003DMT400079005 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079005
+:DMv6.1_chr07	Liftoff	three_prime_UTR	2878357	2879798	.	+	.	ID "nbis-three_prime_utr-268"  ; Name PGSC0003DME400208435 ; Parent PGSC0003DMT400079005 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079186
+:DMv6.1_chr04	Liftoff	five_prime_UTR	61557643	61557766	.	+	.	ID "nbis-five_prime_utr-270"  ; Name PGSC0003DME400208906 ; Parent PGSC0003DMT400079186 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079186
+:DMv6.1_chr04	Liftoff	five_prime_UTR	61563033	61563247	.	+	.	ID "nbis-five_prime_utr-270"  ; Name PGSC0003DME400208906 ; Parent PGSC0003DMT400079186 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079186
+:DMv6.1_chr04	Liftoff	three_prime_UTR	61564094	61564502	.	+	.	ID "nbis-three_prime_utr-269"  ; Name PGSC0003DME400208906 ; Parent PGSC0003DMT400079186 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079416
+:DMv6.1_chr07	Liftoff	three_prime_UTR	4026648	4030121	.	-	.	ID "nbis-three_prime_utr-270"  ; Name PGSC0003DME400209524 ; Parent PGSC0003DMT400079416 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079416
+:DMv6.1_chr07	Liftoff	five_prime_UTR	4030966	4031003	.	-	.	ID "nbis-five_prime_utr-271"  ; Name PGSC0003DME400209524 ; Parent PGSC0003DMT400079416 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079558
+:DMv6.1_chr05	Liftoff	five_prime_UTR	8477838	8477863	.	+	.	ID "nbis-five_prime_utr-272"  ; Name PGSC0003DME400209978 ; Parent PGSC0003DMT400079558 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400079558
+:DMv6.1_chr05	Liftoff	three_prime_UTR	8486501	8486663	.	+	.	ID "nbis-three_prime_utr-271"  ; Name PGSC0003DME400209978 ; Parent PGSC0003DMT400079558 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080145
+:DMv6.1_chr04	Liftoff	three_prime_UTR	52651449	52651962	.	-	.	ID "nbis-three_prime_utr-272"  ; Name PGSC0003DME400211725 ; Parent PGSC0003DMT400080145 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080145
+:DMv6.1_chr04	Liftoff	five_prime_UTR	52653535	52653543	.	-	.	ID "nbis-five_prime_utr-273"  ; Name PGSC0003DME400211725 ; Parent PGSC0003DMT400080145 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080145
+:DMv6.1_chr04	Liftoff	five_prime_UTR	52653963	52656128	.	-	.	ID "nbis-five_prime_utr-273"  ; Name PGSC0003DME400211725 ; Parent PGSC0003DMT400080145 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080294
+:DMv6.1_chr05	Liftoff	three_prime_UTR	4876695	4876940	.	-	.	ID "nbis-three_prime_utr-273"  ; Name PGSC0003DME400212125 ; Parent PGSC0003DMT400080294 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080294
+:DMv6.1_chr05	Liftoff	five_prime_UTR	4877830	4881820	.	-	.	ID "nbis-five_prime_utr-274"  ; Name PGSC0003DME400212125 ; Parent PGSC0003DMT400080294 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080311
+:DMv6.1_chr05	Liftoff	three_prime_UTR	4866174	4867042	.	-	.	ID "nbis-three_prime_utr-274"  ; Name PGSC0003DME400212157 ; Parent PGSC0003DMT400080311 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080311
+:DMv6.1_chr05	Liftoff	five_prime_UTR	4873101	4873206	.	-	.	ID "nbis-five_prime_utr-275"  ; Name PGSC0003DME400212157 ; Parent PGSC0003DMT400080311 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080758
+:DMv6.1_chr06	Liftoff	three_prime_UTR	2026871	2027332	.	-	.	ID "nbis-three_prime_utr-275"  ; Name PGSC0003DME400213144 ; Parent PGSC0003DMT400080758 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400080758
+:DMv6.1_chr06	Liftoff	five_prime_UTR	2027582	2029258	.	-	.	ID "nbis-five_prime_utr-276"  ; Name PGSC0003DME400213144 ; Parent PGSC0003DMT400080758 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082381
+:DMv6.1_chr11	Liftoff	three_prime_UTR	37168462	37169056	.	-	.	ID "nbis-three_prime_utr-276"  ; Name PGSC0003DME400216519 ; Parent PGSC0003DMT400082381 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082381
+:DMv6.1_chr11	Liftoff	five_prime_UTR	37177310	37177403	.	-	.	ID "nbis-five_prime_utr-277"  ; Name PGSC0003DME400216519 ; Parent PGSC0003DMT400082381 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082390
+:DMv6.1_chr11	Liftoff	three_prime_UTR	37418334	37418432	.	-	.	ID "nbis-three_prime_utr-277"  ; Name PGSC0003DME400216561 ; Parent PGSC0003DMT400082390 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082390
+:DMv6.1_chr11	Liftoff	five_prime_UTR	37424434	37424523	.	-	.	ID "nbis-five_prime_utr-278"  ; Name PGSC0003DME400216561 ; Parent PGSC0003DMT400082390 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082496
+:DMv6.1_chr04	Liftoff	three_prime_UTR	6021382	6023402	.	-	.	ID "nbis-three_prime_utr-278"  ; Name PGSC0003DME400216850 ; Parent PGSC0003DMT400082496 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082496
+:DMv6.1_chr04	Liftoff	five_prime_UTR	6023949	6023953	.	-	.	ID "nbis-five_prime_utr-279"  ; Name PGSC0003DME400216850 ; Parent PGSC0003DMT400082496 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082753
+:DMv6.1_chr07	Liftoff	five_prime_UTR	38235538	38235957	.	+	.	ID "nbis-five_prime_utr-280"  ; Name PGSC0003DME400217210 ; Parent PGSC0003DMT400082753 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082753
+:DMv6.1_chr07	Liftoff	five_prime_UTR	38236397	38236457	.	+	.	ID "nbis-five_prime_utr-280"  ; Name PGSC0003DME400217210 ; Parent PGSC0003DMT400082753 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400082753
+:DMv6.1_chr07	Liftoff	three_prime_UTR	38236767	38237335	.	+	.	ID "nbis-three_prime_utr-279"  ; Name PGSC0003DME400217210 ; Parent PGSC0003DMT400082753 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083022
+:DMv6.1_chr12	Liftoff	three_prime_UTR	26077197	26077312	.	-	.	ID "nbis-three_prime_utr-280"  ; Name PGSC0003DME400217597 ; Parent PGSC0003DMT400083022 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083022
+:DMv6.1_chr12	Liftoff	five_prime_UTR	26077820	26081009	.	-	.	ID "nbis-five_prime_utr-281"  ; Name PGSC0003DME400217597 ; Parent PGSC0003DMT400083022 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083476
+:DMv6.1_chr11	Liftoff	five_prime_UTR	39315137	39315180	.	+	.	ID "nbis-five_prime_utr-282"  ; Name PGSC0003DME400218625 ; Parent PGSC0003DMT400083476 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083476
+:DMv6.1_chr11	Liftoff	three_prime_UTR	39315979	39318623	.	+	.	ID "nbis-three_prime_utr-281"  ; Name PGSC0003DME400218625 ; Parent PGSC0003DMT400083476 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083479
+:DMv6.1_chr11	Liftoff	three_prime_UTR	39452228	39452235	.	-	.	ID "nbis-three_prime_utr-282"  ; Name PGSC0003DME400218628 ; Parent PGSC0003DMT400083479 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083479
+:DMv6.1_chr11	Liftoff	five_prime_UTR	39452488	39455113	.	-	.	ID "nbis-five_prime_utr-283"  ; Name PGSC0003DME400218628 ; Parent PGSC0003DMT400083479 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083508
+:DMv6.1_chr04	Liftoff	three_prime_UTR	33377319	33377587	.	-	.	ID "nbis-three_prime_utr-283"  ; Name PGSC0003DME400218687 ; Parent PGSC0003DMT400083508 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083508
+:DMv6.1_chr04	Liftoff	five_prime_UTR	33385784	33385955	.	-	.	ID "nbis-five_prime_utr-284"  ; Name PGSC0003DME400218687 ; Parent PGSC0003DMT400083508 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083718
+:DMv6.1_chr05	Liftoff	five_prime_UTR	52812387	52812976	.	+	.	ID "nbis-five_prime_utr-285"  ; Name PGSC0003DME400218929 ; Parent PGSC0003DMT400083718 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083718
+:DMv6.1_chr05	Liftoff	three_prime_UTR	52813319	52813609	.	+	.	ID "nbis-three_prime_utr-284"  ; Name PGSC0003DME400218929 ; Parent PGSC0003DMT400083718 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083923
+:DMv6.1_chr05	Liftoff	three_prime_UTR	45231723	45231892	.	-	.	ID "nbis-three_prime_utr-285"  ; Name PGSC0003DME400219481 ; Parent PGSC0003DMT400083923 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400083923
+:DMv6.1_chr05	Liftoff	five_prime_UTR	45238174	45238313	.	-	.	ID "nbis-five_prime_utr-286"  ; Name PGSC0003DME400219481 ; Parent PGSC0003DMT400083923 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400084503
+:DMv6.1_chr03	Liftoff	three_prime_UTR	7712426	7713641	.	-	.	ID "nbis-three_prime_utr-286"  ; Name PGSC0003DME400220550 ; Parent PGSC0003DMT400084503 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400084503
+:DMv6.1_chr03	Liftoff	three_prime_UTR	7718409	7718422	.	-	.	ID "nbis-three_prime_utr-286"  ; Name PGSC0003DME400220550 ; Parent PGSC0003DMT400084503 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400084503
+:DMv6.1_chr03	Liftoff	five_prime_UTR	7719504	7719833	.	-	.	ID "nbis-five_prime_utr-287"  ; Name PGSC0003DME400220550 ; Parent PGSC0003DMT400084503 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400084529
+:DMv6.1_chr05	Liftoff	three_prime_UTR	52738031	52738214	.	-	.	ID "nbis-three_prime_utr-287"  ; Name PGSC0003DME400220598 ; Parent PGSC0003DMT400084529 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt400084529
+:DMv6.1_chr05	Liftoff	five_prime_UTR	52739082	52740424	.	-	.	ID "nbis-five_prime_utr-288"  ; Name PGSC0003DME400220598 ; Parent PGSC0003DMT400084529 ; extra_copy_number 0
+Create one UTR for pgsc0003dmt402000299
+:DMv6.1_chr04	Liftoff	five_prime_UTR	23988269	23988357	.	-	.	ID "nbis-five_prime_utr-289"  ; Name "PGSC0003DME402000299.1"  ; Parent PGSC0003DMT402000299 ; extra_copy_number 0
+754 UTRs created that were missing
+No UTRs locations modified
+No supernumerary UTRs removed
+------------------------------ done in 1 seconds -------------------------------
+
+------------------------ Check11: all level2 locations -------------------------
+No problem found
+------------------------------ done in 0 seconds -------------------------------
+
+------------------------ Check12: all level1 locations -------------------------
+No problem found
+------------------------------ done in 0 seconds -------------------------------
+
+---------------------- Check13: remove identical isoforms ----------------------
+None found
+------------------------------ done in 0 seconds -------------------------------
+                  ------ End checks (done in 1 second) ------                   
+
+
