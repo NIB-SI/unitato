@@ -55,7 +55,7 @@ UniTato: a web server for evidence and community based Unification of poTato gen
 ## Output
 * Translation table: ./output/v4-v6.1_translationTable.xlsx
 * GFFs:
-   * ./output/matched-unmatched-gff/
+   * flank-based: ./output/matched-unmatched-gff/
    * unified GFF: v6v4.gff
 ## Reports
 * many-to-many matches: ./reports/overlaps.xlsx
