@@ -30,9 +30,10 @@ UniTato: a web server for evidence and community based Unification of poTato gen
 * Unplaced: ./input/unplaced_DM404.txt
 
 ## Software
-* Liftoff fork with adatation: flanks as integer, insetad of percentage: https://github.com/NIB-SI/Liftoff
+* [Liftoff](https://github.com/agshumate/Liftoff) fork with adatation: flanks as integer, insetad of percentage: <https://github.com/NIB-SI/Liftoff>
 * [Bedtools](https://bedtools.readthedocs.io/en/latest/index.html)
 * [AGAT](https://github.com/NBISweden/AGAT)
+* [minimap2](https://github.com/lh3/minimap2)
  
 ## Output
 * Translation table: ./output/v4-v6.1_translationTable.xlsx
