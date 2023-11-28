@@ -8,8 +8,8 @@ UniTato: a web server for evidence and community based Unification of poTato gen
 * PGSC v4: ./input/StPGSC4.04n_PGSC-gene-model_2022-10-26.gff3
 * DMv6.1  [http://spuddb.uga.edu](http://spuddb.uga.edu/dm_v6_1_download.shtml) <http://spuddb.uga.edu/data/DM_1-3_516_R44_potato.v6.1.working_models.gff3.gz>
 ### FASTA
-* v4 FASTA file: ./input/StPGSC4.04n_2018-01-18_oneliner.fasta <http://spuddb.uga.edu/data/DM_1-3_516_R44_potato_genome_assembly.v6.1.fa.gz>
-* DMv6.1  [http://spuddb.uga.edu](http://spuddb.uga.edu/dm_v6_1_download.shtml)
+* v4 FASTA file: ./input/StPGSC4.04n_2018-01-18_oneliner.fasta
+* DMv6.1  [http://spuddb.uga.edu](http://spuddb.uga.edu/dm_v6_1_download.shtml) <http://spuddb.uga.edu/data/DM_1-3_516_R44_potato_genome_assembly.v6.1.fa.gz>
 ### Annotations
 * PGSC v4 annotations: ./input/Solanum_tuberosum_PGSC_DM_v3.4_converterWithDescriptions.txt
 * DMv6.1  [http://spuddb.uga.edu](http://spuddb.uga.edu/dm_v6_1_download.shtml) <http://spuddb.uga.edu/data/DM_1-3_516_R44_potato.v6.1.working_models.func_anno.txt.gz>
