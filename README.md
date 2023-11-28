@@ -34,6 +34,23 @@ UniTato: a web server for evidence and community based Unification of poTato gen
 * [Bedtools](https://bedtools.readthedocs.io/en/latest/index.html)
 * [AGAT](https://github.com/NBISweden/AGAT)
 * [minimap2](https://github.com/lh3/minimap2)
+### R packages
+* [data.table](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html)
+* [pafr](https://cran.r-project.org/web/packages/pafr/vignettes/Introduction_to_pafr.html)
+* [stringr](https://cran.r-project.org/web/packages/stringr/index.html)
+* [magrittr](https://cran.r-project.org/web/packages/magrittr/index.html)
+* [sqldf](https://cran.r-project.org/web/packages/sqldf/)
+* [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+* [randomcoloR](https://github.com/ronammar/randomcoloR)
+* [circlize](https://jokergoo.github.io/circlize/)
+* [VennDiagram](https://cran.r-project.org/web/packages/VennDiagram/index.html)
+* [grDevices](https://search.r-project.org/R/refmans/grDevices/html/grDevices-package.html)
+* [ggvenn](https://cran.r-project.org/web/packages/ggvenn/index.html)
+* [ggVennDiagram](https://cran.r-project.org/web/packages/ggVennDiagram/vignettes/using-ggVennDiagram.html)
+* [intervals](https://rdrr.io/rforge/intervals/)
+* [igraph](https://r.igraph.org/)
+* [openxlsx](https://cran.r-project.org/web/packages/openxlsx/index.html)
+  
  
 ## Output
 * Translation table: ./output/v4-v6.1_translationTable.xlsx
