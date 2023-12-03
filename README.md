@@ -56,7 +56,7 @@
 * Translation table: ./output/v4-v6.1_translationTable.xlsx
 * GFFs:
    * flank-based: ./output/matched-unmatched-gff/
-   * unified GFF: v6v4.gff
+   * unified v6v4 GFF: UniTato.gff
 ## Reports
 * many-to-many matches: ./reports/overlaps.xlsx
 * Venn: ./reports/01_Venn_wm.tiff
