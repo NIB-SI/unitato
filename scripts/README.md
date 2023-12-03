@@ -25,5 +25,5 @@ Package versions
 * minimap2 v2.26-r1175
 * liftoff fork v1.6.3
 
-
+For Apollo setup visit [Apollo documentation page](https://genomearchitect.readthedocs.io/en/latest/)
 
