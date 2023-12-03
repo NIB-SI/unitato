@@ -62,4 +62,7 @@
 * Venn: ```./reports/01_Venn_wm.tiff```
 * pan-transcriptome ITAG-PGSC pair matching dependent of the F parameter: ```./reports/ITAG-PGSC_F-dependent_pairs-matches.txt```
 * DMv6.1 wm scaffolds without gene features: ```./reports/v6scaffolds-without-v6genes.fasta```
+* Chord diagram visualisation
+* Chr12 inversion visualisation
+  
   
