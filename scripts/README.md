@@ -10,4 +10,4 @@ Unification steps (nonconsecutive order)
 8. Add annotations to GFFs
 9. Mark many-to-many mappings
 
-For table preparation integrating output data from steps above use R or Python
+For table preparation integrating output data from steps above use R or Python, or both using Jupyter Notebook
