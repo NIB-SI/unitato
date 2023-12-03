@@ -21,6 +21,7 @@ Package versions
 * Python v3.9.18
 * agat v1.2.0
 * jupyter v4.4.0
+* pip v23.3.1
 * minimap2 v2.26-r1175
 * liftoff fork v1.6.3
 
