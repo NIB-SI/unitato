@@ -1,4 +1,4 @@
-conda activate Liftoff1.6.3.original
+conda activate UniTato
 minimap2 --version
 # 2.24-r1122
 
