@@ -27,3 +27,4 @@ Package versions
 
 For Apollo setup visit [Apollo documentation page](https://genomearchitect.readthedocs.io/en/latest/)
 
+For creation of an environment from an environment.yml file visit [Conda user guide web page](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
