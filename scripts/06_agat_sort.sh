@@ -1,3 +1,4 @@
+conda activate UniTato
 # https://github.com/NBISweden/AGAT#using-bioconda
 conda install -c bioconda agat
 conda update agat
