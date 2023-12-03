@@ -2,8 +2,7 @@
 bedtools sort -i ../input/StPGSC4.04n_ITAG-gene-model_2020-01-17.gff3 > ../input/StPGSC4.04n_ITAG-gene-model_2020-01-17_sorted.gff3;
 bedtools sort -i ../input/StPGSC4.04n_PGSC-gene-model_2022-10-26.gff3 > ../input/StPGSC4.04n_PGSC-gene-model_2022-10-26_sorted.gff3;
 
-# /home/administrator/conda2/envs/Liftoff1.6.3.original/lib/python3.9/site-packages/liftoff/
-conda activate Liftoff1.6.3.original
+conda activate UniTato
 
 a=(0.90);
 s=(0.90);
