@@ -1,7 +1,7 @@
 # UniTato
 * Apollo genome browser: [UniTato: a web server for evidence and community based Unification of poTato gene models](https://unitato.nib.si)
 * Potato DM v4 to v6 hene ID translation table ```./output/v4-v6.1_translationTable.xlsx```
-* Unified GFF/GTF file ```./output/matched-unmatched-gff/```
+* Unified GFF/GTF file ```./output/matched-unmatched-gff/``` and corresponding FASTA file avalable also at <http://unitato.nib.si/downloads/>
 
 
 
