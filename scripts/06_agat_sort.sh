@@ -6,6 +6,6 @@ conda update agat
 agat_convert_sp_gxf2gxf.pl --gff pure_addition_flank0.gff  > sorted_pure_addition_flank0.gff;
 # repeat for all GFFs
 
-# cob+nvert GFF to GTF
+# convert GFF to GTF
 agat_convert_sp_gff2gtf.pl --gff Unitato.gff -o Unitato.gtf
 
