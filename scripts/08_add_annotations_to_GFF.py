@@ -13,10 +13,7 @@ annots = pd.read_csv(annot_file, compression="gzip", sep="\t", index_col=0, head
 with open(gff_file, "r") as gff:
     with open(out_file, "w") as out:
         for line in gff:
-            if line.startswith("#"):
-                out.write(line)
-                continue
-            else:
+            if not line.startswith("#"):
                 attributes =line.split("\t")[-1].rstrip()
                 #print(attributes)
                 if "ID" in attributes:
@@ -26,4 +23,4 @@ with open(gff_file, "r") as gff:
                         line = line.rstrip() + f";Note={annot}\n"
                         out.write(line)
                         continue
-                out.write(line)
+            out.write(line)
