@@ -1,5 +1,5 @@
 ### nextflow script to map long reads RNA 
-### (ISOSEQ and ONT) to v4v6 UNITATO reference genoome
+### (ISOSEQ and ONT) to v4v6 UNITATO reference genome
 ### to run without nextflow just run script with bash and replace parameters
 
 minimap2 --version
@@ -31,14 +31,14 @@ log.info """\
 process merge_fastq {
      
     input:
-    path(readdir)
+     path(readdir)
  
     output:
-    path "${readdir}.fastq"
+    path "${readdir}.fastq.gz"
 
     script:
     """
-    cat ${readdir}/*fastq.gz > ${readdir}.fastq
+    cat ${readdir}/*fastq.gz > ${readdir}.fastq.gz
     """
 }
 
@@ -57,21 +57,29 @@ process quantification {
     tuple val(read_name), path(read), path(reference_genome), path(reference_genome_fai), path(gtf)
  
     output:
-    tuple val(read_name), path("${read_name}_aligned.bam"), path("${read_name}_aligned.bam.bai")
+    tuple val(read_name), 
+             path("${read_name}_aligned_sorted.bam"), 
+             path("${read_name}_aligned_sorted.bam.bai")
     script:
     """
     if [[ ${read_name} == *"ONT"* ]]; then
         echo "run minimap for Nanopore 2D cDNA-seq"
-        minimap2 -ax splice -G 10000 $reference_genome $read > ${read_name}_aligned.bam  #Nanopore 2D cDNA-seq
+        minimap2 -ax splice -G 10000 -L $reference_genome $read > ${read_name}_aligned.sam  #Nanopore 2D cDNA-seq
     elif [[ ${read_name} == *"ISOSEQ"* ]]; then
         echo "run minimap for ISOSEQ"
-        minimap2 -ax splice:hq -G 10000 -uf $reference_genome $read > ${read_name}_aligned.bam      # PacBio Iso-seq/traditional cDNA
+        minimap2 -ax splice:hq -G 10000 -L -uf $reference_genome $read > ${read_name}_aligned.sam  # PacBio Iso-seq/traditional cDNA
     else 
         printf '%s\n' "Make sure that readname is either *_ONT or *_ISOSEQ" >&2  # write error message to stderr
-        exit 1  
+        exit 1
     fi
+    # convert to bam and index
+    samtools view -bS ${read_name}_aligned.sam > ${read_name}_aligned.bam
+    samtools sort ${read_name}_aligned.bam > ${read_name}_aligned_sorted.bam
+    samtools index ${read_name}_aligned_sorted.bam 
+    
     """
-
+    
+}
 
 // create channels from input files
 long_reads = Channel.fromPath(params.long_read_dir, type: 'dir')
