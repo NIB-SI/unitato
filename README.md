@@ -4,8 +4,9 @@
 * Potato DM v4 to v6 gene ID translation table ```./output/v4-v6.1_translationTable.xlsx``` (all information); high confidence translation table subset at [github.com/NIB-SI/DiNAR/TranslationTables](https://raw.githubusercontent.com/NIB-SI/DiNAR/master/TranslationTables/v4v6.txt)
 * Unified GFF/GTF files ```./output/Unitato.GFF.zip``` ```./output/Unitato.GTF.zip```  and corresponding FASTA file are also avalable at <http://unitato.nib.si/downloads/>
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10257530.svg)](https://doi.org/10.5281/zenodo.10257530)
 
-
+[bioRxiv](https://www.biorxiv.org/content/10.1101/2023.12.07.570586v1)
 
 ## Input files
 ### GFF3
