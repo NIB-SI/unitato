@@ -3,14 +3,14 @@ Unification steps (nonconsecutive order)
 1. Run Liftoff with and without flanks (flanks as [int](https://github.com/NIB-SI/Liftoff))
 2. Run Bedtools [intersect](https://bedtools.readthedocs.io/en/latest/content/tools/intersect.html) using various [F param](https://bedtools.readthedocs.io/en/latest/_images/intersect-glyph.png) values
 3. Filter Bedtools intersect results for matching strands
-4. Use [minimap2](https://github.com/lh3/minimap2) for various mappings using various [params](https://lh3.github.io/minimap2/minimap2.html) (data set specific)
+4. Use [minimap2](https://github.com/lh3/minimap2) (<https://anaconda.org/bioconda/minimap2>) for various mappings using various [params](https://lh3.github.io/minimap2/minimap2.html) (data set specific)
 5. Visualise synteny (R code and packages in .html report)
-6. Use [AGAT](https://github.com/NBISweden/AGAT) for various GFF pre-processing and sorting
+6. Use [AGAT](https://github.com/NBISweden/AGAT) (<https://anaconda.org/bioconda/agat>) for various GFF pre-processing and sorting
 7. Visualise sets (R code and packages in .html report)
 8. Add annotations to GFFs
 9. Mark many-to-many mappings (R code and packages in .html report)
 10. map long read to the genome using [minimap2](https://github.com/lh3/minimap2)
-11. map PE reads to the genome using [STAR](https://github.com/alexdobin/STAR) and/or [Salmon](https://github.com/COMBINE-lab/salmon)
+11. map PE reads to the genome using [STAR](https://github.com/alexdobin/STAR) (<https://anaconda.org/bioconda/star>) and/or [Salmon](https://github.com/COMBINE-lab/salmon) (<https://anaconda.org/bioconda/salmon>)
 12. map reference preoteomes to the genome using [miniprot](https://github.com/lh3/miniprot) (<https://anaconda.org/bioconda/miniprot>)
 
 For table preparation integrating output data from steps above use R or Python, or both using Jupyter Notebook
