@@ -1,8 +1,8 @@
 # UniTato
 ![](./other/mascot1.png)
 * Apollo genome browser: [UniTato: a web server for evidence and community based Unification of poTato gene models](https://unitato.nib.si)
-* Potato DM v4 to v6 gene ID translation table ```./output/v4-v6.1_translationTable.xlsx``` (all information); high confidence translation table subset at [github.com/NIB-SI/DiNAR/TranslationTables](https://raw.githubusercontent.com/NIB-SI/DiNAR/master/TranslationTables/v4v6.txt)
-* Unified GFF/GTF files ```./output/Unitato.GFF.zip``` ```./output/Unitato.GTF.zip```  and corresponding FASTA file are also avalable at <http://unitato.nib.si/downloads/>
+* Potato DM v4 to v6 gene ID translations ```./reports/v4-v6.1_translations.xlsx``` (all information); high confidence translation table subset at ```./output/v4-v6.1_translationTable.xlsx```, [unitato.nib.si/downloads](http://unitato.nib.si/downloads), and [github.com/NIB-SI/DiNAR/TranslationTables](https://github.com/NIB-SI/DiNAR/tree/master/TranslationTables)
+* Unified GFF/GTF files ```./output/Unitato.GFF.zip``` ```./output/Unitato.GTF.zip```  and corresponding FASTA file are also avalable at [unitato.nib.si/downloads](http://unitato.nib.si/downloads)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10257530.svg)](https://doi.org/10.5281/zenodo.10257530)
 
@@ -35,11 +35,20 @@
 * Chromosome: ```./input/pairs chroms.txt```
 * Unplaced: ```./input/unplaced_DM404.txt```
 
+### Proteomes
+* Arabidopsis [Araport11](https://www.arabidopsis.org/download/index-auto.jsp?dir=%2Fdownload_files%2FSequences%2FAraport11_blastsets)
+* Tomato [ITAG4.1](https://solgenomics.net/ftp/genomes/Solanum_lycopersicum/annotation/ITAG4.1_release/)
+* Benthi [Nb HZ version 1](http://lifenglab.hzau.edu.cn/Nicomics/Download/index.php)
+* Tobacco [Nt SR1 version 1](http://lifenglab.hzau.edu.cn/Nicomics/Download/index.php)
+
 ## Software
 * [Liftoff](https://github.com/agshumate/Liftoff) fork with adaptation: flanks as integer (instead of percentage): <https://github.com/NIB-SI/Liftoff>
 * [Bedtools](https://bedtools.readthedocs.io/en/latest/index.html)
 * [AGAT](https://github.com/NBISweden/AGAT)
 * [minimap2](https://github.com/lh3/minimap2)
+* [STAR](https://github.com/alexdobin/STAR)
+* [Salmon](https://github.com/COMBINE-lab/salmon)
+* [miniprot](https://github.com/lh3/miniprot)
 ### R packages
 * [data.table](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html)
 * [pafr](https://cran.r-project.org/web/packages/pafr/vignettes/Introduction_to_pafr.html)
@@ -63,6 +72,7 @@
 * GFFs:
    * flank-based: ```./output/matched-unmatched-gff/```
    * unified v6v4 GFF: ```UniTato.gff```
+* miniprot detailed results: ```./output/miniprot/```
 ## Reports
 * many-to-many matches: ```./reports/overlaps.xlsx```
 * Venn: ```./reports/01_Venn_wm.tiff```
