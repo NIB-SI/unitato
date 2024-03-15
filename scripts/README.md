@@ -9,6 +9,9 @@ Unification steps (nonconsecutive order)
 7. Visualise sets (R code and packages in .html report)
 8. Add annotations to GFFs
 9. Mark many-to-many mappings (R code and packages in .html report)
+10. map long read to the genome using [minimap2](https://github.com/lh3/minimap2)
+11. map PE reads to the genome using [STAR](https://github.com/alexdobin/STAR) and/or [Salmon](https://github.com/COMBINE-lab/salmon)
+12. map reference preoteomes to the genome using [miniprot](https://github.com/lh3/miniprot) (<https://anaconda.org/bioconda/miniprot>)
 
 For table preparation integrating output data from steps above use R or Python, or both using Jupyter Notebook
 
