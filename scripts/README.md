@@ -31,7 +31,7 @@ Package versions
 * pip v23.3.1
 * Python v3.9.18
 * R version v4.2.3
-* Salmon v
+* Salmon v1.10.2
 * STAR v
  
 
