@@ -4,29 +4,36 @@ Unification steps (nonconsecutive order)
 2. Run Bedtools [intersect](https://bedtools.readthedocs.io/en/latest/content/tools/intersect.html) using various [F param](https://bedtools.readthedocs.io/en/latest/_images/intersect-glyph.png) values
 3. Filter Bedtools intersect results for matching strands
 4. Use [minimap2](https://github.com/lh3/minimap2) (<https://anaconda.org/bioconda/minimap2>) for various mappings using various [params](https://lh3.github.io/minimap2/minimap2.html) (data set specific)
-5. Visualise synteny (R code and packages in .html report)
+5. Visualise synteny (custom R code and packages in .html report)
 6. Use [AGAT](https://github.com/NBISweden/AGAT) (<https://anaconda.org/bioconda/agat>) for various GFF pre-processing and sorting
 7. Visualise sets (R code and packages in .html report)
-8. Add annotations to GFFs
+8. Add annotations to GFFs (custom Python code)
 9. Mark many-to-many mappings (R code and packages in .html report)
 10. map long read to the genome using [minimap2](https://github.com/lh3/minimap2)
-11. map PE reads to the genome using [STAR](https://github.com/alexdobin/STAR) (<https://anaconda.org/bioconda/star>) and/or [Salmon](https://github.com/COMBINE-lab/salmon) (<https://anaconda.org/bioconda/salmon>)
-12. map reference preoteomes to the genome using [miniprot](https://github.com/lh3/miniprot) (<https://anaconda.org/bioconda/miniprot>)
+11. map PE reads to the genome using [STAR](https://github.com/alexdobin/STAR) (<https://anaconda.org/bioconda/star>)
+12. map PE reads to the genome using [Salmon](https://github.com/COMBINE-lab/salmon) (<https://anaconda.org/bioconda/salmon>)
+13. perform differential expression analysis (custom R code)
+14. map reference preoteomes to the genome using [miniprot](https://github.com/lh3/miniprot) (<https://anaconda.org/bioconda/miniprot>)
+15. replace miniprot IDs with original proteome IDs in .gff (custom R code)
 
 For table preparation integrating output data from steps above use R or Python, or both using Jupyter Notebook
 
 For GitHub & BitBucket HTML Preview use <https://htmlpreview.github.io/>
 
 Package versions
-* conda 4.8.3
-* bedtools v2.25.0
-* R version v4.2.3
-* Python v3.9.18
 * agat v1.2.0
+* bedtools v2.25.0
+* conda 4.8.3
 * jupyter v4.4.0
-* pip v23.3.1
-* minimap2 v2.26-r1175
 * liftoff fork v1.6.3
+* minimap2 v2.26-r1175
+* miniprot v0.13-r248
+* pip v23.3.1
+* Python v3.9.18
+* R version v4.2.3
+* Salmon v
+* STAR v
+ 
 
 For Apollo setup visit [Apollo documentation page](https://genomearchitect.readthedocs.io/en/latest/)
 
