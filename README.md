@@ -1,7 +1,7 @@
 # UniTato
 ![](./other/mascot1.png)
 * Apollo genome browser: [UniTato: a web server for evidence and community based Unification of poTato gene models](https://unitato.nib.si)
-* Potato DM v4 to v6 gene ID translations ```./reports/v4-v6.1_translations.xlsx``` (all information); high confidence translation table subset at ```./output/v4-v6.1_translationTable.xlsx```, [unitato.nib.si/downloads](http://unitato.nib.si/downloads), and [github.com/NIB-SI/DiNAR/TranslationTables](https://github.com/NIB-SI/DiNAR/tree/master/TranslationTables)
+* Potato DM v4 to v6 gene ID translations ```./output/v4-v6.1_translationTable.xlsx``` (all information); high confidence translation table subset at ```./output/Phureja_v4-v6.1_translations.xlsx```, [unitato.nib.si/downloads](http://unitato.nib.si/downloads), and [github.com/NIB-SI/DiNAR/TranslationTables](https://github.com/NIB-SI/DiNAR/tree/master/TranslationTables)
 * Unified GFF/GTF files ```./output/Unitato.GFF.zip``` ```./output/Unitato.GTF.zip```  and corresponding FASTA file are also avalable at [unitato.nib.si/downloads](http://unitato.nib.si/downloads)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10257530.svg)](https://doi.org/10.5281/zenodo.10257530)
