@@ -85,5 +85,13 @@ For more information see ```sessionInfo()``` in R Markdown files (.html)
 * DMv6.1 wm scaffolds without gene features: ```./reports/v6scaffolds-without-v6genes.fasta```
 * Chord diagram visualisation
 * Chr12 inversion visualisation
+
+  # Additional information
+  ## DMv6.1
+  “High-confidence gene models”, as defined by Pham et al (2020), are based on the following criteria: 
+- Transcripts per Million value greater than 0 in at least one RNA-Seq library
+- Gene models that have a match to a PFAM domain are considered high-confidence
+- Gene models that are partial or have matches to transposable element-related PFAM domains are excluded from the high-confidence model set
+
   
   
