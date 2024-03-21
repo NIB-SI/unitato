@@ -49,6 +49,9 @@
 * [STAR](https://github.com/alexdobin/STAR)
 * [Salmon](https://github.com/COMBINE-lab/salmon)
 * [miniprot](https://github.com/lh3/miniprot)
+
+For more information see ```README``` in ```scripts```
+
 ### R packages
 * [data.table](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html)
 * [pafr](https://cran.r-project.org/web/packages/pafr/vignettes/Introduction_to_pafr.html)
@@ -65,6 +68,8 @@
 * [intervals](https://rdrr.io/rforge/intervals/)
 * [igraph](https://r.igraph.org/)
 * [openxlsx](https://cran.r-project.org/web/packages/openxlsx/index.html)
+
+For more information see ```sessionInfo()``` in R Markdown files (.html)
   
  
 ## Output
