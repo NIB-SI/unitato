@@ -433,7 +433,9 @@ head(newV9)</code></pre>
 </div>
 <div id="write-track-for-apollo" class="section level2">
 <h2>write track for Apollo</h2>
-<pre class="r"><code>ath$V9 = newV9
+<pre class="r"><code>fp = file.path(&#39;..&#39;, &#39;output&#39;)
+
+ath$V9 = newV9
 fn = &#39;Araport11-only_withIDs.gff&#39;
 data.table::fwrite(ath, file.path(fp, fn), quote=FALSE, sep = &#39;\t&#39;, col.names = FALSE) </code></pre>
 <pre class="r"><code>sessionInfo()</code></pre>
