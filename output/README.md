@@ -19,3 +19,5 @@ DM v6.1 ITAG/PGSC v4 paremeter-dependent combinations are shown in multi-sheet `
 ```Phureja_v4-v6.1_translations.xlsx``` is also hosted at <https://unitato.nib.si/downloads/>
 
   ```matched-unmatched-gff``` directory contains GFF files compiled based on information available from the translation table(s)
+  
+  ```maminiprot``` directory contains parsed miniprot .gffs
