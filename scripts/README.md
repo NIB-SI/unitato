@@ -1,4 +1,4 @@
-Unification steps (nonconsecutive order)
+Unification steps
 
 1. Run Liftoff with and without flanks (flanks as [int](https://github.com/NIB-SI/Liftoff))
 2. Run Bedtools [intersect](https://bedtools.readthedocs.io/en/latest/content/tools/intersect.html) using various [F param](https://bedtools.readthedocs.io/en/latest/_images/intersect-glyph.png) values
@@ -9,12 +9,12 @@ Unification steps (nonconsecutive order)
 7. Visualise sets (R code and packages in .html report)
 8. Add annotations to GFFs (custom Python code)
 9. Mark many-to-many mappings (R code and packages in .html report)
-10. map long read to the genome using [minimap2](https://github.com/lh3/minimap2)
-11. map PE reads to the genome using [STAR](https://github.com/alexdobin/STAR) (<https://anaconda.org/bioconda/star>)
-12. map PE reads to the genome using [Salmon](https://github.com/COMBINE-lab/salmon) (<https://anaconda.org/bioconda/salmon>)
-13. perform differential expression analysis (custom R code)
-14. map reference preoteomes to the genome using [miniprot](https://github.com/lh3/miniprot) (<https://anaconda.org/bioconda/miniprot>)
-15. replace miniprot IDs with original proteome IDs in .gff (custom R code)
+10. Map long read to the genome using [minimap2](https://github.com/lh3/minimap2)
+11. Map PE reads to the genome using [STAR](https://github.com/alexdobin/STAR) (<https://anaconda.org/bioconda/star>)
+12. Map PE reads to the genome using [Salmon](https://github.com/COMBINE-lab/salmon) (<https://anaconda.org/bioconda/salmon>)
+13. Perform differential expression analysis (custom R code)
+14. Map reference preoteomes to the genome using [miniprot](https://github.com/lh3/miniprot) (<https://anaconda.org/bioconda/miniprot>)
+15. Replace miniprot IDs with original proteome IDs in .gff (custom R code)
 
 For table preparation integrating output data from steps above use R or Python, or both using Jupyter Notebook
 
