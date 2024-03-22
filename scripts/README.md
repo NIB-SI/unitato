@@ -29,6 +29,7 @@ Package versions
 * liftoff fork v1.6.3
 * minimap2 v2.26-r1175
 * miniprot v0.13-r248
+* nextflow v23.10.1.5891
 * pip v23.3.1
 * Python v3.9.18
 * R version v4.2.3
