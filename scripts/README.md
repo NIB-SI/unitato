@@ -24,6 +24,7 @@ Package versions
 * agat v1.2.0
 * bedtools v2.25.0
 * conda 4.8.3
+* freatureCounts v2.0.6
 * jupyter v4.4.0
 * liftoff fork v1.6.3
 * minimap2 v2.26-r1175
@@ -32,7 +33,7 @@ Package versions
 * Python v3.9.18
 * R version v4.2.3
 * Salmon v1.10.2
-* STAR v
+* STAR v2.7.11a
  
 
 For Apollo setup visit [Apollo documentation page](https://genomearchitect.readthedocs.io/en/latest/)
