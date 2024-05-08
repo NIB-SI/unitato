@@ -10,8 +10,7 @@ gunzip UniTato.gff.gz
 
 
 
-awk -v "key=mRNA" '$3 == key {print($0)}' UniTato.gff > UniTato_mRNA.gff
-awk -v "key=CDS" '$3 == key {print($0)}' UniTato.gff > UniTato_CDS.gff
+# awk -v "key=CDS" '$3 == key {print($0)}' UniTato.gff > UniTato_CDS.gff
 
 
 # https://agat.readthedocs.io/en/latest/gff_to_bed.html#agat
@@ -33,7 +32,6 @@ awk -v "key=CDS" '$3 == key {print($0)}' UniTato.gff > UniTato_CDS.gff
 
 
 agat_convert_sp_gff2bed.pl --gff UniTato.gff -o UniTato.bed
-agat_convert_sp_gff2bed.pl --gff UniTato_CDS.gff -o UniTato_CDS.bed
 
 
 
