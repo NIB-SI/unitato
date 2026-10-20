@@ -8,6 +8,9 @@
 
 [bioRxiv](https://www.biorxiv.org/content/10.1101/2023.12.07.570586v1)
 
+
+[![DOI](https://zenodo.org/badge/DOI/10.1093/plphys/kiaf126.svg)](https://doi.org/10.1093/plphys/kiaf126)
+
 ## Input files
 ### GFF3
 * ITAG v4: ```./input/StPGSC4.04n_ITAG-gene-model_2020-01-17.gff3```
