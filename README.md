@@ -7,9 +7,9 @@
 * Potato DM v4 to v6 gene ID translations ```./output/v4-v6.1_translationTable.xlsx``` (all information); high confidence translation table subset at ```./output/Phureja_v4-v6.1_translations.xlsx```, [unitato.nib.si/downloads](http://unitato.nib.si/downloads), and [github.com/NIB-SI/DiNAR/TranslationTables](https://github.com/NIB-SI/DiNAR/tree/master/TranslationTables)
 * Unified GFF/GTF files ```./output/Unitato.GFF.zip``` ```./output/Unitato.GTF.zip```  and corresponding FASTA file are also avalable at [unitato.nib.si/downloads](http://unitato.nib.si/downloads)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10257530.svg)](https://doi.org/10.5281/zenodo.10257530) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10867578.svg)](https://doi.org/10.5281/zenodo.10867578)
+[![DOI](https://zenodo.org/badge/DOI/10.3389/fpls.2024.1352253.svg)]( https://doi.org/10.3389/fpls.2024.1352253)
 [![DOI](https://zenodo.org/badge/DOI/10.1101/2023.12.07.570586.svg)](https://doi.org/10.1101/2023.12.07.570586)
-[![DOI](https://zenodo.org/badge/DOI/10.1093/plphys/kiaf126.svg)](https://doi.org/10.1093/plphys/kiaf126)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18788468.svg)](https://zenodo.org/records/18788468)
 
 ## Input files
